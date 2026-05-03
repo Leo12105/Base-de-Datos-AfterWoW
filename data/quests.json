@@ -1,1 +1,520 @@
-
+[
+  {
+    "id": 12584,
+    "nombre": "El Llamado de la Cruzada",
+    "nivel": 80,
+    "tipo": "Misión de historia",
+    "subtipo": "Historia principal",
+    "categoria": "quests",
+    "calidad": "epic",
+    "icono": "inv_misc_book_11",
+    "iconoEmoji": "📜",
+    "fuente": "Capitán Rohan - Rasganorte",
+    "binding": null,
+    "stats": {
+      "experiencia": "22,050 XP",
+      "oro": "7g 40s",
+      "reputacion": "Cruzada Argenta +250"
+    },
+    "efecto": {
+      "nombre": "Inicio de la cadena principal",
+      "descripcion": "Inicia la cadena de misiones que lleva al Torneo del Cruzado y eventualmente a ICC."
+    },
+    "flavor": "La Cruzada Argenta necesita los más valientes campeones de Azeroth.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.2",
+    "ubicacion": {
+      "zona": "Rasganorte",
+      "continente": "Rasganorte",
+      "x": 75,
+      "y": 22,
+      "descripcion": "Icecrown - Argent Tournament Grounds"
+    },
+    "loot": [],
+    "relacionados": [13400, 13401],
+    "comentarios": []
+  },
+  {
+    "id": 13400,
+    "nombre": "La Espada Rota de los Quel'dorei",
+    "nivel": 80,
+    "tipo": "Misión de cadena",
+    "subtipo": "Cadena épica",
+    "categoria": "quests",
+    "calidad": "epic",
+    "icono": "inv_sword_115",
+    "iconoEmoji": "⚔️",
+    "fuente": "Myralion Sunblaze - Dalaran",
+    "binding": null,
+    "stats": {
+      "experiencia": "0 XP",
+      "oro": "0g",
+      "reputacion": "Sin reputación"
+    },
+    "efecto": {
+      "nombre": "Cadena de Quel'delar",
+      "descripcion": "Inicio de la cadena para obtener la espada Quel'delar. Una de las mejores armas de ICC."
+    },
+    "flavor": "La espada de los Altos Elfos debe ser restaurada a su gloria.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3",
+    "ubicacion": {
+      "zona": "Dalaran",
+      "continente": "Rasganorte",
+      "x": 50,
+      "y": 50,
+      "descripcion": "Dalaran - Silver Enclave / Sunreaver's Sanctuary"
+    },
+    "loot": [
+      {"fuente": "Recompensa final de la cadena", "chance": "100%", "modo": "Quest"}
+    ],
+    "relacionados": [13401, 13402],
+    "comentarios": [
+      {"id": 1, "usuario": "LoreExpert", "fecha": "Hace 2 semanas", "texto": "Una de las mejores cadenas de misiones de WotLK. La historia es increíble.", "votos": 89}
+    ]
+  },
+  {
+    "id": 13401,
+    "nombre": "El Forjamiento de Shadowmourne",
+    "nivel": 80,
+    "tipo": "Misión legendaria",
+    "subtipo": "Cadena legendaria",
+    "categoria": "quests",
+    "calidad": "legendary",
+    "icono": "inv_axe_113",
+    "iconoEmoji": "🪓",
+    "fuente": "Darion Mograine - ICC",
+    "binding": null,
+    "stats": {
+      "experiencia": "0 XP",
+      "oro": "0g",
+      "reputacion": "Sin reputación"
+    },
+    "efecto": {
+      "nombre": "Cadena de Shadowmourne",
+      "descripcion": "La cadena más épica de WotLK. Requiere matar jefes de ICC 25 heroico y recoger materiales únicos."
+    },
+    "flavor": "El arma que rivalizará con Frostmourne debe ser forjada con almas de los más poderosos.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3",
+    "ubicacion": {
+      "zona": "Ciudadela de la Corona de Hielo",
+      "continente": "Rasganorte",
+      "x": 52,
+      "y": 20,
+      "descripcion": "ICC - Sala principal"
+    },
+    "loot": [
+      {"fuente": "Recompensa final", "chance": "100%", "modo": "Quest Legendaria"}
+    ],
+    "relacionados": [13400],
+    "comentarios": [
+      {"id": 1, "usuario": "GuildLeader", "fecha": "Hace 1 mes", "texto": "La cadena más épica del juego. Necesitas full ICC 25 heroico para completarla.", "votos": 234}
+    ]
+  },
+  {
+    "id": 24560,
+    "nombre": "Bienvenido a Rasganorte",
+    "nivel": 68,
+    "tipo": "Misión de introducción",
+    "subtipo": "Historia principal",
+    "categoria": "quests",
+    "calidad": "uncommon",
+    "icono": "inv_misc_map_01",
+    "iconoEmoji": "🗺️",
+    "fuente": "Rey Varian Wrynn / Thrall",
+    "binding": null,
+    "stats": {
+      "experiencia": "20,100 XP",
+      "oro": "5g 00s",
+      "reputacion": "Sin reputación"
+    },
+    "efecto": {
+      "nombre": "Introducción a Rasganorte",
+      "descripcion": "Primera misión en Rasganorte. Te dirige a Rasganorte Occidental o Fiordo Aquilón."
+    },
+    "flavor": "Rasganorte te espera, héroe. El Rey Exánime debe ser detenido.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "ubicacion": {
+      "zona": "Ventormenta / Orgrimmar",
+      "continente": "Los Reinos del Este / Kalimdor",
+      "x": 50,
+      "y": 50,
+      "descripcion": "Capital de la facción del jugador"
+    },
+    "loot": [],
+    "relacionados": [24561, 24562],
+    "comentarios": []
+  },
+  {
+    "id": 24561,
+    "nombre": "La Cruzada Argenta",
+    "nivel": 77,
+    "tipo": "Misión de reputación",
+    "subtipo": "Reputación",
+    "categoria": "quests",
+    "calidad": "rare",
+    "icono": "inv_misc_emblem_argentcrusade",
+    "iconoEmoji": "🏅",
+    "fuente": "Varios NPCs - Icecrown",
+    "binding": null,
+    "stats": {
+      "experiencia": "16,550 XP",
+      "oro": "7g 40s",
+      "reputacion": "Cruzada Argenta +500"
+    },
+    "efecto": {
+      "nombre": "Subir reputación Cruzada Argenta",
+      "descripcion": "Necesaria para acceder al Torneo del Cruzado y comprar equipamiento especial."
+    },
+    "flavor": "La Cruzada Argenta es la última línea de defensa contra el Rey Exánime.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "ubicacion": {
+      "zona": "Icecrown",
+      "continente": "Rasganorte",
+      "x": 55,
+      "y": 35,
+      "descripcion": "Argent Vanguard - Icecrown"
+    },
+    "loot": [],
+    "relacionados": [12584],
+    "comentarios": []
+  },
+  {
+    "id": 24562,
+    "nombre": "Los Caballeros del Ebon Blade",
+    "nivel": 77,
+    "tipo": "Misión de reputación",
+    "subtipo": "Reputación",
+    "categoria": "quests",
+    "calidad": "rare",
+    "icono": "achievement_reputation_ebonblade",
+    "iconoEmoji": "⚔️",
+    "fuente": "Darion Mograine - Icecrown",
+    "binding": null,
+    "stats": {
+      "experiencia": "16,550 XP",
+      "oro": "7g 40s",
+      "reputacion": "Caballeros del Ebon Blade +500"
+    },
+    "efecto": {
+      "nombre": "Subir reputación Ebon Blade",
+      "descripcion": "Necesaria para Caballeros de la Muerte. Desbloquea encantamientos y monturas especiales."
+    },
+    "flavor": "Los Caballeros del Ebon Blade sirven la justicia, no al Rey Exánime.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "ubicacion": {
+      "zona": "Icecrown",
+      "continente": "Rasganorte",
+      "x": 42,
+      "y": 28,
+      "descripcion": "Shadow Vault - Icecrown"
+    },
+    "loot": [],
+    "relacionados": [24561],
+    "comentarios": []
+  },
+  {
+    "id": 24563,
+    "nombre": "La Prueba del Guerrero",
+    "nivel": 80,
+    "tipo": "Misión diaria",
+    "subtipo": "Torneo",
+    "categoria": "quests",
+    "calidad": "rare",
+    "icono": "ability_warrior_savageblow",
+    "iconoEmoji": "⚔️",
+    "fuente": "Torneo del Cruzado - Icecrown",
+    "binding": null,
+    "stats": {
+      "experiencia": "0 XP",
+      "oro": "13g 23s",
+      "reputacion": "Cruzada Argenta +250"
+    },
+    "efecto": {
+      "nombre": "Misión diaria del Torneo",
+      "descripcion": "Demuestra tu valor como guerrero en el Torneo del Cruzado. Otorga Champion's Seal."
+    },
+    "flavor": "Solo el más valioso campeón puede representar a su pueblo.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.2",
+    "ubicacion": {
+      "zona": "Icecrown",
+      "continente": "Rasganorte",
+      "x": 75,
+      "y": 20,
+      "descripcion": "Argent Tournament Grounds"
+    },
+    "loot": [
+      {"fuente": "Recompensa diaria", "chance": "100%", "modo": "Diaria"}
+    ],
+    "relacionados": [12584],
+    "comentarios": []
+  },
+  {
+    "id": 24564,
+    "nombre": "La Búsqueda del Permafrost",
+    "nivel": 80,
+    "tipo": "Misión de mazmorra",
+    "subtipo": "Mazmorra heroica",
+    "categoria": "quests",
+    "calidad": "rare",
+    "icono": "achievement_dungeon_naxxramas",
+    "iconoEmoji": "🗡️",
+    "fuente": "Varios NPCs - Dalaran",
+    "binding": null,
+    "stats": {
+      "experiencia": "0 XP",
+      "oro": "16g 53s",
+      "reputacion": "Sin reputación"
+    },
+    "efecto": {
+      "nombre": "Misión de mazmorra ICC",
+      "descripcion": "Inicia las mazmorras de ICC: Forge of Souls, Pit of Saron y Halls of Reflection."
+    },
+    "flavor": "Las mazmorras de la Ciudadela guardan secretos y poderosas recompensas.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3",
+    "ubicacion": {
+      "zona": "Dalaran",
+      "continente": "Rasganorte",
+      "x": 48,
+      "y": 52,
+      "descripcion": "Dalaran - Cerca de la entrada de ICC"
+    },
+    "loot": [
+      {"fuente": "Completar la cadena", "chance": "100%", "modo": "Quest"}
+    ],
+    "relacionados": [24565, 24566],
+    "comentarios": []
+  },
+  {
+    "id": 24565,
+    "nombre": "La Forja de Almas",
+    "nivel": 80,
+    "tipo": "Misión de mazmorra",
+    "subtipo": "Mazmorra heroica",
+    "categoria": "quests",
+    "calidad": "rare",
+    "icono": "achievement_dungeon_forgeofsouls",
+    "iconoEmoji": "⚙️",
+    "fuente": "Jaina Proudmoore / Sylvanas",
+    "binding": null,
+    "stats": {
+      "experiencia": "44,100 XP",
+      "oro": "22g 20s",
+      "reputacion": "Cruzada Argenta +350"
+    },
+    "efecto": {
+      "nombre": "Primera mazmorra de ICC",
+      "descripcion": "Completa la Forja de Almas para continuar la cadena de las mazmorras de ICC."
+    },
+    "flavor": "Las almas de los caídos son forjadas en armas para el ejército del Rey Exánime.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3",
+    "ubicacion": {
+      "zona": "Ciudadela de la Corona de Hielo",
+      "continente": "Rasganorte",
+      "x": 52,
+      "y": 85,
+      "descripcion": "Entrada de la Forja de Almas"
+    },
+    "loot": [],
+    "relacionados": [24564, 24566],
+    "comentarios": []
+  },
+  {
+    "id": 24566,
+    "nombre": "Halls of Reflection",
+    "nivel": 80,
+    "tipo": "Misión de mazmorra",
+    "subtipo": "Mazmorra heroica",
+    "categoria": "quests",
+    "calidad": "epic",
+    "icono": "achievement_dungeon_hallsofreflection",
+    "iconoEmoji": "🏛️",
+    "fuente": "Jaina Proudmoore / Sylvanas",
+    "binding": null,
+    "stats": {
+      "experiencia": "44,100 XP",
+      "oro": "22g 20s",
+      "reputacion": "Cruzada Argenta +500"
+    },
+    "efecto": {
+      "nombre": "Última mazmorra de ICC",
+      "descripcion": "La mazmorra más intensa. Incluye una huida del Rey Exánime con Jaina o Sylvanas."
+    },
+    "flavor": "El Rey Exánime te persigue. No puedes detenerte.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3",
+    "ubicacion": {
+      "zona": "Ciudadela de la Corona de Hielo",
+      "continente": "Rasganorte",
+      "x": 52,
+      "y": 80,
+      "descripcion": "Halls of Reflection - ICC"
+    },
+    "loot": [
+      {"fuente": "Recompensa de cadena", "chance": "100%", "modo": "Quest"}
+    ],
+    "relacionados": [24564, 24565],
+    "comentarios": [
+      {"id": 1, "usuario": "StoryFan", "fecha": "Hace 3 semanas", "texto": "La persecución del Rey Exánime al final es uno de los momentos más intensos de WoW.", "votos": 167}
+    ]
+  },
+  {
+    "id": 24567,
+    "nombre": "El Despertar del Caballero de la Muerte",
+    "nivel": 55,
+    "tipo": "Misión de clase",
+    "subtipo": "Inicio de clase",
+    "categoria": "quests",
+    "calidad": "epic",
+    "icono": "classicon_deathknight",
+    "iconoEmoji": "💀",
+    "fuente": "El Rey Exánime - Acherus",
+    "binding": null,
+    "stats": {
+      "experiencia": "0 XP",
+      "oro": "0g",
+      "reputacion": "Sin reputación"
+    },
+    "efecto": {
+      "nombre": "Inicio de la zona de inicio del DK",
+      "descripcion": "La cadena de misiones inicial de los Caballeros de la Muerte. Una de las mejores zonas de inicio de WoW."
+    },
+    "flavor": "Sirves al Rey Exánime ahora. Tu voluntad no es tuya.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "ubicacion": {
+      "zona": "Acherus - La Ciudadela Ebónica",
+      "continente": "Los Reinos del Este",
+      "x": 75,
+      "y": 28,
+      "descripcion": "Tierras del Este Plaga - Acherus"
+    },
+    "loot": [
+      {"fuente": "Recompensa final de la cadena", "chance": "100%", "modo": "Quest de clase"}
+    ],
+    "relacionados": [24568],
+    "comentarios": [
+      {"id": 1, "usuario": "DKFan", "fecha": "Hace 1 mes", "texto": "La mejor zona de inicio de toda la historia de WoW. El giro final es impactante.", "votos": 345}
+    ]
+  },
+  {
+    "id": 24568,
+    "nombre": "El Lado Correcto de la Justicia",
+    "nivel": 58,
+    "tipo": "Misión de clase",
+    "subtipo": "Final de cadena DK",
+    "categoria": "quests",
+    "calidad": "epic",
+    "icono": "spell_deathknight_classicon",
+    "iconoEmoji": "⚔️",
+    "fuente": "Darion Mograine - Light's Hope Chapel",
+    "binding": null,
+    "stats": {
+      "experiencia": "0 XP",
+      "oro": "0g",
+      "reputacion": "Caballeros del Ebon Blade +1000"
+    },
+    "efecto": {
+      "nombre": "Final de la zona de inicio DK",
+      "descripcion": "La batalla de Light's Hope Chapel. Los DK se liberan del control del Rey Exánime y forman el Ebon Blade."
+    },
+    "flavor": "¡Hemos luchado por el lado equivocado por demasiado tiempo!",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "ubicacion": {
+      "zona": "Tierras del Este Plaga",
+      "continente": "Los Reinos del Este",
+      "x": 78,
+      "y": 52,
+      "descripcion": "Light's Hope Chapel"
+    },
+    "loot": [
+      {"fuente": "Recompensa final", "chance": "100%", "modo": "Quest de clase"}
+    ],
+    "relacionados": [24567],
+    "comentarios": [
+      {"id": 1, "usuario": "Loremaster", "fecha": "Hace 3 semanas", "texto": "El giro de esta misión es uno de los mejores momentos narrativos de WoW.", "votos": 278}
+    ]
+  },
+  {
+    "id": 24569,
+    "nombre": "Pescando en Rasganorte",
+    "nivel": 70,
+    "tipo": "Misión de profesión",
+    "subtipo": "Pesca",
+    "categoria": "quests",
+    "calidad": "common",
+    "icono": "trade_fishing",
+    "iconoEmoji": "🎣",
+    "fuente": "Marcia Chase - Dalaran",
+    "binding": null,
+    "stats": {
+      "experiencia": "0 XP",
+      "oro": "0g",
+      "reputacion": "Sin reputación"
+    },
+    "efecto": {
+      "nombre": "Misión diaria de pesca",
+      "descripcion": "Pesca diaria en Dalaran. Recompensa: Cofre del Pescador con posibilidad de montura acuática."
+    },
+    "flavor": "Las aguas de Dalaran guardan peces únicos.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "ubicacion": {
+      "zona": "Dalaran",
+      "continente": "Rasganorte",
+      "x": 35,
+      "y": 65,
+      "descripcion": "Canal de Dalaran"
+    },
+    "loot": [
+      {"fuente": "Cofre del Pescador Sew Manweather", "chance": "Diaria", "modo": "Diaria"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  },
+  {
+    "id": 24570,
+    "nombre": "La Búsqueda de Arthas",
+    "nivel": 80,
+    "tipo": "Misión épica",
+    "subtipo": "Historia principal",
+    "categoria": "quests",
+    "calidad": "epic",
+    "icono": "achievement_boss_lichking",
+    "iconoEmoji": "👑",
+    "fuente": "Tirion Fordring - Icecrown",
+    "binding": null,
+    "stats": {
+      "experiencia": "0 XP",
+      "oro": "23g 40s",
+      "reputacion": "Cruzada Argenta +1000"
+    },
+    "efecto": {
+      "nombre": "Misión previa a ICC",
+      "descripcion": "La misión final antes de asaltar la Ciudadela de la Corona de Hielo."
+    },
+    "flavor": "Esta es nuestra hora. El Rey Exánime caerá hoy.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3",
+    "ubicacion": {
+      "zona": "Icecrown",
+      "continente": "Rasganorte",
+      "x": 53,
+      "y": 90,
+      "descripcion": "Puerta de la Ciudadela de la Corona de Hielo"
+    },
+    "loot": [],
+    "relacionados": [13401, 24566],
+    "comentarios": [
+      {"id": 1, "usuario": "ICCRaider", "fecha": "Hace 2 semanas", "texto": "El discurso de Tirion antes de entrar a ICC pone los pelos de punta.", "votos": 212}
+    ]
+  }
+]
