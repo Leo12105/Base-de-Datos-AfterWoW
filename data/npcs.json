@@ -1,1 +1,528 @@
-
+[
+  {
+    "id": 36597,
+    "nombre": "El Rey Exánime - Arthas Menethil",
+    "nivel": 83,
+    "tipo": "Jefe de Raid",
+    "subtipo": "Jefe final",
+    "categoria": "jefes",
+    "calidad": "legendary",
+    "icono": "achievement_boss_lichking",
+    "iconoEmoji": "💀",
+    "fuente": "Ciudadela de la Corona de Hielo",
+    "binding": null,
+    "stats": {
+      "vida": "103,151,168",
+      "daño": "25,000 - 45,000",
+      "armadura": "10,643"
+    },
+    "efecto": {
+      "nombre": "Encuentro épico de 3 fases",
+      "descripcion": "El encuentro más emblemático de WoW. En la fase final Arthas mata a toda la raid y Tirion Fordring rompe su cadena para resucitarlos."
+    },
+    "flavor": "Ya no hay nada de humano en mí. Solo soy... el Rey Exánime.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3",
+    "ubicacion": {
+      "zona": "Ciudadela de la Corona de Hielo",
+      "continente": "Rasganorte",
+      "x": 52,
+      "y": 15,
+      "descripcion": "Sala del Trono - Planta más alta de ICC"
+    },
+    "loot": [
+      {"fuente": "El Rey Exánime (10 Normal)", "chance": "Garantizado", "modo": "10 Normal"},
+      {"fuente": "El Rey Exánime (10 Heroico)", "chance": "Garantizado", "modo": "10 Heroico"},
+      {"fuente": "El Rey Exánime (25 Normal)", "chance": "Garantizado", "modo": "25 Normal"},
+      {"fuente": "El Rey Exánime (25 Heroico)", "chance": "Garantizado", "modo": "25 Heroico"}
+    ],
+    "relacionados": [36612, 36855, 36895],
+    "habilidades": [
+      {"nombre": "Plaga de Infestación", "icono": "spell_shadow_plaguecloud", "descripcion": "Plaga que mata si no se cura a tiempo. Prioridad máxima de sanación."},
+      {"nombre": "Invocación de los Muertos", "icono": "spell_shadow_animatedead", "descripcion": "Invoca Gules y Sombras que atacan a los jugadores."},
+      {"nombre": "Trampa de Almas", "icono": "spell_shadow_soulleech_2", "descripcion": "Atrapa las almas de los jugadores caídos en la espada Frostmourne."},
+      {"nombre": "Filo del Dolor", "icono": "inv_sword_frostmourne", "descripcion": "Daño masivo al tanque principal. Requiere cooldowns defensivos."},
+      {"nombre": "Colapso del Mundo", "icono": "spell_frost_frostshock", "descripcion": "Destruye parte de la plataforma. Los jugadores deben evitar caer."},
+      {"nombre": "Enfurecer", "icono": "ability_warrior_rampage", "descripcion": "FASE FINAL: Mata a todos los jugadores. Tirion usa el Martillo del Alba para romper Frostmourne."}
+    ],
+    "estrategia": {
+      "fase1": "Tanquear al Rey Exánime en el centro. Curar la plaga inmediatamente. Matar a los adds rápidamente. Evitar los bordes de la plataforma.",
+      "fase2": "El Rey Exánime destruye parte del suelo. Cuidado con los bordes. Los adds son más peligrosos.",
+      "fase3": "El Rey Exánime mata a todos. Tirion rompe Frostmourne. Las almas resucitan a los jugadores. DPS final al 10% de vida."
+    },
+    "comentarios": [
+      {"id": 1, "usuario": "WoWVeteran", "fecha": "Hace 6 meses", "texto": "El mejor encuentro de la historia de WoW. El cinemático final es increíble.", "votos": 203},
+      {"id": 2, "usuario": "RaidLeader", "fecha": "Hace 2 meses", "texto": "En heroico la plaga hace muchísimo más daño. Necesitas al menos 3 sanadores en 25.", "votos": 89}
+    ]
+  },
+  {
+    "id": 36612,
+    "nombre": "Lord Marrowgar",
+    "nivel": 82,
+    "tipo": "Jefe de Raid",
+    "subtipo": "Jefe de raid",
+    "categoria": "jefes",
+    "calidad": "epic",
+    "icono": "achievement_boss_lordmarrowgar",
+    "iconoEmoji": "🦴",
+    "fuente": "Ciudadela de la Corona de Hielo",
+    "binding": null,
+    "stats": {
+      "vida": "33,174,000",
+      "daño": "15,000 - 25,000",
+      "armadura": "10,000"
+    },
+    "efecto": {
+      "nombre": "Tormenta de Huesos",
+      "descripcion": "Gira sin control causando daño masivo a todos los jugadores que toca."
+    },
+    "flavor": "¡Solo la muerte te espera, insensato!",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3",
+    "ubicacion": {
+      "zona": "Ciudadela de la Corona de Hielo",
+      "continente": "Rasganorte",
+      "x": 52,
+      "y": 80,
+      "descripcion": "Primera sala de ICC - Sala del Hueso"
+    },
+    "loot": [
+      {"fuente": "Lord Marrowgar (10 Normal)", "chance": "Garantizado", "modo": "10 Normal"},
+      {"fuente": "Lord Marrowgar (25 Normal)", "chance": "Garantizado", "modo": "25 Normal"},
+      {"fuente": "Lord Marrowgar (10 Heroico)", "chance": "Garantizado", "modo": "10 Heroico"},
+      {"fuente": "Lord Marrowgar (25 Heroico)", "chance": "Garantizado", "modo": "25 Heroico"}
+    ],
+    "relacionados": [36855, 36597],
+    "habilidades": [
+      {"nombre": "Sable de Frío", "icono": "spell_frost_coldfeer", "descripcion": "Dispara rayos de escarcha en línea recta. Causan daño masivo si te impactan."},
+      {"nombre": "Empalado de Frío", "icono": "spell_frost_frostshock", "descripcion": "Empala a un jugador en el suelo con huesos de escarcha. El jugador queda inmovilizado y necesita ser curado."},
+      {"nombre": "Tormenta de Huesos", "icono": "ability_warrior_bladestorm", "descripcion": "Gira causando daño masivo. Los jugadores deben alejarse o morir."},
+      {"nombre": "Fuego de Osario", "icono": "spell_fire_flamebolt", "descripcion": "Llamas de hueso que aparecen bajo los pies de los jugadores."}
+    ],
+    "estrategia": {
+      "fase1": "Tanquear de espaldas a la raid. Curar a los empalados inmediatamente. Durante la Tormenta de Huesos toda la raid debe dispersarse y moverse constantemente.",
+      "fase2": "No hay fase 2. El encuentro es continuo hasta la muerte del jefe.",
+      "fase3": "N/A"
+    },
+    "comentarios": [
+      {"id": 1, "usuario": "Healer", "fecha": "Hace 1 mes", "texto": "El primer jefe de ICC. La Tormenta de Huesos puede wipear fácilmente si la raid no está dispersa.", "votos": 45}
+    ]
+  },
+  {
+    "id": 36855,
+    "nombre": "Lady Deathwhisper",
+    "nivel": 82,
+    "tipo": "Jefe de Raid",
+    "subtipo": "Jefe de raid",
+    "categoria": "jefes",
+    "calidad": "epic",
+    "icono": "achievement_boss_ladydeathwhisper",
+    "iconoEmoji": "🧟",
+    "fuente": "Ciudadela de la Corona de Hielo",
+    "binding": null,
+    "stats": {
+      "vida": "8,902,800",
+      "mana": "49,050,000",
+      "daño": "12,000 - 20,000",
+      "armadura": "10,000"
+    },
+    "efecto": {
+      "nombre": "Escudo de Maná",
+      "descripcion": "En la fase 1 tiene un escudo de maná que debe ser destruido antes de poder dañarla."
+    },
+    "flavor": "¡Silencio! El tumulto de vuestra vida llega a su fin.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3",
+    "ubicacion": {
+      "zona": "Ciudadela de la Corona de Hielo",
+      "continente": "Rasganorte",
+      "x": 52,
+      "y": 70,
+      "descripcion": "Segunda sala de ICC - Sala de la Suprema Faccionaria"
+    },
+    "loot": [
+      {"fuente": "Lady Deathwhisper (10 Normal)", "chance": "Garantizado", "modo": "10 Normal"},
+      {"fuente": "Lady Deathwhisper (25 Normal)", "chance": "Garantizado", "modo": "25 Normal"}
+    ],
+    "relacionados": [36612, 36597],
+    "habilidades": [
+      {"nombre": "Escudo de Maná", "icono": "spell_shadow_antimagicshell", "descripcion": "Escudo que bloquea todo el daño físico. Debe ser destruido con daño mágico."},
+      {"nombre": "Maldición de la Torpe", "icono": "spell_shadow_curseofachimonde", "descripcion": "Transforma a un jugador en un add que ataca a sus compañeros."},
+      {"nombre": "Silencio Eterno", "icono": "spell_shadow_mindshear", "descripcion": "Silencia a todos los jugadores en un área. Muy peligroso para healers."},
+      {"nombre": "Toque del Lichhombre", "icono": "spell_shadow_soulleech", "descripcion": "Convierte a los adds muertos en fantasmas."}
+    ],
+    "estrategia": {
+      "fase1": "Dividir la raid en dos grupos a cada lado. Matar adds inmediatamente. Los DPS mágicos destruyen el escudo de maná. No dejen que lleguen los adds a Lady.",
+      "fase2": "Sin escudo de maná. Tanquear en el centro. Matar a los que sean malditos rápidamente.",
+      "fase3": "N/A"
+    },
+    "comentarios": [
+      {"id": 1, "usuario": "MageMain", "fecha": "Hace 3 semanas", "texto": "Los DPS mágicos son clave para destruir el escudo en la fase 1.", "votos": 34}
+    ]
+  },
+  {
+    "id": 36895,
+    "nombre": "Sindragosa",
+    "nivel": 82,
+    "tipo": "Jefe de Raid",
+    "subtipo": "Jefe de raid",
+    "categoria": "jefes",
+    "calidad": "epic",
+    "icono": "achievement_boss_sindragosa",
+    "iconoEmoji": "❄️",
+    "fuente": "Ciudadela de la Corona de Hielo",
+    "binding": null,
+    "stats": {
+      "vida": "51,000,000",
+      "daño": "20,000 - 35,000",
+      "armadura": "10,643"
+    },
+    "efecto": {
+      "nombre": "Mística Inhibición",
+      "descripcion": "Acumula un debuff en los jugadores que penaliza fuertemente el uso de hechizos."
+    },
+    "flavor": "¡Sufrid como yo sufrí! ¡Sufrid la voluntad del Rey Exánime!",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3",
+    "ubicacion": {
+      "zona": "Ciudadela de la Corona de Hielo",
+      "continente": "Rasganorte",
+      "x": 52,
+      "y": 25,
+      "descripcion": "Sala de Sindragosa - Antes del Trono del Rey Exánime"
+    },
+    "loot": [
+      {"fuente": "Sindragosa (10 Normal)", "chance": "Garantizado", "modo": "10 Normal"},
+      {"fuente": "Sindragosa (25 Normal)", "chance": "Garantizado", "modo": "25 Normal"},
+      {"fuente": "Sindragosa (10 Heroico)", "chance": "Garantizado", "modo": "10 Heroico"},
+      {"fuente": "Sindragosa (25 Heroico)", "chance": "Garantizado", "modo": "25 Heroico"}
+    ],
+    "relacionados": [36597],
+    "habilidades": [
+      {"nombre": "Aliento de Escarcha", "icono": "spell_frost_frostbreath", "descripcion": "Aliento frontal masivo de hielo. El tanque debe posicionarla alejada de la raid."},
+      {"nombre": "Trampa de Hielo", "icono": "spell_frost_freezingbreath", "descripcion": "Congela a un jugador en un bloque de hielo. Los compañeros deben romperlo."},
+      {"nombre": "Mística Inhibición", "icono": "spell_arcane_arcane04", "descripcion": "Debuff acumulable que penaliza hechizos. Al llegar a 5 stacks el jugador debe esconderse."},
+      {"nombre": "Bola de Escarcha", "icono": "spell_frost_icestorm", "descripcion": "Lanza bola de hielo al tanque. Daño masivo."},
+      {"nombre": "Aterrizaje", "icono": "ability_dragonkin_frost", "descripcion": "En fase aérea lanza bloques de hielo que bloquean la sala."}
+    ],
+    "estrategia": {
+      "fase1": "Tanquear mirando hacia la pared. Raid detrás. Romper los bloques de hielo inmediatamente. Gestionar los stacks de Mística Inhibición.",
+      "fase2": "Fase aérea. Evitar los bloques de hielo. Spread para no compartir el debuff.",
+      "fase3": "Igual que fase 1 pero más rápido e intenso."
+    },
+    "comentarios": [
+      {"id": 1, "usuario": "HeroicKiller", "fecha": "Hace 2 semanas", "texto": "En heroico los stacks de Mística Inhibición son brutales. Necesitas mucha comunicación.", "votos": 67}
+    ]
+  },
+  {
+    "id": 33288,
+    "nombre": "Yogg-Saron",
+    "nivel": 83,
+    "tipo": "Jefe de Raid",
+    "subtipo": "Jefe final",
+    "categoria": "jefes",
+    "calidad": "legendary",
+    "icono": "achievement_boss_yoggsaron",
+    "iconoEmoji": "👁️",
+    "fuente": "Ulduar",
+    "binding": null,
+    "stats": {
+      "vida": "Ilimitada (fase 3)",
+      "daño": "Variable por fase",
+      "armadura": "0"
+    },
+    "efecto": {
+      "nombre": "El Dios de la Muerte",
+      "descripcion": "Encuentro de 3 fases único. Los jugadores pueden volverse locos. Solo algunos guardianes pueden ayudar."
+    },
+    "flavor": "¡La cordura es el precio de la claridad!",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.1",
+    "ubicacion": {
+      "zona": "Ulduar",
+      "continente": "Cimas de la Tormenta",
+      "x": 50,
+      "y": 90,
+      "descripcion": "Profundidades de Ulduar - La prisión del Dios de la Muerte"
+    },
+    "loot": [
+      {"fuente": "Yogg-Saron (25 Normal)", "chance": "Garantizado", "modo": "25 Normal"},
+      {"fuente": "Yogg-Saron (25 Heroico Solo)", "chance": "Garantizado", "modo": "Solo (Sin Guardianes)"}
+    ],
+    "relacionados": [33515],
+    "habilidades": [
+      {"nombre": "Boca de Yogg-Saron", "icono": "spell_shadow_shadowbolt", "descripcion": "Bocas en el suelo que atacan. Deben ser matadas."},
+      {"nombre": "Visiones del Pasado", "icono": "spell_shadow_mindtwisting", "descripcion": "Manda jugadores a visiones de eventos históricos de WoW."},
+      {"nombre": "Locura", "icono": "spell_shadow_mindflay", "descripcion": "Los jugadores se vuelven locos y atacan a sus compañeros si miran demasiado al jefe."},
+      {"nombre": "Tentáculos de Constricción", "icono": "inv_misc_monsterclaw_04", "descripcion": "Agarra a un jugador causando daño masivo."},
+      {"nombre": "Nube de Pesadillas", "icono": "spell_shadow_nightofthedead", "descripcion": "Nube que causa locura al contacto."}
+    ],
+    "estrategia": {
+      "fase1": "Matar las bocas para dañar el cerebro. No mirar al ojo central. Gestionar la sanidad.",
+      "fase2": "Entrar en las visiones del pasado. Resolver los puzzles históricos. Salir antes de volverse loco.",
+      "fase3": "DPS al cerebro expuesto. Matar tentáculos. Cero guardianes = máxima dificultad."
+    },
+    "comentarios": [
+      {"id": 1, "usuario": "OldGod", "fecha": "Hace 4 meses", "texto": "El encuentro más único de WoW. Hacerlo en 0 light (sin guardianes) es el mayor desafío de WotLK.", "votos": 178}
+    ]
+  },
+  {
+    "id": 33515,
+    "nombre": "Algalon el Observador",
+    "nivel": 83,
+    "tipo": "Jefe de Raid",
+    "subtipo": "Jefe secreto",
+    "categoria": "jefes",
+    "calidad": "legendary",
+    "icono": "achievement_boss_algalon",
+    "iconoEmoji": "⭐",
+    "fuente": "Ulduar",
+    "binding": null,
+    "stats": {
+      "vida": "16,347,200",
+      "daño": "Variable",
+      "armadura": "0"
+    },
+    "efecto": {
+      "nombre": "Jefe secreto de Ulduar",
+      "descripcion": "Solo disponible durante 1 hora por semana. Enviado por los titanes para evaluar si Azeroth debe ser reiniciada."
+    },
+    "flavor": "He atestiguado la caída de miles de mundos. Azeroth no será diferente.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.1",
+    "ubicacion": {
+      "zona": "Ulduar",
+      "continente": "Cimas de la Tormenta",
+      "x": 60,
+      "y": 40,
+      "descripcion": "Sala del Observador - Solo accesible con llaves de acceso"
+    },
+    "loot": [
+      {"fuente": "Algalon (10 Normal)", "chance": "Garantizado", "modo": "10 Normal"},
+      {"fuente": "Algalon (25 Normal)", "chance": "Garantizado", "modo": "25 Normal"}
+    ],
+    "relacionados": [33288],
+    "habilidades": [
+      {"nombre": "Big Bang", "icono": "spell_arcane_starfire", "descripcion": "Daño masivo a toda la raid. Los jugadores deben entrar en Agujeros de Gusano."},
+      {"nombre": "Colapso Cuántico", "icono": "spell_arcane_teleportstormwind", "descripcion": "Teletransporta jugadores aleatorios."},
+      {"nombre": "Agujero de Gusano", "icono": "spell_arcane_portalundercity", "descripcion": "Portales que aparecen en la sala. Los jugadores deben entrar durante Big Bang."},
+      {"nombre": "Fase Oscura", "icono": "spell_shadow_shadowbolt", "descripcion": "Una fase oscura aparece. Los Constellations oscuros deben ser matados."}
+    ],
+    "estrategia": {
+      "fase1": "Matar los Constellations cuando aparezcan. Entrar en Agujeros de Gusano durante Big Bang.",
+      "fase2": "Durante Fase Oscura matar los adds oscuros rápidamente.",
+      "fase3": "DPS sostenido. Gestionar los Agujeros de Gusano correctamente."
+    },
+    "comentarios": [
+      {"id": 1, "usuario": "StarGazer", "fecha": "Hace 5 meses", "texto": "El jefe más épico de Ulduar. Su diálogo antes de morir te rompe el corazón.", "votos": 234}
+    ]
+  },
+  {
+    "id": 15990,
+    "nombre": "Kel'Thuzad",
+    "nivel": 63,
+    "tipo": "Jefe de Raid",
+    "subtipo": "Jefe final",
+    "categoria": "jefes",
+    "calidad": "epic",
+    "icono": "achievement_boss_kelthuzad",
+    "iconoEmoji": "💀",
+    "fuente": "Naxxramas",
+    "binding": null,
+    "stats": {
+      "vida": "5,500,000",
+      "daño": "18,000 - 30,000",
+      "armadura": "7,700"
+    },
+    "efecto": {
+      "nombre": "Trampa de Hielo",
+      "descripcion": "Congela a un jugador en su lugar. Los compañeros deben liberarlo o morirá."
+    },
+    "flavor": "¡El maestro está satisfecho con tu progreso!",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "ubicacion": {
+      "zona": "Naxxramas",
+      "continente": "Rasganorte",
+      "x": 50,
+      "y": 95,
+      "descripcion": "Cámara final de Naxxramas"
+    },
+    "loot": [
+      {"fuente": "Kel'Thuzad (10 Normal)", "chance": "Garantizado", "modo": "10 Normal"},
+      {"fuente": "Kel'Thuzad (25 Normal)", "chance": "Garantizado", "modo": "25 Normal"}
+    ],
+    "relacionados": [36597],
+    "habilidades": [
+      {"nombre": "Trampa de Hielo", "icono": "spell_frost_chainsofice", "descripcion": "Congela a un jugador en su lugar."},
+      {"nombre": "Sombra Oscura", "icono": "spell_shadow_shadowbolt", "descripcion": "Daño masivo de sombra a un jugador."},
+      {"nombre": "Cadena de Kel'Thuzad", "icono": "spell_shadow_mindtwisting", "descripcion": "Encadena a varios jugadores juntos."},
+      {"nombre": "Guardianes de Icecrown", "icono": "achievement_boss_kelthuzad", "descripcion": "En fase 2 invoca 4 guardianes adicionales."}
+    ],
+    "estrategia": {
+      "fase1": "Sobrevivir a las oleadas de adds durante 3 minutos y 50 segundos.",
+      "fase2": "Kel'Thuzad aparece en el centro. Tanquear lejos de la raid. Curar la Sombra Oscura.",
+      "fase3": "A 45% invoca Guardianes. Los tanks secundarios deben agarrarlos inmediatamente."
+    },
+    "comentarios": [
+      {"id": 1, "usuario": "NaxxVet", "fecha": "Hace 3 meses", "texto": "El jefe más icónico de Naxxramas. Su voz y diálogos son increíbles.", "votos": 145}
+    ]
+  },
+  {
+    "id": 28860,
+    "nombre": "Malygos",
+    "nivel": 83,
+    "tipo": "Jefe de Raid",
+    "subtipo": "Jefe final",
+    "categoria": "jefes",
+    "calidad": "epic",
+    "icono": "achievement_boss_malygos",
+    "iconoEmoji": "🔵",
+    "fuente": "Ojo de la Eternidad",
+    "binding": null,
+    "stats": {
+      "vida": "33,000,000",
+      "daño": "Variable por fase",
+      "armadura": "0"
+    },
+    "efecto": {
+      "nombre": "Encuentro único de 3 fases",
+      "descripcion": "Fase 3 los jugadores montan en discos voladores y deben usar habilidades especiales para derrotar a Malygos."
+    },
+    "flavor": "¡Soy el amo de la magia! ¿Cómo osan los mortales usar mi poder?",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "ubicacion": {
+      "zona": "El Nexo",
+      "continente": "Rasganorte",
+      "x": 50,
+      "y": 50,
+      "descripcion": "El Ojo de la Eternidad - En el centro del Nexo"
+    },
+    "loot": [
+      {"fuente": "Malygos (10 Normal)", "chance": "Garantizado", "modo": "10 Normal"},
+      {"fuente": "Malygos (25 Normal)", "chance": "Garantizado", "modo": "25 Normal"}
+    ],
+    "relacionados": [],
+    "habilidades": [
+      {"nombre": "Vórtice de Maná", "icono": "spell_arcane_manatap", "descripcion": "Lanza a todos los jugadores al aire durante la fase 1."},
+      {"nombre": "Rayo de Poder", "icono": "spell_arcane_blast", "descripcion": "Rayo de magia pura dirigido al tanque."},
+      {"nombre": "Aliento Ártico", "icono": "spell_frost_frostbreath", "descripcion": "Aliento de escarcha en la fase 2."},
+      {"nombre": "Disco Volador", "icono": "ability_mount_drake_blue", "descripcion": "Fase 3: Los jugadores montan en discos y usan habilidades especiales."}
+    ],
+    "estrategia": {
+      "fase1": "Tanquear en el centro. Durante el Vórtice todos vuelan, usar las habilidades para no caer.",
+      "fase2": "Malygos vuela. Los jugadores se quedan en plataformas. Matar adds.",
+      "fase3": "Todos montan discos. Usar las 5 habilidades especiales. DPS al 10% de Malygos."
+    },
+    "comentarios": [
+      {"id": 1, "usuario": "DragonFighter", "fecha": "Hace 4 meses", "texto": "La fase 3 con los discos es muy divertida y única. Nunca se había hecho algo así en WoW.", "votos": 112}
+    ]
+  },
+  {
+    "id": 37955,
+    "nombre": "Saurfang el Desolador",
+    "nivel": 82,
+    "tipo": "Jefe de Raid",
+    "subtipo": "Jefe de raid",
+    "categoria": "jefes",
+    "calidad": "epic",
+    "icono": "achievement_boss_deathbringersaurfang",
+    "iconoEmoji": "🩸",
+    "fuente": "Ciudadela de la Corona de Hielo",
+    "binding": null,
+    "stats": {
+      "vida": "12,509,000",
+      "daño": "18,000 - 28,000",
+      "armadura": "10,000"
+    },
+    "efecto": {
+      "nombre": "Marca de la Bestia",
+      "descripcion": "Marca a un jugador. Los adds Blood Beast deben NO alcanzar al marcado o curarán enormemente al jefe."
+    },
+    "flavor": "¡Mis hermanos... el honor de la Horda... todo perdido!",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3",
+    "ubicacion": {
+      "zona": "Ciudadela de la Corona de Hielo",
+      "continente": "Rasganorte",
+      "x": 52,
+      "y": 60,
+      "descripcion": "Cuarta sala de ICC - Tras la Batalla Naval Aérea"
+    },
+    "loot": [
+      {"fuente": "Saurfang (10 Normal)", "chance": "Garantizado", "modo": "10 Normal"},
+      {"fuente": "Saurfang (25 Normal)", "chance": "Garantizado", "modo": "25 Normal"},
+      {"fuente": "Saurfang (10 Heroico)", "chance": "Garantizado", "modo": "10 Heroico"},
+      {"fuente": "Saurfang (25 Heroico)", "chance": "Garantizado", "modo": "25 Heroico"}
+    ],
+    "relacionados": [36612, 36855, 36597],
+    "habilidades": [
+      {"nombre": "Marca de la Bestia", "icono": "ability_hunter_markedfordeath", "descripcion": "Marca a un jugador al azar. Los Blood Beasts deben evitar alcanzarle."},
+      {"nombre": "Llamada de los Esclavos", "icono": "spell_shadow_animatedead", "descripcion": "Invoca Blood Beasts que corren hacia la Marca."},
+      {"nombre": "Salpicadura de Sangre", "icono": "spell_deathknight_bloodboil", "descripcion": "Daño de sangre en área alrededor del jefe."},
+      {"nombre": "Frenesí de Sangre", "icono": "ability_warrior_bloodfrenzy", "descripcion": "Acumula Poder de Sangre. Al llegar a 100 Marca a más jugadores."}
+    ],
+    "estrategia": {
+      "fase1": "Tanquear de frente. Kite los Blood Beasts lejos del marcado. Ranged DPS los Blood Beasts. No dejar que toquen al marcado.",
+      "fase2": "No hay fase 2. El encounter es continuo.",
+      "fase3": "N/A"
+    },
+    "comentarios": [
+      {"id": 1, "usuario": "HordeFan", "fecha": "Hace 2 meses", "texto": "El cinemático de Saurfang y su padre es uno de los momentos más emotivos de WoW.", "votos": 189}
+    ]
+  },
+  {
+    "id": 36678,
+    "nombre": "Profesor Putricide",
+    "nivel": 82,
+    "tipo": "Jefe de Raid",
+    "subtipo": "Jefe de raid",
+    "categoria": "jefes",
+    "calidad": "epic",
+    "icono": "achievement_boss_professorputricide",
+    "iconoEmoji": "🧪",
+    "fuente": "Ciudadela de la Corona de Hielo",
+    "binding": null,
+    "stats": {
+      "vida": "35,800,000",
+      "daño": "15,000 - 25,000",
+      "armadura": "10,000"
+    },
+    "efecto": {
+      "nombre": "Encuentro de 3 fases",
+      "descripcion": "Los jugadores deben gestionar dos tipos de slime mientras un jugador se transforma en aberración."
+    },
+    "flavor": "¡Oh, esto es maravilloso! ¡Los datos son simplemente... deliciosos!",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3",
+    "ubicacion": {
+      "zona": "Ciudadela de la Corona de Hielo",
+      "continente": "Rasganorte",
+      "x": 45,
+      "y": 45,
+      "descripcion": "Laboratorio de Putricide - Ala de Plaga"
+    },
+    "loot": [
+      {"fuente": "Putricide (10 Normal)", "chance": "Garantizado", "modo": "10 Normal"},
+      {"fuente": "Putricide (25 Normal)", "chance": "Garantizado", "modo": "25 Normal"},
+      {"fuente": "Putricide (10 Heroico)", "chance": "Garantizado", "modo": "10 Heroico"},
+      {"fuente": "Putricide (25 Heroico)", "chance": "Garantizado", "modo": "25 Heroico"}
+    ],
+    "relacionados": [36626, 36627, 36597],
+    "habilidades": [
+      {"nombre": "Plaga Maleable", "icono": "spell_shadow_plaguecloud", "descripcion": "Plaga verde que persigue a un jugador. Debe absorberse para no explotar."},
+      {"nombre": "Bomba de Gas", "icono": "spell_nature_acid_01", "descripcion": "Bomba naranja que debe absorberse antes de explotar."},
+      {"nombre": "Aberración", "icono": "ability_creature_poison_06", "descripcion": "Un jugador se transforma en aberración y puede kitar la Plaga Maleable."},
+      {"nombre": "Transmutación", "icono": "spell_shadow_metamorphosis", "descripcion": "En fase 3 Putricide se transforma en una enorme aberración."}
+    ],
+    "estrategia": {
+      "fase1": "Gestionar la Plaga Maleable y la Bomba de Gas. Designar un jugador como Aberración.",
+      "fase2": "Más adds y más peligroso. La Aberración debe kitar eficientemente.",
+      "fase3": "Putricide se transforma. DPS máximo. La Aberración debe seguir kitando."
+    },
+    "comentarios": [
+      {"id": 1, "usuario": "ChemistPlayer", "fecha": "Hace 1 mes", "texto": "Uno de los encuentros más creativos de ICC. La mecánica de la Aberración es genial.", "votos": 98}
+    ]
+  }
+]
