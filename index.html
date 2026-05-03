@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<!-- ========== TOP BAR ========== -->
+<!-- TOP BAR -->
 <div class="topbar">
   <div class="topbar-left">
     <a href="#" class="expansion active">Dragonflight</a>
@@ -27,7 +27,7 @@
   </div>
 </div>
 
-<!-- ========== HEADER ========== -->
+<!-- HEADER -->
 <header class="header">
   <div class="logo" onclick="navegarInicio()">
     <i class="fas fa-dragon"></i> AfterWoW <span class="logo-db">Database</span>
@@ -40,116 +40,192 @@
         <option value="armadura">Armadura</option>
         <option value="accesorios">Accesorios</option>
         <option value="consumibles">Consumibles</option>
-        <option value="npcs">NPCs</option>
         <option value="jefes">Jefes</option>
         <option value="quests">Misiones</option>
         <option value="spells">Hechizos</option>
         <option value="monturas">Monturas</option>
       </select>
-      <input type="text" id="search" placeholder="Buscar items, NPCs, quests, spells..." autocomplete="off">
+      <input type="text" id="search"
+        placeholder="Buscar items, NPCs, quests, spells..." autocomplete="off">
       <button><i class="fas fa-search"></i></button>
     </div>
     <div id="autocompleteResults" class="autocomplete-results"></div>
   </div>
   <div class="header-stats">
     <span><i class="fas fa-database"></i> <span id="totalItems">0</span> registros</span>
-    <span><i class="fas fa-users"></i> Online</span>
+    <span><i class="fas fa-circle" style="color:#1eff00;font-size:8px;"></i> Online</span>
   </div>
 </header>
 
-<!-- ========== NAVEGACION ========== -->
+<!-- NAVEGACION -->
 <nav class="nav">
   <ul class="nav-menu">
     <li class="nav-item">
-      <a href="#" onclick="navegarInicio()"><i class="fas fa-home"></i> Inicio</a>
+      <a href="#" onclick="navegarInicio()">
+        <i class="fas fa-home"></i> Inicio
+      </a>
     </li>
     <li class="nav-item">
-      <a href="#"><i class="fas fa-sword"></i> Items <i class="fas fa-chevron-down"></i></a>
+      <a href="#">
+        <i class="fas fa-shield-alt"></i> Items
+        <i class="fas fa-chevron-down"></i>
+      </a>
       <div class="dropdown mega-menu">
         <div class="mega-col">
           <h4>Armas</h4>
-          <a href="#" onclick="filtrarSubcategoria('armas','Espada')"><i class="fas fa-sword"></i> Espadas</a>
-          <a href="#" onclick="filtrarSubcategoria('armas','Maza')"><i class="fas fa-hammer"></i> Mazas</a>
-          <a href="#" onclick="filtrarSubcategoria('armas','Hacha')"><i class="fas fa-axe"></i> Hachas</a>
-          <a href="#" onclick="filtrarSubcategoria('armas','Bastón')"><i class="fas fa-staff"></i> Bastones</a>
-          <a href="#" onclick="filtrarSubcategoria('armas','Puño')"><i class="fas fa-fist-raised"></i> Puños</a>
+          <a href="#" onclick="filtrarSubcategoria('armas','Espada')">
+            <i class="fas fa-sword"></i> Espadas
+          </a>
+          <a href="#" onclick="filtrarSubcategoria('armas','Maza')">
+            <i class="fas fa-hammer"></i> Mazas
+          </a>
+          <a href="#" onclick="filtrarSubcategoria('armas','Hacha')">
+            <i class="fas fa-axe-battle"></i> Hachas
+          </a>
+          <a href="#" onclick="filtrarSubcategoria('armas','Bastón')">
+            <i class="fas fa-staff"></i> Bastones
+          </a>
+          <a href="#" onclick="filtrarSubcategoria('armas','Puño')">
+            <i class="fas fa-fist-raised"></i> Puños
+          </a>
         </div>
         <div class="mega-col">
           <h4>Armadura</h4>
-          <a href="#" onclick="filtrarSubcategoria('armadura','Placas')"><i class="fas fa-shield-alt"></i> Placas</a>
-          <a href="#" onclick="filtrarSubcategoria('armadura','Malla')"><i class="fas fa-vest"></i> Malla</a>
-          <a href="#" onclick="filtrarSubcategoria('armadura','Cuero')"><i class="fas fa-mitten"></i> Cuero</a>
-          <a href="#" onclick="filtrarSubcategoria('armadura','Tela')"><i class="fas fa-tshirt"></i> Tela</a>
-          <a href="#" onclick="filtrarSubcategoria('armadura','Capa')"><i class="fas fa-cape"></i> Capas</a>
+          <a href="#" onclick="filtrarSubcategoria('armadura','Placas')">
+            <i class="fas fa-shield-alt"></i> Placas
+          </a>
+          <a href="#" onclick="filtrarSubcategoria('armadura','Malla')">
+            <i class="fas fa-vest"></i> Malla
+          </a>
+          <a href="#" onclick="filtrarSubcategoria('armadura','Cuero')">
+            <i class="fas fa-mitten"></i> Cuero
+          </a>
+          <a href="#" onclick="filtrarSubcategoria('armadura','Tela')">
+            <i class="fas fa-tshirt"></i> Tela
+          </a>
+          <a href="#" onclick="filtrarSubcategoria('armadura','Capa')">
+            <i class="fas fa-wind"></i> Capas
+          </a>
         </div>
         <div class="mega-col">
           <h4>Accesorios</h4>
-          <a href="#" onclick="filtrarSubcategoria('accesorios','Anillo')"><i class="fas fa-ring"></i> Anillos</a>
-          <a href="#" onclick="filtrarSubcategoria('accesorios','Collar')"><i class="fas fa-gem"></i> Collares</a>
-          <a href="#" onclick="filtrarSubcategoria('accesorios','Trinket')"><i class="fas fa-dice-d20"></i> Trinkets</a>
+          <a href="#" onclick="filtrarSubcategoria('accesorios','Anillo')">
+            <i class="fas fa-ring"></i> Anillos
+          </a>
+          <a href="#" onclick="filtrarSubcategoria('accesorios','Collar')">
+            <i class="fas fa-gem"></i> Collares
+          </a>
+          <a href="#" onclick="filtrarSubcategoria('accesorios','Trinket')">
+            <i class="fas fa-dice-d20"></i> Trinkets
+          </a>
         </div>
         <div class="mega-col">
           <h4>Otros</h4>
-          <a href="#" onclick="filtrarCategoria('consumibles')"><i class="fas fa-flask"></i> Consumibles</a>
-          <a href="#" onclick="filtrarCategoria('gemas')"><i class="fas fa-gem"></i> Gemas</a>
-          <a href="#" onclick="filtrarCategoria('monturas')"><i class="fas fa-horse"></i> Monturas</a>
+          <a href="#" onclick="filtrarCategoria('consumibles')">
+            <i class="fas fa-flask"></i> Consumibles
+          </a>
+          <a href="#" onclick="filtrarCategoria('gemas')">
+            <i class="fas fa-gem"></i> Gemas
+          </a>
+          <a href="#" onclick="filtrarCategoria('monturas')">
+            <i class="fas fa-horse"></i> Monturas
+          </a>
         </div>
       </div>
     </li>
     <li class="nav-item">
-      <a href="#" onclick="filtrarCategoria('npcs')"><i class="fas fa-skull"></i> NPCs</a>
+      <a href="#" onclick="filtrarCategoria('jefes')">
+        <i class="fas fa-skull"></i> NPCs
+      </a>
     </li>
     <li class="nav-item">
-      <a href="#" onclick="filtrarCategoria('quests')"><i class="fas fa-scroll"></i> Misiones</a>
+      <a href="#" onclick="filtrarCategoria('quests')">
+        <i class="fas fa-scroll"></i> Misiones
+      </a>
     </li>
     <li class="nav-item">
-      <a href="#" onclick="filtrarCategoria('spells')"><i class="fas fa-magic"></i> Hechizos</a>
+      <a href="#" onclick="filtrarCategoria('spells')">
+        <i class="fas fa-magic"></i> Hechizos
+      </a>
     </li>
     <li class="nav-item">
-      <a href="#"><i class="fas fa-users"></i> Clases <i class="fas fa-chevron-down"></i></a>
+      <a href="#">
+        <i class="fas fa-users"></i> Clases
+        <i class="fas fa-chevron-down"></i>
+      </a>
       <div class="dropdown">
-        <a href="#" onclick="filtrarClase('Guerrero')"><span class="class-icon warrior"></span> Guerrero</a>
-        <a href="#" onclick="filtrarClase('Paladín')"><span class="class-icon paladin"></span> Paladín</a>
-        <a href="#" onclick="filtrarClase('Cazador')"><span class="class-icon hunter"></span> Cazador</a>
-        <a href="#" onclick="filtrarClase('Pícaro')"><span class="class-icon rogue"></span> Pícaro</a>
-        <a href="#" onclick="filtrarClase('Sacerdote')"><span class="class-icon priest"></span> Sacerdote</a>
-        <a href="#" onclick="filtrarClase('Chamán')"><span class="class-icon shaman"></span> Chamán</a>
-        <a href="#" onclick="filtrarClase('Mago')"><span class="class-icon mage"></span> Mago</a>
-        <a href="#" onclick="filtrarClase('Brujo')"><span class="class-icon warlock"></span> Brujo</a>
-        <a href="#" onclick="filtrarClase('Druida')"><span class="class-icon druid"></span> Druida</a>
-        <a href="#" onclick="filtrarClase('Caballero de la Muerte')"><span class="class-icon dk"></span> Caballero de la Muerte</a>
+        <a href="#" onclick="filtrarClase('Guerrero')">
+          <span class="class-icon warrior"></span> Guerrero
+        </a>
+        <a href="#" onclick="filtrarClase('Paladín')">
+          <span class="class-icon paladin"></span> Paladín
+        </a>
+        <a href="#" onclick="filtrarClase('Cazador')">
+          <span class="class-icon hunter"></span> Cazador
+        </a>
+        <a href="#" onclick="filtrarClase('Pícaro')">
+          <span class="class-icon rogue"></span> Pícaro
+        </a>
+        <a href="#" onclick="filtrarClase('Sacerdote')">
+          <span class="class-icon priest"></span> Sacerdote
+        </a>
+        <a href="#" onclick="filtrarClase('Chamán')">
+          <span class="class-icon shaman"></span> Chamán
+        </a>
+        <a href="#" onclick="filtrarClase('Mago')">
+          <span class="class-icon mage"></span> Mago
+        </a>
+        <a href="#" onclick="filtrarClase('Brujo')">
+          <span class="class-icon warlock"></span> Brujo
+        </a>
+        <a href="#" onclick="filtrarClase('Druida')">
+          <span class="class-icon druid"></span> Druida
+        </a>
+        <a href="#" onclick="filtrarClase('Caballero de la Muerte')">
+          <span class="class-icon dk"></span> Caballero de la Muerte
+        </a>
       </div>
     </li>
     <li class="nav-item">
-      <a href="#"><i class="fas fa-tools"></i> Herramientas <i class="fas fa-chevron-down"></i></a>
+      <a href="#">
+        <i class="fas fa-tools"></i> Herramientas
+        <i class="fas fa-chevron-down"></i>
+      </a>
       <div class="dropdown">
-        <a href="#" onclick="mostrarCalculadora()"><i class="fas fa-calculator"></i> Calculadora de DPS</a>
-        <a href="#" onclick="mostrarComparador()"><i class="fas fa-balance-scale"></i> Comparar Items</a>
-        <a href="#" onclick="mostrarRecientes()"><i class="fas fa-history"></i> Vistos recientemente</a>
-        <a href="#" onclick="mostrarFavoritos()"><i class="fas fa-star"></i> Mis favoritos</a>
+        <a href="#" onclick="mostrarComparador()">
+          <i class="fas fa-balance-scale"></i> Comparar Items
+        </a>
+        <a href="#" onclick="mostrarRecientes()">
+          <i class="fas fa-history"></i> Vistos recientemente
+        </a>
+        <a href="#" onclick="mostrarFavoritos()">
+          <i class="fas fa-star"></i> Mis favoritos
+        </a>
       </div>
     </li>
   </ul>
 </nav>
 
-<!-- ========== BREADCRUMBS ========== -->
+<!-- BREADCRUMBS -->
 <div class="breadcrumbs" id="breadcrumbs">
   <div class="breadcrumbs-inner">
-    <a href="#" onclick="navegarInicio()"><i class="fas fa-home"></i> Inicio</a>
+    <a href="#" onclick="navegarInicio()">
+      <i class="fas fa-home"></i> Inicio
+    </a>
   </div>
 </div>
 
-<!-- ========== CONTENIDO PRINCIPAL ========== -->
+<!-- MAIN -->
 <main class="main">
 
   <!-- PAGINA INICIO -->
   <div id="paginaInicio">
 
-    <!-- HERO / BIENVENIDA -->
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-content">
         <h1>Base de Datos <span class="highlight">AfterWoW</span></h1>
-        <p>Explora items, NPCs, misiones, hechizos y más. La referencia completa para tu aventura.</p>
+        <p>Explora items, NPCs, misiones, hechizos y más.</p>
         <div class="hero-counters">
           <div class="counter-item">
             <span class="counter-number" id="countItems">0</span>
@@ -171,7 +247,7 @@
       </div>
     </section>
 
-    <!-- VISTOS RECIENTEMENTE -->
+    <!-- RECIENTES -->
     <section class="recientes-seccion" id="recientesSeccion" style="display:none;">
       <h2><i class="fas fa-history"></i> Vistos recientemente</h2>
       <div class="recientes-grid" id="recientesGrid"></div>
@@ -248,27 +324,37 @@
       </div>
     </section>
 
-    <!-- TABLA DE ITEMS -->
+    <!-- TABLA -->
     <section class="tabla-seccion">
       <div class="tabla-header">
         <div class="tabla-title-group">
-          <h2 id="tituloTabla"><i class="fas fa-fire"></i> Items Populares</h2>
+          <h2 id="tituloTabla">
+            <i class="fas fa-fire"></i> Items Populares
+          </h2>
           <span class="resultado-count" id="resultadoCount"></span>
         </div>
         <div class="tabla-controls">
           <div class="filtros">
-            <button class="filtro-btn active" onclick="filtrarCalidad('all', this)">Todos</button>
-            <button class="filtro-btn legendary-btn" onclick="filtrarCalidad('legendary', this)">Legendario</button>
-            <button class="filtro-btn epic-btn" onclick="filtrarCalidad('epic', this)">Épico</button>
-            <button class="filtro-btn rare-btn" onclick="filtrarCalidad('rare', this)">Raro</button>
-            <button class="filtro-btn uncommon-btn" onclick="filtrarCalidad('uncommon', this)">Poco común</button>
-            <button class="filtro-btn common-btn" onclick="filtrarCalidad('common', this)">Común</button>
+            <button class="filtro-btn active"
+              onclick="filtrarCalidad('all', this)">Todos</button>
+            <button class="filtro-btn legendary-btn"
+              onclick="filtrarCalidad('legendary', this)">Legendario</button>
+            <button class="filtro-btn epic-btn"
+              onclick="filtrarCalidad('epic', this)">Épico</button>
+            <button class="filtro-btn rare-btn"
+              onclick="filtrarCalidad('rare', this)">Raro</button>
+            <button class="filtro-btn uncommon-btn"
+              onclick="filtrarCalidad('uncommon', this)">Poco común</button>
+            <button class="filtro-btn common-btn"
+              onclick="filtrarCalidad('common', this)">Común</button>
           </div>
           <div class="view-toggle">
-            <button class="view-btn active" onclick="cambiarVista('tabla', this)" title="Vista tabla">
+            <button class="view-btn active"
+              onclick="cambiarVista('tabla', this)" title="Vista tabla">
               <i class="fas fa-list"></i>
             </button>
-            <button class="view-btn" onclick="cambiarVista('grid', this)" title="Vista cuadrícula">
+            <button class="view-btn"
+              onclick="cambiarVista('grid', this)" title="Vista cuadrícula">
               <i class="fas fa-th"></i>
             </button>
           </div>
@@ -276,14 +362,18 @@
       </div>
 
       <!-- FILTROS AVANZADOS -->
-      <div class="filtros-avanzados" id="filtrosAvanzados">
+      <div class="filtros-avanzados">
         <div class="filtro-group">
           <label>Nivel mín</label>
-          <input type="number" id="filtroNivelMin" min="1" max="500" placeholder="1" onchange="aplicarFiltrosAvanzados()">
+          <input type="number" id="filtroNivelMin"
+            min="1" max="500" placeholder="1"
+            onchange="aplicarFiltrosAvanzados()">
         </div>
         <div class="filtro-group">
           <label>Nivel máx</label>
-          <input type="number" id="filtroNivelMax" min="1" max="500" placeholder="500" onchange="aplicarFiltrosAvanzados()">
+          <input type="number" id="filtroNivelMax"
+            min="1" max="500" placeholder="500"
+            onchange="aplicarFiltrosAvanzados()">
         </div>
         <div class="filtro-group">
           <label>Expansión</label>
@@ -296,7 +386,7 @@
           </select>
         </div>
         <button class="filtro-reset" onclick="resetFiltrosAvanzados()">
-          <i class="fas fa-times"></i> Limpiar filtros
+          <i class="fas fa-times"></i> Limpiar
         </button>
       </div>
 
@@ -357,18 +447,18 @@
 
 </main>
 
-<!-- ========== TOOLTIP ========== -->
+<!-- TOOLTIP -->
 <div id="tooltip" class="tooltip-wowhead"></div>
 
-<!-- ========== TOAST NOTIFICATION ========== -->
-<div id="toast" class="toast"></div>
+<!-- TOAST -->
+<div id="toast" class="toast hide"></div>
 
-<!-- ========== FOOTER ========== -->
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-col">
       <h3><i class="fas fa-dragon"></i> AfterWoW</h3>
-      <p>La base de datos más completa para el servidor AfterWoW. Encuentra todo lo que necesitas para tu aventura en Azeroth.</p>
+      <p>La base de datos más completa para el servidor AfterWoW.</p>
       <div class="social-links">
         <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
         <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
@@ -378,27 +468,43 @@
     </div>
     <div class="footer-col">
       <h4>Base de datos</h4>
-      <a href="#" onclick="filtrarCategoria('armas')"><i class="fas fa-chevron-right"></i> Armas</a>
-      <a href="#" onclick="filtrarCategoria('armadura')"><i class="fas fa-chevron-right"></i> Armadura</a>
-      <a href="#" onclick="filtrarCategoria('accesorios')"><i class="fas fa-chevron-right"></i> Accesorios</a>
-      <a href="#" onclick="filtrarCategoria('consumibles')"><i class="fas fa-chevron-right"></i> Consumibles</a>
-      <a href="#" onclick="filtrarCategoria('monturas')"><i class="fas fa-chevron-right"></i> Monturas</a>
+      <a href="#" onclick="filtrarCategoria('armas')">
+        <i class="fas fa-chevron-right"></i> Armas
+      </a>
+      <a href="#" onclick="filtrarCategoria('armadura')">
+        <i class="fas fa-chevron-right"></i> Armadura
+      </a>
+      <a href="#" onclick="filtrarCategoria('accesorios')">
+        <i class="fas fa-chevron-right"></i> Accesorios
+      </a>
+      <a href="#" onclick="filtrarCategoria('consumibles')">
+        <i class="fas fa-chevron-right"></i> Consumibles
+      </a>
+      <a href="#" onclick="filtrarCategoria('monturas')">
+        <i class="fas fa-chevron-right"></i> Monturas
+      </a>
     </div>
     <div class="footer-col">
       <h4>Comunidad</h4>
-      <a href="#" onclick="filtrarCategoria('jefes')"><i class="fas fa-chevron-right"></i> Jefes de Raid</a>
-      <a href="#" onclick="filtrarCategoria('quests')"><i class="fas fa-chevron-right"></i> Misiones</a>
-      <a href="#" onclick="filtrarCategoria('spells')"><i class="fas fa-chevron-right"></i> Hechizos</a>
-      <a href="#"><i class="fas fa-chevron-right"></i> Guías</a>
-      <a href="#"><i class="fas fa-chevron-right"></i> Foro</a>
+      <a href="#" onclick="filtrarCategoria('jefes')">
+        <i class="fas fa-chevron-right"></i> Jefes de Raid
+      </a>
+      <a href="#" onclick="filtrarCategoria('quests')">
+        <i class="fas fa-chevron-right"></i> Misiones
+      </a>
+      <a href="#" onclick="filtrarCategoria('spells')">
+        <i class="fas fa-chevron-right"></i> Hechizos
+      </a>
+      <a href="#"><i class="fas fa-chevron-right"></i> Discord</a>
+      <a href="#"><i class="fas fa-chevron-right"></i> GitHub</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 AfterWoW Database. Este sitio no está afiliado con Blizzard Entertainment.</p>
-    <p>World of Warcraft® es una marca registrada de Blizzard Entertainment, Inc.</p>
+    <p>© 2024 AfterWoW Database · No afiliado con Blizzard Entertainment</p>
+    <p>World of Warcraft® es marca registrada de Blizzard Entertainment, Inc.</p>
   </div>
 </footer>
 
-<script src="script.js" defer></script>
+<script src="script.js"></script>
 </body>
 </html>
