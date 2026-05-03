@@ -1,10 +1,44 @@
 // ================================================
-// AfterWoW Database — Script Principal
+// AfterWoW Database — Script Completo
 // ================================================
 
-// === BASE DE DATOS DE ITEMS ===
+// ================================================
+// SISTEMA DE ICONOS REALES DE WOW
+// ================================================
+const ICON_BASE_URL = "https://wow.zamimg.com/images/wow/icons/";
+
+function getIconURL(iconName, size = "medium") {
+  if (!iconName || iconName.length <= 2) return null;
+  return `${ICON_BASE_URL}${size}/${iconName}.jpg`;
+}
+
+function crearIconoHTML(item, size = "medium", extraClass = "") {
+  const iconUrl = getIconURL(item.icono, size);
+  const fallback = item.iconoEmoji || "❓";
+  const claseCalidad = `${item.calidad}-border`;
+
+  if (iconUrl) {
+    return `
+      <div class="wow-icon wow-icon-${size} ${claseCalidad} ${extraClass}">
+        <img
+          src="${iconUrl}"
+          alt="${item.nombre}"
+          loading="lazy"
+          onerror="this.parentElement.innerHTML='<span class=\\'emoji-fallback\\'>${fallback}</span>'"
+        >
+      </div>`;
+  }
+
+  return `
+    <div class="wow-icon wow-icon-${size} ${claseCalidad} ${extraClass}">
+      <span class="emoji-fallback">${fallback}</span>
+    </div>`;
+}
+
+// ================================================
+// BASE DE DATOS — ITEMS
+// ================================================
 const items = [
-  // ARMAS LEGENDARIAS
   {
     id: 1,
     nombre: "Fyr'alath el Lacerasueños",
@@ -13,7 +47,8 @@ const items = [
     subtipo: "Hacha",
     categoria: "armas",
     calidad: "legendary",
-    icono: "🪓",
+    icono: "inv_axe_2h_fyrakk_d_01",
+    iconoEmoji: "🪓",
     fuente: "Fyrakk - Amirdrassil",
     binding: "Se liga al recoger",
     stats: {
@@ -32,14 +67,16 @@ const items = [
     expansion: "Dragonflight",
     patch: "10.2",
     loot: [
-      { fuente: "Fyrakk (Normal)", chance: "12%", modo: "Normal" },
-      { fuente: "Fyrakk (Heroico)", chance: "8%", modo: "Heroico" },
-      { fuente: "Fyrakk (Mítico)", chance: "5%", modo: "Mítico" }
+      { fuente: "Fyrakk (Normal)",  chance: "12%", modo: "Normal"  },
+      { fuente: "Fyrakk (Heroico)", chance: "8%",  modo: "Heroico" },
+      { fuente: "Fyrakk (Mítico)",  chance: "5%",  modo: "Mítico"  }
     ],
     relacionados: [2, 3, 4],
     comentarios: [
-      { id: 1, usuario: "DragonSlayer", fecha: "Hace 2 días", texto: "El mejor arma de la expansión. El proc de fuego es brutal en AoE.", votos: 12 },
-      { id: 2, usuario: "TankMaster", fecha: "Hace 5 días", texto: "Se dropea del último boss de Amirdrassil en cualquier dificultad.", votos: 8 }
+      { id: 1, usuario: "DragonSlayer", fecha: "Hace 2 días",
+        texto: "El mejor arma de la expansión. El proc de fuego es brutal en AoE.", votos: 12 },
+      { id: 2, usuario: "TankMaster", fecha: "Hace 5 días",
+        texto: "Se dropea del último boss de Amirdrassil en cualquier dificultad.", votos: 8 }
     ]
   },
   {
@@ -50,7 +87,8 @@ const items = [
     subtipo: "Bastón",
     categoria: "armas",
     calidad: "legendary",
-    icono: "🔮",
+    icono: "inv_staff_medivh",
+    iconoEmoji: "🔮",
     fuente: "Naxxramas (Classic)",
     binding: "Se liga al recoger",
     stats: {
@@ -73,7 +111,8 @@ const items = [
     ],
     relacionados: [3, 5],
     comentarios: [
-      { id: 1, usuario: "ClassicFan", fecha: "Hace 1 mes", texto: "Uno de los items más difíciles de conseguir en la historia de WoW.", votos: 25 }
+      { id: 1, usuario: "ClassicFan", fecha: "Hace 1 mes",
+        texto: "Uno de los items más difíciles de conseguir en la historia de WoW.", votos: 25 }
     ]
   },
   {
@@ -84,7 +123,8 @@ const items = [
     subtipo: "Maza",
     categoria: "armas",
     calidad: "legendary",
-    icono: "🔨",
+    icono: "inv_hammer_unique_sulfuras",
+    iconoEmoji: "🔨",
     fuente: "Ragnaros - Núcleo de Magma",
     binding: "Se liga al recoger",
     stats: {
@@ -106,7 +146,8 @@ const items = [
     ],
     relacionados: [2, 4],
     comentarios: [
-      { id: 1, usuario: "VeteranPlayer", fecha: "Hace 2 meses", texto: "El legendario original. Muchos recuerdos farmeando Ragnaros.", votos: 45 }
+      { id: 1, usuario: "VeteranPlayer", fecha: "Hace 2 meses",
+        texto: "El legendario original. Muchos recuerdos farmeando Ragnaros.", votos: 45 }
     ]
   },
   {
@@ -117,7 +158,8 @@ const items = [
     subtipo: "Espada",
     categoria: "armas",
     calidad: "legendary",
-    icono: "⚔️",
+    icono: "inv_weapon_glave_01",
+    iconoEmoji: "⚔️",
     fuente: "Illidan - Templo Oscuro",
     binding: "Se liga al recoger",
     stats: {
@@ -140,7 +182,8 @@ const items = [
     ],
     relacionados: [3, 5],
     comentarios: [
-      { id: 1, usuario: "DemonHunter", fecha: "Hace 3 meses", texto: "Las armas más icónicas de WoW. Illidan es el mejor villano.", votos: 67 }
+      { id: 1, usuario: "DemonHunter", fecha: "Hace 3 meses",
+        texto: "Las armas más icónicas de WoW. Illidan es el mejor villano.", votos: 67 }
     ]
   },
   {
@@ -151,7 +194,8 @@ const items = [
     subtipo: "Maza",
     categoria: "armas",
     calidad: "legendary",
-    icono: "🔨",
+    icono: "inv_mace_99",
+    iconoEmoji: "🔨",
     fuente: "Ulduar",
     binding: "Se liga al recoger",
     stats: {
@@ -174,7 +218,8 @@ const items = [
     ],
     relacionados: [2, 3],
     comentarios: [
-      { id: 1, usuario: "HolyPala", fecha: "Hace 1 mes", texto: "El mejor arma de healer que ha existido.", votos: 33 }
+      { id: 1, usuario: "HolyPala", fecha: "Hace 1 mes",
+        texto: "El mejor arma de healer que ha existido.", votos: 33 }
     ]
   },
   {
@@ -185,7 +230,8 @@ const items = [
     subtipo: "Espada",
     categoria: "armas",
     calidad: "epic",
-    icono: "⚔️",
+    icono: "inv_sword_166",
+    iconoEmoji: "⚔️",
     fuente: "Cadena de misiones",
     binding: "Se liga al recoger",
     stats: {
@@ -208,7 +254,8 @@ const items = [
     ],
     relacionados: [4, 5],
     comentarios: [
-      { id: 1, usuario: "LoreExpert", fecha: "Hace 2 semanas", texto: "La cadena de misiones para obtenerla es épica.", votos: 18 }
+      { id: 1, usuario: "LoreExpert", fecha: "Hace 2 semanas",
+        texto: "La cadena de misiones para obtenerla es épica.", votos: 18 }
     ]
   },
   {
@@ -219,7 +266,8 @@ const items = [
     subtipo: "Puño",
     categoria: "armas",
     calidad: "epic",
-    icono: "🔥",
+    icono: "inv_hand_1h_naszuro",
+    iconoEmoji: "🔥",
     fuente: "Scalecommander Sarkareth - Aberrus",
     binding: "Se liga al recoger",
     stats: {
@@ -242,7 +290,8 @@ const items = [
     ],
     relacionados: [1, 6],
     comentarios: [
-      { id: 1, usuario: "Evoker_Main", fecha: "Hace 1 semana", texto: "Muy buena para Evoker y casters en general.", votos: 9 }
+      { id: 1, usuario: "Evoker_Main", fecha: "Hace 1 semana",
+        texto: "Muy buena para Evoker y casters en general.", votos: 9 }
     ]
   },
   {
@@ -253,7 +302,8 @@ const items = [
     subtipo: "Capa",
     categoria: "armadura",
     calidad: "epic",
-    icono: "🧥",
+    icono: "inv_cape_special_fyrakk_d_01",
+    iconoEmoji: "🧥",
     fuente: "Fyrakk - Amirdrassil",
     binding: "Se liga al recoger",
     stats: {
@@ -275,7 +325,8 @@ const items = [
     ],
     relacionados: [9, 10],
     comentarios: [
-      { id: 1, usuario: "RaidLeader", fecha: "Hace 3 días", texto: "Best in slot para casi todas las clases de agilidad.", votos: 22 }
+      { id: 1, usuario: "RaidLeader", fecha: "Hace 3 días",
+        texto: "Best in slot para casi todas las clases de agilidad.", votos: 22 }
     ]
   },
   {
@@ -286,7 +337,8 @@ const items = [
     subtipo: "Placas",
     categoria: "armadura",
     calidad: "epic",
-    icono: "⛑️",
+    icono: "inv_helm_plate_raidwarrior_s_01",
+    iconoEmoji: "⛑️",
     fuente: "Tindral - Amirdrassil",
     binding: "Se liga al recoger",
     stats: {
@@ -308,7 +360,8 @@ const items = [
     ],
     relacionados: [8, 10, 11],
     comentarios: [
-      { id: 1, usuario: "WarriorMain", fecha: "Hace 1 semana", texto: "Excelente pieza de tier para Warriors y Paladins.", votos: 14 }
+      { id: 1, usuario: "WarriorMain", fecha: "Hace 1 semana",
+        texto: "Excelente pieza de tier para Warriors y Paladins.", votos: 14 }
     ]
   },
   {
@@ -319,7 +372,8 @@ const items = [
     subtipo: "Tela",
     categoria: "armadura",
     calidad: "epic",
-    icono: "👘",
+    icono: "inv_chest_cloth_raidpriest_s_01",
+    iconoEmoji: "👘",
     fuente: "Nymue - Amirdrassil",
     binding: "Se liga al recoger",
     stats: {
@@ -331,7 +385,7 @@ const items = [
     },
     efecto: {
       nombre: "Resonancia del Vacío",
-      descripcion: "Tu daño con hechizos de Sombra tiene probabilidad de crear una zona de vacío que daña enemigos cercanos."
+      descripcion: "Tu daño con hechizos de Sombra tiene probabilidad de crear una zona de vacío."
     },
     flavor: "Las sombras susurran secretos olvidados.",
     expansion: "Dragonflight",
@@ -350,7 +404,8 @@ const items = [
     subtipo: "Cuero",
     categoria: "armadura",
     calidad: "epic",
-    icono: "🦺",
+    icono: "inv_shoulder_leather_raiddruid_s_01",
+    iconoEmoji: "🦺",
     fuente: "Volcoross - Amirdrassil",
     binding: "Se liga al recoger",
     stats: {
@@ -378,7 +433,8 @@ const items = [
     subtipo: "Anillo",
     categoria: "accesorios",
     calidad: "epic",
-    icono: "💍",
+    icono: "inv_ring_80_02a",
+    iconoEmoji: "💍",
     fuente: "Nymue - Amirdrassil",
     binding: "Se liga al recoger",
     stats: {
@@ -398,7 +454,8 @@ const items = [
     ],
     relacionados: [13, 14],
     comentarios: [
-      { id: 1, usuario: "MinMaxer", fecha: "Hace 4 días", texto: "Los stats son perfectos para specs de celeridad y maestría.", votos: 7 }
+      { id: 1, usuario: "MinMaxer", fecha: "Hace 4 días",
+        texto: "Los stats son perfectos para specs de celeridad y maestría.", votos: 7 }
     ]
   },
   {
@@ -409,7 +466,8 @@ const items = [
     subtipo: "Collar",
     categoria: "accesorios",
     calidad: "epic",
-    icono: "📿",
+    icono: "inv_neck_firelands_02",
+    iconoEmoji: "📿",
     fuente: "Smolderon - Amirdrassil",
     binding: "Se liga al recoger",
     stats: {
@@ -438,12 +496,11 @@ const items = [
     subtipo: "Trinket",
     categoria: "accesorios",
     calidad: "epic",
-    icono: "🔯",
+    icono: "inv_trinket_emeralddream_01",
+    iconoEmoji: "🔯",
     fuente: "Fyrakk - Amirdrassil",
     binding: "Se liga al recoger",
-    stats: {
-      intelecto: "+780"
-    },
+    stats: { intelecto: "+780" },
     efecto: {
       nombre: "Distorsión Onírica",
       descripcion: "Uso: Aumenta tu poder con hechizos en 3,450 durante 15 seg. 2 min de reutilización."
@@ -456,7 +513,8 @@ const items = [
     ],
     relacionados: [12, 13],
     comentarios: [
-      { id: 1, usuario: "CasterDPS", fecha: "Hace 1 día", texto: "Mejor trinket para casters en Amirdrassil, sin duda.", votos: 19 }
+      { id: 1, usuario: "CasterDPS", fecha: "Hace 1 día",
+        texto: "Mejor trinket para casters en Amirdrassil, sin duda.", votos: 19 }
     ]
   },
   {
@@ -467,7 +525,8 @@ const items = [
     subtipo: "Matraz",
     categoria: "consumibles",
     calidad: "rare",
-    icono: "🧪",
+    icono: "inv_alchemy_83_flask05",
+    iconoEmoji: "🧪",
     fuente: "Alquimia",
     binding: "No se liga",
     stats: { efecto: "Stat principal +720" },
@@ -481,7 +540,8 @@ const items = [
     loot: [{ fuente: "Alquimia (nivel 100)", chance: "Fabricación", modo: "Profesión" }],
     relacionados: [16, 17],
     comentarios: [
-      { id: 1, usuario: "Raider", fecha: "Hace 1 día", texto: "Obligatorio para cualquier raid.", votos: 31 }
+      { id: 1, usuario: "Raider", fecha: "Hace 1 día",
+        texto: "Obligatorio para cualquier raid.", votos: 31 }
     ]
   },
   {
@@ -492,7 +552,8 @@ const items = [
     subtipo: "Poción",
     categoria: "consumibles",
     calidad: "rare",
-    icono: "⚗️",
+    icono: "inv_alchemy_83_potion01",
+    iconoEmoji: "⚗️",
     fuente: "Alquimia",
     binding: "No se liga",
     stats: { efecto: "Intelecto +1,200 por 30seg" },
@@ -515,7 +576,8 @@ const items = [
     subtipo: "Comida",
     categoria: "consumibles",
     calidad: "uncommon",
-    icono: "🍖",
+    icono: "inv_misc_food_164_fish_feast",
+    iconoEmoji: "🍖",
     fuente: "Cocina",
     binding: "No se liga",
     stats: { efecto: "Stat secundaria +75" },
@@ -538,7 +600,8 @@ const items = [
     subtipo: "Gema",
     categoria: "gemas",
     calidad: "rare",
-    icono: "💎",
+    icono: "inv_misc_gem_sapphire_01",
+    iconoEmoji: "💎",
     fuente: "Joyería",
     binding: "No se liga",
     stats: { celeridad: "+70" },
@@ -558,7 +621,8 @@ const items = [
     subtipo: "Montura voladora",
     categoria: "monturas",
     calidad: "epic",
-    icono: "🐉",
+    icono: "ability_mount_drake_proto",
+    iconoEmoji: "🐉",
     fuente: "Logro: Glory of the Dragonflight Hero",
     binding: "Se liga al recoger",
     stats: {},
@@ -572,7 +636,8 @@ const items = [
     loot: [{ fuente: "Logro completado", chance: "100%", modo: "Logro" }],
     relacionados: [20],
     comentarios: [
-      { id: 1, usuario: "MountCollector", fecha: "Hace 1 semana", texto: "Necesitas completar todos los logros de mazmorras heroicas de Dragonflight.", votos: 11 }
+      { id: 1, usuario: "MountCollector", fecha: "Hace 1 semana",
+        texto: "Necesitas completar todos los logros de mazmorras heroicas de Dragonflight.", votos: 11 }
     ]
   },
   {
@@ -583,7 +648,8 @@ const items = [
     subtipo: "Montura voladora",
     categoria: "monturas",
     calidad: "legendary",
-    icono: "🦄",
+    icono: "ability_mount_yourmagicmount",
+    iconoEmoji: "🦄",
     fuente: "Arthas - Ciudadela de la Corona de Hielo",
     binding: "Se liga al recoger",
     stats: {},
@@ -597,13 +663,17 @@ const items = [
     loot: [{ fuente: "Arthas (Mítico 25)", chance: "1%", modo: "25 Heroico" }],
     relacionados: [19],
     comentarios: [
-      { id: 1, usuario: "LootHunter", fecha: "Hace 2 meses", texto: "Drop rate de 1%. Llevo 500 intentos y nada.", votos: 89 },
-      { id: 2, usuario: "LuckyOne", fecha: "Hace 1 mes", texto: "Me cayó en el primer intento, sorry not sorry 😂", votos: 156 }
+      { id: 1, usuario: "LootHunter", fecha: "Hace 2 meses",
+        texto: "Drop rate de 1%. Llevo 500 intentos y nada.", votos: 89 },
+      { id: 2, usuario: "LuckyOne", fecha: "Hace 1 mes",
+        texto: "Me cayó en el primer intento, sorry not sorry 😂", votos: 156 }
     ]
   }
 ];
 
-// === NPCS ===
+// ================================================
+// BASE DE DATOS — NPCS
+// ================================================
 const npcs = [
   {
     id: 101,
@@ -613,7 +683,8 @@ const npcs = [
     subtipo: "Jefe final",
     categoria: "jefes",
     calidad: "legendary",
-    icono: "🐉",
+    icono: "achievement_raiddragon_fyrakk",
+    iconoEmoji: "🐉",
     fuente: "Amirdrassil, el Sueño de la Esperanza",
     binding: null,
     stats: {
@@ -628,14 +699,22 @@ const npcs = [
     flavor: "El más destructivo de los Proto-dragones primordiales.",
     expansion: "Dragonflight",
     patch: "10.2",
+    ubicacion: {
+      zona: "Amirdrassil",
+      continente: "Islas del Dragón",
+      x: 52,
+      y: 48,
+      descripcion: "En lo más profundo del Árbol del Mundo"
+    },
     loot: [
-      { fuente: "Fyrakk (Normal)", chance: "Drop garantizado", modo: "Normal" },
-      { fuente: "Fyrakk (Heroico)", chance: "Drop garantizado", modo: "Heroico" },
-      { fuente: "Fyrakk (Mítico)", chance: "Drop garantizado", modo: "Mítico" }
+      { fuente: "Fyrakk (Normal)",  chance: "Garantizado", modo: "Normal"  },
+      { fuente: "Fyrakk (Heroico)", chance: "Garantizado", modo: "Heroico" },
+      { fuente: "Fyrakk (Mítico)",  chance: "Garantizado", modo: "Mítico"  }
     ],
     relacionados: [102, 103],
     comentarios: [
-      { id: 1, usuario: "MythicRaider", fecha: "Hace 3 días", texto: "La fase 3 es brutal en mítico. Necesitas mucha coordinación.", votos: 28 }
+      { id: 1, usuario: "MythicRaider", fecha: "Hace 3 días",
+        texto: "La fase 3 es brutal en mítico. Necesitas mucha coordinación.", votos: 28 }
     ]
   },
   {
@@ -646,7 +725,8 @@ const npcs = [
     subtipo: "Jefe final",
     categoria: "jefes",
     calidad: "epic",
-    icono: "⚡",
+    icono: "achievement_raidprimalist_raszageth",
+    iconoEmoji: "⚡",
     fuente: "Bóveda de las Encarnaciones",
     binding: null,
     stats: {
@@ -661,9 +741,16 @@ const npcs = [
     flavor: "La primera de las Encarnaciones Primordiales en despertar.",
     expansion: "Dragonflight",
     patch: "10.0",
+    ubicacion: {
+      zona: "Thaldraszus",
+      continente: "Islas del Dragón",
+      x: 62,
+      y: 38,
+      descripcion: "En la cima de la Bóveda de las Encarnaciones"
+    },
     loot: [
-      { fuente: "Raszageth (Normal)", chance: "Drop garantizado", modo: "Normal" },
-      { fuente: "Raszageth (Mítico)", chance: "Drop garantizado", modo: "Mítico" }
+      { fuente: "Raszageth (Normal)", chance: "Garantizado", modo: "Normal" },
+      { fuente: "Raszageth (Mítico)", chance: "Garantizado", modo: "Mítico" }
     ],
     relacionados: [101, 103],
     comentarios: []
@@ -676,7 +763,8 @@ const npcs = [
     subtipo: "Jefe final",
     categoria: "jefes",
     calidad: "legendary",
-    icono: "💀",
+    icono: "achievement_boss_inthecompleteundead",
+    iconoEmoji: "💀",
     fuente: "Ciudadela de la Corona de Hielo",
     binding: null,
     stats: {
@@ -691,18 +779,28 @@ const npcs = [
     flavor: "Ya no hay nada de humano en mí. Solo soy... el Rey Exánime.",
     expansion: "Wrath of the Lich King",
     patch: "3.3",
+    ubicacion: {
+      zona: "Rasganorte",
+      continente: "Rasganorte",
+      x: 54,
+      y: 20,
+      descripcion: "En la sala del trono de la Ciudadela de la Corona de Hielo"
+    },
     loot: [
-      { fuente: "Arthas (25 Normal)", chance: "Drop garantizado", modo: "25 Normal" },
-      { fuente: "Arthas (25 Heroico)", chance: "Drop garantizado", modo: "25 Heroico" }
+      { fuente: "Arthas (25 Normal)", chance: "Garantizado", modo: "25 Normal"  },
+      { fuente: "Arthas (25 Heroico)", chance: "Garantizado", modo: "25 Heroico" }
     ],
     relacionados: [101, 102],
     comentarios: [
-      { id: 1, usuario: "WoWVeteran", fecha: "Hace 6 meses", texto: "El mejor encuentro de la historia de WoW. El cinemático final es increíble.", votos: 203 }
+      { id: 1, usuario: "WoWVeteran", fecha: "Hace 6 meses",
+        texto: "El mejor encuentro de la historia de WoW. El cinemático final es increíble.", votos: 203 }
     ]
   }
 ];
 
-// === QUESTS ===
+// ================================================
+// BASE DE DATOS — QUESTS
+// ================================================
 const quests = [
   {
     id: 201,
@@ -712,7 +810,8 @@ const quests = [
     subtipo: "Historia",
     categoria: "quests",
     calidad: "epic",
-    icono: "📜",
+    icono: "inv_misc_book_11",
+    iconoEmoji: "📜",
     fuente: "Amirdrassil",
     binding: null,
     stats: {
@@ -727,6 +826,13 @@ const quests = [
     flavor: "El Sueño Esmeralda necesita héroes que lo defiendan.",
     expansion: "Dragonflight",
     patch: "10.2",
+    ubicacion: {
+      zona: "Amirdrassil",
+      continente: "Islas del Dragón",
+      x: 45,
+      y: 55,
+      descripcion: "Inicio de la cadena principal de 10.2"
+    },
     loot: [],
     relacionados: [202],
     comentarios: []
@@ -739,7 +845,8 @@ const quests = [
     subtipo: "Mazmorra",
     categoria: "quests",
     calidad: "rare",
-    icono: "📋",
+    icono: "inv_misc_book_09",
+    iconoEmoji: "📋",
     fuente: "Ciudadela de la Corona de Hielo",
     binding: null,
     stats: {
@@ -754,13 +861,22 @@ const quests = [
     flavor: "Las almas atrapadas claman por liberación.",
     expansion: "Wrath of the Lich King",
     patch: "3.3",
+    ubicacion: {
+      zona: "Rasganorte",
+      continente: "Rasganorte",
+      x: 57,
+      y: 25,
+      descripcion: "En las afueras de la Ciudadela"
+    },
     loot: [],
     relacionados: [201],
     comentarios: []
   }
 ];
 
-// === SPELLS ===
+// ================================================
+// BASE DE DATOS — SPELLS
+// ================================================
 const spells = [
   {
     id: 301,
@@ -770,7 +886,8 @@ const spells = [
     subtipo: "Habilidad",
     categoria: "spells",
     calidad: "common",
-    icono: "⚔️",
+    icono: "ability_heroicstrike",
+    iconoEmoji: "⚔️",
     fuente: "Guerrero - Nivel 1",
     binding: null,
     stats: {
@@ -786,6 +903,7 @@ const spells = [
     flavor: null,
     expansion: "Classic",
     patch: "1.0",
+    ubicacion: null,
     loot: [],
     relacionados: [302, 303],
     comentarios: []
@@ -798,7 +916,8 @@ const spells = [
     subtipo: "Habilidad",
     categoria: "spells",
     calidad: "common",
-    icono: "🔥",
+    icono: "spell_fire_fireball02",
+    iconoEmoji: "🔥",
     fuente: "Mago - Nivel 1",
     binding: null,
     stats: {
@@ -809,11 +928,12 @@ const spells = [
     },
     efecto: {
       nombre: "Bola de Fuego",
-      descripcion: "Lanza una bola de fuego que inflige daño de Fuego y aplica un efecto de quemadura que inflige daño adicional durante 8 seg."
+      descripcion: "Lanza una bola de fuego que inflige daño de Fuego y aplica un efecto de quemadura."
     },
     flavor: null,
     expansion: "Classic",
     patch: "1.0",
+    ubicacion: null,
     loot: [],
     relacionados: [301, 303],
     comentarios: []
@@ -826,7 +946,8 @@ const spells = [
     subtipo: "Habilidad",
     categoria: "spells",
     calidad: "common",
-    icono: "🌿",
+    icono: "spell_nature_rejuvenation",
+    iconoEmoji: "🌿",
     fuente: "Druida - Nivel 1",
     binding: null,
     stats: {
@@ -842,6 +963,7 @@ const spells = [
     flavor: null,
     expansion: "Classic",
     patch: "1.0",
+    ubicacion: null,
     loot: [],
     relacionados: [301, 302],
     comentarios: []
@@ -849,7 +971,7 @@ const spells = [
 ];
 
 // ================================================
-// JUNTAR TODA LA BASE DE DATOS
+// JUNTAR DB
 // ================================================
 const todosLosItems = [...items, ...npcs, ...quests, ...spells];
 
@@ -857,49 +979,48 @@ const todosLosItems = [...items, ...npcs, ...quests, ...spells];
 // ESTADO GLOBAL
 // ================================================
 let state = {
-  filtroCalidad: 'all',
-  categoriaActual: 'all',
+  filtroCalidad: "all",
+  categoriaActual: "all",
   subcategoriaActual: null,
   paginaActual: 1,
   itemsPorPagina: 15,
-  vistaActual: 'tabla',
+  vistaActual: "tabla",
   ordenActual: null,
-  ordenDireccion: 'asc',
+  ordenDireccion: "asc",
   filtroNivelMin: null,
   filtroNivelMax: null,
-  filtroExpansion: 'all',
+  filtroExpansion: "all",
   listaActual: [],
   comentarioIdCounter: 1000
 };
 
+let comparadorItems = [];
+
 // ================================================
-// FAVORITOS Y RECIENTES (localStorage)
+// LOCAL STORAGE
 // ================================================
 function getFavoritos() {
-  return JSON.parse(localStorage.getItem('awdb_favoritos')) || [];
+  return JSON.parse(localStorage.getItem("awdb_favoritos")) || [];
 }
-
-function setFavoritos(favs) {
-  localStorage.setItem('awdb_favoritos', JSON.stringify(favs));
+function setFavoritos(f) {
+  localStorage.setItem("awdb_favoritos", JSON.stringify(f));
 }
-
 function getRecientes() {
-  return JSON.parse(localStorage.getItem('awdb_recientes')) || [];
+  return JSON.parse(localStorage.getItem("awdb_recientes")) || [];
 }
-
-function setRecientes(rec) {
-  localStorage.setItem('awdb_recientes', JSON.stringify(rec));
+function setRecientes(r) {
+  localStorage.setItem("awdb_recientes", JSON.stringify(r));
 }
 
 function toggleFavorito(id) {
   let favs = getFavoritos();
   if (favs.includes(id)) {
     favs = favs.filter(f => f !== id);
-    mostrarToast('Eliminado de favoritos', 'fa-star');
+    mostrarToast("Eliminado de favoritos", "fa-star");
   } else {
     favs.unshift(id);
     favs = favs.slice(0, 50);
-    mostrarToast('Añadido a favoritos ⭐', 'fa-star');
+    mostrarToast("Añadido a favoritos ⭐", "fa-star");
   }
   setFavoritos(favs);
   actualizarBtnFavorito(id);
@@ -918,471 +1039,370 @@ function agregarReciente(id) {
 }
 
 function actualizarBtnFavorito(id) {
-  const btn = document.getElementById('btnFavorito');
+  const btn = document.getElementById("btnFavorito");
   if (!btn) return;
   if (esFavorito(id)) {
-    btn.classList.add('favorited');
+    btn.classList.add("favorited");
     btn.innerHTML = '<i class="fas fa-star"></i> Favorito';
   } else {
-    btn.classList.remove('favorited');
+    btn.classList.remove("favorited");
     btn.innerHTML = '<i class="far fa-star"></i> Añadir a favoritos';
   }
 }
 
 // ================================================
-// TOAST NOTIFICATION
+// TOAST
 // ================================================
-function mostrarToast(mensaje, icono = 'fa-check') {
-  const toast = document.getElementById('toast');
-  toast.innerHTML = `<i class="fas ${icono}"></i> ${mensaje}`;
-  toast.classList.add('show');
-  toast.classList.remove('hide');
-  clearTimeout(toast._timeout);
-  toast._timeout = setTimeout(() => {
-    toast.classList.remove('show');
-    toast.classList.add('hide');
+function mostrarToast(msg, icono = "fa-check") {
+  const t = document.getElementById("toast");
+  t.innerHTML = `<i class="fas ${icono}"></i> ${msg}`;
+  t.classList.add("show");
+  t.classList.remove("hide");
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => {
+    t.classList.remove("show");
+    t.classList.add("hide");
   }, 2500);
 }
 
 // ================================================
 // TOOLTIP
 // ================================================
-const tooltip = document.getElementById('tooltip');
+const tooltip = document.getElementById("tooltip");
 
 function mostrarTooltip(e, item) {
   if (!item) return;
+  const iconURL = getIconURL(item.icono, "medium");
+  const iconHTML = iconURL
+    ? `<img src="${iconURL}" style="width:36px;height:36px;border-radius:6px;object-fit:cover;" onerror="this.remove()">`
+    : `<span style="font-size:24px;">${item.iconoEmoji || "❓"}</span>`;
 
   const statsHTML = Object.entries(item.stats || {})
     .slice(0, 4)
     .map(([k, v]) => `<div class="tt-stat">+${v} ${formatStatName(k)}</div>`)
-    .join('');
+    .join("");
 
   tooltip.className = `tooltip-wowhead tt-${item.calidad}`;
   tooltip.innerHTML = `
-    <div class="tt-name ${item.calidad}">${item.icono} ${item.nombre}</div>
-    ${item.nivel > 0 ? `<div class="tt-ilvl">Nivel de objeto ${item.nivel}</div>` : ''}
-    ${item.binding ? `<div class="tt-binding">${item.binding}</div>` : ''}
+    <div class="tt-header">
+      <div class="tt-icon-wrap">${iconHTML}</div>
+      <div>
+        <div class="tt-name ${item.calidad}">${item.nombre}</div>
+        ${item.nivel > 0 ? `<div class="tt-ilvl">Nivel de objeto ${item.nivel}</div>` : ""}
+      </div>
+    </div>
+    ${item.binding ? `<div class="tt-binding">${item.binding}</div>` : ""}
     <div class="tt-type">
       <span>${item.tipo}</span>
-      ${item.subtipo ? `<span>${item.subtipo}</span>` : ''}
+      ${item.subtipo ? `<span>${item.subtipo}</span>` : ""}
     </div>
     ${statsHTML}
-    ${item.efecto ? `<div class="tt-effect">✨ ${item.efecto.descripcion}</div>` : ''}
-    ${item.flavor ? `<div class="tt-flavor">"${item.flavor}"</div>` : ''}
+    ${item.efecto ? `<div class="tt-effect">✨ ${item.efecto.descripcion}</div>` : ""}
+    ${item.flavor ? `<div class="tt-flavor">"${item.flavor}"</div>` : ""}
     <div class="tt-source"><i class="fas fa-map-marker-alt"></i> ${item.fuente}</div>
   `;
-  tooltip.style.display = 'block';
+  tooltip.style.display = "block";
   moverTooltip(e);
 }
 
 function moverTooltip(e) {
   const x = e.clientX + 15;
   const y = e.clientY + 15;
-  const rect = tooltip.getBoundingClientRect();
-  const maxX = window.innerWidth - rect.width - 10;
-  const maxY = window.innerHeight - rect.height - 10;
-  tooltip.style.left = Math.min(x, maxX) + 'px';
-  tooltip.style.top = Math.min(y, maxY) + 'px';
+  const r = tooltip.getBoundingClientRect();
+  tooltip.style.left = Math.min(x, window.innerWidth  - r.width  - 10) + "px";
+  tooltip.style.top  = Math.min(y, window.innerHeight - r.height - 10) + "px";
 }
 
 function ocultarTooltip() {
-  tooltip.style.display = 'none';
+  tooltip.style.display = "none";
 }
 
 // ================================================
-// INICIALIZACION
+// INIT
 // ================================================
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", () => {
   inicializarContadores();
   inicializarBuscador();
   inicializarRecientes();
   mostrarItems(todosLosItems);
   manejarHash();
-  console.log('%cAfterWoW Database cargado ✅', 'color:#e94560;font-size:16px;font-weight:bold;');
+  console.log("%cAfterWoW DB cargado ✅", "color:#e94560;font-size:16px;font-weight:bold;");
 });
 
 function inicializarContadores() {
-  const total = todosLosItems.length;
-  document.getElementById('totalItems').textContent = total;
+  document.getElementById("totalItems").textContent = todosLosItems.length;
+  animarContador("countItems",  items.length);
+  animarContador("countNpcs",   npcs.length);
+  animarContador("countQuests", quests.length);
+  animarContador("countSpells", spells.length);
 
-  const countItems = items.length;
-  const countNpcs = npcs.length;
-  const countQuests = quests.length;
-  const countSpells = spells.length;
-
-  animarContador('countItems', countItems);
-  animarContador('countNpcs', countNpcs);
-  animarContador('countQuests', countQuests);
-  animarContador('countSpells', countSpells);
-
-  // Contadores en cards
-  document.getElementById('cardCountArmas').textContent =
-    todosLosItems.filter(i => i.categoria === 'armas').length;
-  document.getElementById('cardCountArmadura').textContent =
-    todosLosItems.filter(i => i.categoria === 'armadura').length;
-  document.getElementById('cardCountAccesorios').textContent =
-    todosLosItems.filter(i => i.categoria === 'accesorios').length;
-  document.getElementById('cardCountConsumibles').textContent =
-    todosLosItems.filter(i => i.categoria === 'consumibles').length;
-  document.getElementById('cardCountNpcs').textContent =
-    todosLosItems.filter(i => i.categoria === 'jefes').length;
-  document.getElementById('cardCountQuests').textContent =
-    todosLosItems.filter(i => i.categoria === 'quests').length;
-  document.getElementById('cardCountSpells').textContent =
-    todosLosItems.filter(i => i.categoria === 'spells').length;
-  document.getElementById('cardCountMonturas').textContent =
-    todosLosItems.filter(i => i.categoria === 'monturas').length;
+  const cats = ["armas","armadura","accesorios","consumibles","jefes","quests","spells","monturas"];
+  const ids  = ["cardCountArmas","cardCountArmadura","cardCountAccesorios","cardCountConsumibles",
+                 "cardCountNpcs","cardCountQuests","cardCountSpells","cardCountMonturas"];
+  cats.forEach((cat, i) => {
+    const el = document.getElementById(ids[i]);
+    if (el) el.textContent = todosLosItems.filter(x => x.categoria === cat).length;
+  });
 }
 
 function animarContador(id, target) {
   const el = document.getElementById(id);
   if (!el) return;
-  let current = 0;
-  const step = Math.ceil(target / 30);
-  const timer = setInterval(() => {
-    current = Math.min(current + step, target);
-    el.textContent = current;
-    if (current >= target) clearInterval(timer);
+  let cur = 0;
+  const step = Math.max(1, Math.ceil(target / 30));
+  const t = setInterval(() => {
+    cur = Math.min(cur + step, target);
+    el.textContent = cur;
+    if (cur >= target) clearInterval(t);
   }, 40);
 }
 
 function inicializarRecientes() {
-  const rec = getRecientes();
-  const seccion = document.getElementById('recientesSeccion');
-  const grid = document.getElementById('recientesGrid');
-
-  if (rec.length === 0) {
-    seccion.style.display = 'none';
-    return;
-  }
-
-  seccion.style.display = 'block';
+  const rec     = getRecientes();
+  const seccion = document.getElementById("recientesSeccion");
+  const grid    = document.getElementById("recientesGrid");
+  if (!seccion || !grid) return;
+  if (rec.length === 0) { seccion.style.display = "none"; return; }
+  seccion.style.display = "block";
   grid.innerHTML = rec.map(id => {
     const item = todosLosItems.find(i => i.id === id);
-    if (!item) return '';
+    if (!item) return "";
     return `
       <div class="reciente-card" onclick="mostrarDetalle(${item.id})">
-        <span class="rc-icon">${item.icono}</span>
+        ${crearIconoHTML(item, "small")}
         <div>
           <div class="rc-name ${item.calidad}">${item.nombre}</div>
           <div class="rc-level">iLvl ${item.nivel} · ${item.tipo}</div>
         </div>
-      </div>
-    `;
-  }).join('');
+      </div>`;
+  }).join("");
 }
 
 // ================================================
-// BUSCADOR CON AUTOCOMPLETADO
+// BUSCADOR
 // ================================================
 function inicializarBuscador() {
-  const searchInput = document.getElementById('search');
-  const searchFilter = document.getElementById('searchFilter');
-  const autocomplete = document.getElementById('autocompleteResults');
+  const input      = document.getElementById("search");
+  const filter     = document.getElementById("searchFilter");
+  const acResults  = document.getElementById("autocompleteResults");
 
-  searchInput.addEventListener('input', function () {
+  input.addEventListener("input", function () {
     const texto = this.value.toLowerCase().trim();
+    if (texto.length < 2) { acResults.style.display = "none"; return; }
 
-    if (texto.length < 2) {
-      autocomplete.style.display = 'none';
-      return;
-    }
-
-    const filtro = searchFilter.value;
-    let resultados = todosLosItems.filter(item =>
-      item.nombre.toLowerCase().includes(texto) ||
-      String(item.id).includes(texto)
+    const cat = filter.value;
+    let res = todosLosItems.filter(i =>
+      i.nombre.toLowerCase().includes(texto) || String(i.id).includes(texto)
     );
+    if (cat !== "all") res = res.filter(i => i.categoria === cat);
 
-    if (filtro !== 'all') {
-      resultados = resultados.filter(i => i.categoria === filtro);
-    }
-
-    if (resultados.length === 0) {
-      autocomplete.innerHTML = `
+    if (res.length === 0) {
+      acResults.innerHTML = `
         <div class="autocomplete-item" style="color:#4a4a5e;">
           <div class="ac-icon">🔍</div>
-          <div class="ac-info">
-            <div class="ac-name">Sin resultados para "${texto}"</div>
-          </div>
+          <div class="ac-info"><div class="ac-name">Sin resultados para "${texto}"</div></div>
         </div>`;
-      autocomplete.style.display = 'block';
+      acResults.style.display = "block";
       return;
     }
 
-    // Agrupar por categoría
-    const categorias = {};
-    resultados.slice(0, 12).forEach(item => {
-      if (!categorias[item.categoria]) categorias[item.categoria] = [];
-      categorias[item.categoria].push(item);
-    });
-
     const nombresCategoria = {
-      armas: '⚔️ Armas',
-      armadura: '🛡️ Armadura',
-      accesorios: '💍 Accesorios',
-      consumibles: '🧪 Consumibles',
-      gemas: '💎 Gemas',
-      jefes: '👹 Jefes',
-      quests: '📜 Misiones',
-      spells: '✨ Hechizos',
-      monturas: '🐎 Monturas'
+      armas: "⚔️ Armas", armadura: "🛡️ Armadura", accesorios: "💍 Accesorios",
+      consumibles: "🧪 Consumibles", gemas: "💎 Gemas", jefes: "👹 Jefes",
+      quests: "📜 Misiones", spells: "✨ Hechizos", monturas: "🐎 Monturas"
     };
 
-    let html = '';
-    Object.entries(categorias).forEach(([cat, items]) => {
+    const grupos = {};
+    res.slice(0, 12).forEach(item => {
+      if (!grupos[item.categoria]) grupos[item.categoria] = [];
+      grupos[item.categoria].push(item);
+    });
+
+    let html = "";
+    Object.entries(grupos).forEach(([cat, lista]) => {
       html += `<div class="autocomplete-category">${nombresCategoria[cat] || cat}</div>`;
-      items.forEach(item => {
+      lista.forEach(item => {
+        const iconURL = getIconURL(item.icono, "small");
+        const iconImg = iconURL
+          ? `<img src="${iconURL}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;" onerror="this.parentElement.textContent='${item.iconoEmoji||"❓"}'">`
+          : item.iconoEmoji || "❓";
         html += `
           <div class="autocomplete-item" onclick="mostrarDetalle(${item.id})">
-            <div class="ac-icon item-icon-small ${item.calidad}-border">${item.icono}</div>
+            <div class="ac-icon ${item.calidad}-border">${iconImg}</div>
             <div class="ac-info">
               <div class="ac-name ${item.calidad}">${resaltarTexto(item.nombre, texto)}</div>
               <div class="ac-meta">${item.tipo} · ${item.fuente}</div>
             </div>
             <div class="ac-level">iLvl ${item.nivel}</div>
-          </div>
-        `;
+          </div>`;
       });
     });
 
-    if (resultados.length > 12) {
+    if (res.length > 12) {
       html += `<div class="autocomplete-footer" onclick="buscarTodos('${texto}')">
-        Ver todos los ${resultados.length} resultados →
+        Ver todos los ${res.length} resultados →
       </div>`;
     }
 
-    autocomplete.innerHTML = html;
-    autocomplete.style.display = 'block';
+    acResults.innerHTML = html;
+    acResults.style.display = "block";
   });
 
-  searchInput.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') {
-      const texto = this.value.toLowerCase().trim();
-      buscarTodos(texto);
-      autocomplete.style.display = 'none';
+  input.addEventListener("keydown", e => {
+    if (e.key === "Enter") {
+      buscarTodos(input.value.toLowerCase().trim());
+      acResults.style.display = "none";
     }
-    if (e.key === 'Escape') {
-      autocomplete.style.display = 'none';
-    }
+    if (e.key === "Escape") acResults.style.display = "none";
   });
 
-  searchFilter.addEventListener('change', function () {
-    searchInput.dispatchEvent(new Event('input'));
-  });
+  filter.addEventListener("change", () => input.dispatchEvent(new Event("input")));
 
-  document.addEventListener('click', function (e) {
-    if (!e.target.closest('.search-wrapper')) {
-      autocomplete.style.display = 'none';
-    }
+  document.addEventListener("click", e => {
+    if (!e.target.closest(".search-wrapper")) acResults.style.display = "none";
   });
 }
 
 function resaltarTexto(texto, busqueda) {
   if (!busqueda) return texto;
-  const regex = new RegExp(`(${busqueda})`, 'gi');
-  return texto.replace(regex, '<mark style="background:#e94560;color:white;border-radius:2px;padding:0 2px;">$1</mark>');
+  return texto.replace(
+    new RegExp(`(${busqueda.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "gi"),
+    '<mark style="background:#e94560;color:white;border-radius:2px;padding:0 2px;">$1</mark>'
+  );
 }
 
 function buscarTodos(texto) {
-  const searchFilter = document.getElementById('searchFilter');
-  const filtro = searchFilter.value;
-
-  let resultado = todosLosItems.filter(item =>
-    item.nombre.toLowerCase().includes(texto) ||
-    String(item.id).includes(texto)
+  const cat = document.getElementById("searchFilter").value;
+  let res = todosLosItems.filter(i =>
+    i.nombre.toLowerCase().includes(texto) || String(i.id).includes(texto)
   );
-
-  if (filtro !== 'all') {
-    resultado = resultado.filter(item => item.categoria === filtro);
-  }
-
-  state.categoriaActual = filtro !== 'all' ? filtro : 'all';
-  state.listaActual = resultado;
+  if (cat !== "all") res = res.filter(i => i.categoria === cat);
+  state.categoriaActual = cat !== "all" ? cat : "all";
   state.paginaActual = 1;
-
-  document.getElementById('tituloTabla').innerHTML =
+  document.getElementById("tituloTabla").innerHTML =
     `<i class="fas fa-search"></i> Resultados para "${texto}"`;
-
-  mostrarItems(resultado);
-  mostrarPagina('inicio');
+  mostrarItems(res);
+  mostrarPagina("inicio");
   actualizarBreadcrumbs([{ texto: `Búsqueda: "${texto}"` }]);
 }
 
 // ================================================
-// MOSTRAR ITEMS EN TABLA
+// MOSTRAR ITEMS
 // ================================================
 function mostrarItems(lista) {
   state.listaActual = lista;
   state.paginaActual = 1;
-
   renderizarVista();
 }
 
 function renderizarVista() {
-  const lista = state.listaActual;
-  const inicio = (state.paginaActual - 1) * state.itemsPorPagina;
-  const fin = inicio + state.itemsPorPagina;
-  const paginada = lista.slice(inicio, fin);
-
-  actualizarContadorResultados(lista.length);
-
-  if (state.vistaActual === 'tabla') {
-    renderizarTabla(paginada);
-  } else {
-    renderizarGrid(paginada);
-  }
-
-  renderizarPaginacion(lista.length);
+  const inicio   = (state.paginaActual - 1) * state.itemsPorPagina;
+  const paginada = state.listaActual.slice(inicio, inicio + state.itemsPorPagina);
+  actualizarContadorResultados(state.listaActual.length);
+  if (state.vistaActual === "tabla") renderizarTabla(paginada);
+  else renderizarGrid(paginada);
+  renderizarPaginacion(state.listaActual.length);
 }
 
 function renderizarTabla(lista) {
-  const tbody = document.getElementById('tablaBody');
-
-  if (lista.length === 0) {
-    tbody.innerHTML = `
-      <tr>
-        <td colspan="6">
-          <div class="empty-state">
-            <i class="fas fa-search"></i>
-            <h3>No se encontraron resultados</h3>
-            <p>Intenta con otro término de búsqueda o cambia los filtros</p>
-          </div>
-        </td>
-      </tr>`;
+  const tbody = document.getElementById("tablaBody");
+  if (!lista.length) {
+    tbody.innerHTML = `<tr><td colspan="6">
+      <div class="empty-state">
+        <i class="fas fa-search"></i>
+        <h3>No se encontraron resultados</h3>
+        <p>Intenta con otro término o cambia los filtros</p>
+      </div></td></tr>`;
     return;
   }
-
   tbody.innerHTML = lista.map(item => `
     <tr onclick="mostrarDetalle(${item.id})"
-        onmouseenter="mostrarTooltip(event, todosLosItems.find(i=>i.id===${item.id}))"
+        onmouseenter="mostrarTooltip(event,todosLosItems.find(i=>i.id===${item.id}))"
         onmousemove="moverTooltip(event)"
         onmouseleave="ocultarTooltip()">
-      <td>
-        <div class="item-icon-small ${item.calidad}-border">${item.icono}</div>
-      </td>
+      <td>${crearIconoHTML(item, "medium")}</td>
       <td>
         <div class="item-name-cell">
           <span class="${item.calidad}">${item.nombre}</span>
-          <span class="item-name-sub">${item.subtipo || ''}</span>
+          <span class="item-name-sub">${item.subtipo || ""}</span>
         </div>
       </td>
       <td style="color:#f59e0b;font-weight:600;">${item.nivel}</td>
       <td style="color:#94a3b8;">${item.tipo}</td>
-      <td style="color:#64748b;">${item.fuente}</td>
-      <td><span class="expansion-badge">${item.expansion || ''}</span></td>
-    </tr>
-  `).join('');
+      <td style="color:#64748b;max-width:200px;overflow:hidden;text-overflow:ellipsis;">${item.fuente}</td>
+      <td><span class="expansion-badge">${item.expansion || ""}</span></td>
+    </tr>`).join("");
 }
 
 function renderizarGrid(lista) {
-  const grid = document.getElementById('gridBody');
-
-  if (lista.length === 0) {
-    grid.innerHTML = `
-      <div class="empty-state" style="grid-column:1/-1;">
-        <i class="fas fa-search"></i>
-        <h3>No se encontraron resultados</h3>
-      </div>`;
+  const grid = document.getElementById("gridBody");
+  if (!lista.length) {
+    grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1;">
+      <i class="fas fa-search"></i><h3>No se encontraron resultados</h3></div>`;
     return;
   }
-
   grid.innerHTML = lista.map(item => `
-    <div class="grid-item ${item.calidad}-border"
+    <div class="grid-item"
          onclick="mostrarDetalle(${item.id})"
-         onmouseenter="mostrarTooltip(event, todosLosItems.find(i=>i.id===${item.id}))"
+         onmouseenter="mostrarTooltip(event,todosLosItems.find(i=>i.id===${item.id}))"
          onmousemove="moverTooltip(event)"
          onmouseleave="ocultarTooltip()">
-      <div class="grid-item-icon ${item.calidad}-border">${item.icono}</div>
+      ${crearIconoHTML(item, "large")}
       <div class="grid-item-name ${item.calidad}">${item.nombre}</div>
       <div class="grid-item-meta">${item.tipo}</div>
       <div class="grid-item-level">iLvl ${item.nivel}</div>
-    </div>
-  `).join('');
+    </div>`).join("");
 }
 
 function actualizarContadorResultados(total) {
-  const el = document.getElementById('resultadoCount');
-  if (el) el.textContent = `${total} resultado${total !== 1 ? 's' : ''}`;
+  const el = document.getElementById("resultadoCount");
+  if (el) el.textContent = `${total} resultado${total !== 1 ? "s" : ""}`;
 }
 
 // ================================================
 // PAGINACION
 // ================================================
 function renderizarPaginacion(total) {
-  const paginacion = document.getElementById('paginacion');
-  const totalPaginas = Math.ceil(total / state.itemsPorPagina);
+  const pag = document.getElementById("paginacion");
+  const totalPags = Math.ceil(total / state.itemsPorPagina);
+  if (totalPags <= 1) { pag.innerHTML = ""; return; }
 
-  if (totalPaginas <= 1) {
-    paginacion.innerHTML = '';
-    return;
-  }
+  const p = state.paginaActual;
+  let html = `<button class="pag-btn ${p===1?"disabled":""}" onclick="${p>1?`cambiarPagina(${p-1})`:""}" >
+    <i class="fas fa-chevron-left"></i></button>`;
 
-  const pagActual = state.paginaActual;
-  let html = '';
-
-  // Anterior
-  html += `<button class="pag-btn ${pagActual === 1 ? 'disabled' : ''}"
-    onclick="${pagActual > 1 ? `cambiarPagina(${pagActual - 1})` : ''}">
-    <i class="fas fa-chevron-left"></i>
-  </button>`;
-
-  // Páginas
   const rango = [];
-  for (let i = 1; i <= totalPaginas; i++) {
-    if (i === 1 || i === totalPaginas || (i >= pagActual - 2 && i <= pagActual + 2)) {
-      rango.push(i);
-    } else if (rango[rango.length - 1] !== '...') {
-      rango.push('...');
-    }
+  for (let i = 1; i <= totalPags; i++) {
+    if (i===1 || i===totalPags || (i>=p-2 && i<=p+2)) rango.push(i);
+    else if (rango[rango.length-1] !== "...") rango.push("...");
   }
 
-  rango.forEach(p => {
-    if (p === '...') {
-      html += `<span class="pag-info">...</span>`;
-    } else {
-      html += `<button class="pag-btn ${p === pagActual ? 'active' : ''}"
-        onclick="cambiarPagina(${p})">${p}</button>`;
-    }
+  rango.forEach(r => {
+    if (r === "...") html += `<span class="pag-info">...</span>`;
+    else html += `<button class="pag-btn ${r===p?"active":""}" onclick="cambiarPagina(${r})">${r}</button>`;
   });
 
-  // Siguiente
-  html += `<button class="pag-btn ${pagActual === totalPaginas ? 'disabled' : ''}"
-    onclick="${pagActual < totalPaginas ? `cambiarPagina(${pagActual + 1})` : ''}">
-    <i class="fas fa-chevron-right"></i>
-  </button>`;
-
-  html += `<span class="pag-info">Página ${pagActual} de ${totalPaginas}</span>`;
-
-  paginacion.innerHTML = html;
+  html += `<button class="pag-btn ${p===totalPags?"disabled":""}" onclick="${p<totalPags?`cambiarPagina(${p+1})`:""}" >
+    <i class="fas fa-chevron-right"></i></button>`;
+  html += `<span class="pag-info">Página ${p} de ${totalPags}</span>`;
+  pag.innerHTML = html;
 }
 
-function cambiarPagina(pagina) {
-  state.paginaActual = pagina;
+function cambiarPagina(p) {
+  state.paginaActual = p;
   renderizarVista();
-  window.scrollTo({ top: document.querySelector('.tabla-seccion').offsetTop - 80, behavior: 'smooth' });
+  window.scrollTo({ top: document.querySelector(".tabla-seccion").offsetTop - 80, behavior: "smooth" });
 }
 
 // ================================================
-// CAMBIAR VISTA (tabla/grid)
+// VISTA TABLA / GRID
 // ================================================
 function cambiarVista(vista, btn) {
   state.vistaActual = vista;
-
-  document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-
-  const vistaTabla = document.getElementById('vistaTabla');
-  const vistaGrid = document.getElementById('vistaGrid');
-
-  if (vista === 'tabla') {
-    vistaTabla.style.display = 'block';
-    vistaGrid.style.display = 'none';
-  } else {
-    vistaTabla.style.display = 'none';
-    vistaGrid.style.display = 'block';
-  }
-
+  document.querySelectorAll(".view-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  document.getElementById("vistaTabla").style.display = vista === "tabla" ? "block" : "none";
+  document.getElementById("vistaGrid").style.display  = vista === "grid"  ? "block" : "none";
   renderizarVista();
 }
 
@@ -1390,61 +1410,46 @@ function cambiarVista(vista, btn) {
 // FILTROS
 // ================================================
 function filtrarCalidad(calidad, boton) {
-  document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
-  boton.classList.add('active');
+  document.querySelectorAll(".filtro-btn").forEach(b => b.classList.remove("active"));
+  boton.classList.add("active");
   state.filtroCalidad = calidad;
 
-  let lista = state.categoriaActual === 'all' ? todosLosItems :
-    todosLosItems.filter(i => i.categoria === state.categoriaActual);
+  let lista = state.categoriaActual === "all"
+    ? todosLosItems
+    : todosLosItems.filter(i => i.categoria === state.categoriaActual);
 
-  if (state.subcategoriaActual) {
+  if (state.subcategoriaActual)
     lista = lista.filter(i => i.subtipo === state.subcategoriaActual);
-  }
-
-  if (calidad !== 'all') {
+  if (calidad !== "all")
     lista = lista.filter(i => i.calidad === calidad);
-  }
 
-  lista = aplicarFiltrosNivel(lista);
-  mostrarItems(lista);
+  mostrarItems(aplicarFiltrosNivel(lista));
 }
 
 function filtrarCategoria(categoria) {
   state.categoriaActual = categoria;
   state.subcategoriaActual = null;
-  state.filtroCalidad = 'all';
+  state.filtroCalidad = "all";
   state.paginaActual = 1;
 
-  document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
-  const firstBtn = document.querySelector('.filtro-btn');
-  if (firstBtn) firstBtn.classList.add('active');
-
-  let lista = todosLosItems.filter(i => i.categoria === categoria);
+  document.querySelectorAll(".filtro-btn").forEach(b => b.classList.remove("active"));
+  const fb = document.querySelector(".filtro-btn");
+  if (fb) fb.classList.add("active");
 
   const titulos = {
-    armas: '⚔️ Armas',
-    armadura: '🛡️ Armadura',
-    accesorios: '💍 Accesorios',
-    consumibles: '🧪 Consumibles',
-    gemas: '💎 Gemas',
-    jefes: '👹 Jefes de Raid',
-    quests: '📜 Misiones',
-    spells: '✨ Hechizos',
-    monturas: '🐎 Monturas'
+    armas: "⚔️ Armas", armadura: "🛡️ Armadura", accesorios: "💍 Accesorios",
+    consumibles: "🧪 Consumibles", gemas: "💎 Gemas", jefes: "👹 Jefes de Raid",
+    quests: "📜 Misiones", spells: "✨ Hechizos", monturas: "🐎 Monturas"
   };
 
-  const titulo = titulos[categoria] || '📦 Resultados';
-  document.getElementById('tituloTabla').innerHTML = `<i class="fas fa-filter"></i> ${titulo}`;
+  const titulo = titulos[categoria] || "📦 Resultados";
+  document.getElementById("tituloTabla").innerHTML =
+    `<i class="fas fa-filter"></i> ${titulo}`;
 
-  mostrarItems(lista);
-  mostrarPagina('inicio');
-
+  mostrarItems(todosLosItems.filter(i => i.categoria === categoria));
+  mostrarPagina("inicio");
   actualizarBreadcrumbs([{ texto: titulo, accion: `filtrarCategoria('${categoria}')` }]);
-
-  window.scrollTo({
-    top: document.querySelector('.tabla-seccion').offsetTop - 80,
-    behavior: 'smooth'
-  });
+  window.scrollTo({ top: document.querySelector(".tabla-seccion").offsetTop - 80, behavior: "smooth" });
 }
 
 function filtrarSubcategoria(categoria, subtipo) {
@@ -1452,211 +1457,301 @@ function filtrarSubcategoria(categoria, subtipo) {
   state.subcategoriaActual = subtipo;
   state.paginaActual = 1;
 
-  const lista = todosLosItems.filter(i =>
-    i.categoria === categoria && i.subtipo === subtipo
-  );
-
-  document.getElementById('tituloTabla').innerHTML =
+  const lista = todosLosItems.filter(i => i.categoria === categoria && i.subtipo === subtipo);
+  document.getElementById("tituloTabla").innerHTML =
     `<i class="fas fa-filter"></i> ${subtipo}`;
-
   mostrarItems(lista);
-  mostrarPagina('inicio');
-
+  mostrarPagina("inicio");
   actualizarBreadcrumbs([
     { texto: categoria.charAt(0).toUpperCase() + categoria.slice(1), accion: `filtrarCategoria('${categoria}')` },
     { texto: subtipo }
   ]);
-
-  window.scrollTo({
-    top: document.querySelector('.tabla-seccion').offsetTop - 80,
-    behavior: 'smooth'
-  });
+  window.scrollTo({ top: document.querySelector(".tabla-seccion").offsetTop - 80, behavior: "smooth" });
 }
 
 function filtrarClase(clase) {
-  mostrarToast(`Clase ${clase} - Próximamente 🚧`, 'fa-hammer');
+  mostrarToast(`Clase ${clase} — Próximamente 🚧`, "fa-hammer");
 }
 
 // ================================================
 // FILTROS AVANZADOS
 // ================================================
 function aplicarFiltrosAvanzados() {
-  const nivelMin = parseInt(document.getElementById('filtroNivelMin').value) || 0;
-  const nivelMax = parseInt(document.getElementById('filtroNivelMax').value) || 9999;
-  const expansion = document.getElementById('filtroExpansion').value;
+  const min = parseInt(document.getElementById("filtroNivelMin").value) || 0;
+  const max = parseInt(document.getElementById("filtroNivelMax").value) || 9999;
+  const exp = document.getElementById("filtroExpansion").value;
+  state.filtroNivelMin = min;
+  state.filtroNivelMax = max;
+  state.filtroExpansion = exp;
 
-  state.filtroNivelMin = nivelMin;
-  state.filtroNivelMax = nivelMax;
-  state.filtroExpansion = expansion;
+  let lista = state.categoriaActual === "all"
+    ? todosLosItems
+    : todosLosItems.filter(i => i.categoria === state.categoriaActual);
 
-  let lista = state.categoriaActual === 'all' ? todosLosItems :
-    todosLosItems.filter(i => i.categoria === state.categoriaActual);
-
-  lista = aplicarFiltrosNivel(lista);
-  mostrarItems(lista);
+  mostrarItems(aplicarFiltrosNivel(lista));
 }
 
 function aplicarFiltrosNivel(lista) {
   const min = state.filtroNivelMin || 0;
   const max = state.filtroNivelMax || 9999;
-  const exp = state.filtroExpansion;
-
+  const exp = state.filtroExpansion || "all";
   return lista.filter(i => {
     const nivelOk = i.nivel >= min && i.nivel <= max;
-    const expOk = exp === 'all' || i.expansion === exp;
+    const expOk   = exp === "all" || i.expansion === exp;
     return nivelOk && expOk;
   });
 }
 
 function resetFiltrosAvanzados() {
-  document.getElementById('filtroNivelMin').value = '';
-  document.getElementById('filtroNivelMax').value = '';
-  document.getElementById('filtroExpansion').value = 'all';
+  document.getElementById("filtroNivelMin").value = "";
+  document.getElementById("filtroNivelMax").value = "";
+  document.getElementById("filtroExpansion").value = "all";
   state.filtroNivelMin = null;
   state.filtroNivelMax = null;
-  state.filtroExpansion = 'all';
-
-  let lista = state.categoriaActual === 'all' ? todosLosItems :
-    todosLosItems.filter(i => i.categoria === state.categoriaActual);
-
+  state.filtroExpansion = "all";
+  let lista = state.categoriaActual === "all"
+    ? todosLosItems
+    : todosLosItems.filter(i => i.categoria === state.categoriaActual);
   mostrarItems(lista);
-  mostrarToast('Filtros limpiados', 'fa-times');
+  mostrarToast("Filtros limpiados", "fa-times");
 }
 
 // ================================================
 // ORDENAR TABLA
 // ================================================
 function ordenarTabla(campo) {
-  if (state.ordenActual === campo) {
-    state.ordenDireccion = state.ordenDireccion === 'asc' ? 'desc' : 'asc';
-  } else {
-    state.ordenActual = campo;
-    state.ordenDireccion = 'asc';
+  if (state.ordenActual === campo)
+    state.ordenDireccion = state.ordenDireccion === "asc" ? "desc" : "asc";
+  else {
+    state.ordenActual   = campo;
+    state.ordenDireccion = "asc";
   }
 
-  const dir = state.ordenDireccion === 'asc' ? 1 : -1;
-
+  const dir = state.ordenDireccion === "asc" ? 1 : -1;
   state.listaActual = [...state.listaActual].sort((a, b) => {
-    if (campo === 'nivel') return (a.nivel - b.nivel) * dir;
-    const aVal = String(a[campo] || '').toLowerCase();
-    const bVal = String(b[campo] || '').toLowerCase();
-    return aVal.localeCompare(bVal) * dir;
+    if (campo === "nivel") return (a.nivel - b.nivel) * dir;
+    return String(a[campo]||"").toLowerCase().localeCompare(String(b[campo]||"").toLowerCase()) * dir;
   });
 
-  // Actualizar iconos de ordenación
-  document.querySelectorAll('.sortable').forEach(th => {
-    th.classList.remove('sort-active');
-    th.querySelector('i').className = 'fas fa-sort';
+  document.querySelectorAll(".sortable").forEach(th => {
+    th.classList.remove("sort-active");
+    th.querySelector("i").className = "fas fa-sort";
   });
 
-  const thActivo = [...document.querySelectorAll('.sortable')]
-    .find(th => th.getAttribute('onclick').includes(campo));
-  if (thActivo) {
-    thActivo.classList.add('sort-active');
-    thActivo.querySelector('i').className =
-      `fas fa-sort-${state.ordenDireccion === 'asc' ? 'up' : 'down'}`;
+  const activo = [...document.querySelectorAll(".sortable")]
+    .find(th => th.getAttribute("onclick").includes(campo));
+  if (activo) {
+    activo.classList.add("sort-active");
+    activo.querySelector("i").className =
+      `fas fa-sort-${state.ordenDireccion === "asc" ? "up" : "down"}`;
   }
 
   renderizarVista();
 }
 
 // ================================================
-// MOSTRAR PAGINAS
+// PÁGINAS
 // ================================================
-function mostrarPagina(pagina) {
-  const paginas = ['paginaInicio', 'paginaDetalle', 'paginaComparar',
-    'paginaRecientes', 'paginaFavoritos'];
-  paginas.forEach(p => {
-    const el = document.getElementById(p);
-    if (el) el.style.display = 'none';
-  });
-
-  const nombres = {
-    inicio: 'paginaInicio',
-    detalle: 'paginaDetalle',
-    comparar: 'paginaComparar',
-    recientes: 'paginaRecientes',
-    favoritos: 'paginaFavoritos'
+function mostrarPagina(nombre) {
+  const mapa = {
+    inicio: "paginaInicio", detalle: "paginaDetalle",
+    comparar: "paginaComparar", recientes: "paginaRecientes",
+    favoritos: "paginaFavoritos"
   };
-
-  const el = document.getElementById(nombres[pagina]);
-  if (el) {
-    el.style.display = 'block';
-    el.classList.add('fade-in');
-  }
+  Object.values(mapa).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = "none";
+  });
+  const el = document.getElementById(mapa[nombre]);
+  if (el) { el.style.display = "block"; el.classList.add("fade-in"); }
 }
 
 // ================================================
-// NAVEGACION Y HASH URL
+// HASH URL
 // ================================================
-window.addEventListener('hashchange', manejarHash);
+window.addEventListener("hashchange", manejarHash);
 
 function manejarHash() {
   const hash = window.location.hash;
-  if (!hash || hash === '#') {
-    navegarInicio();
-    return;
-  }
-
-  const partes = hash.replace('#', '').split('=');
+  if (!hash || hash === "#") { navegarInicio(); return; }
+  const partes = hash.replace("#", "").split("=");
   if (partes.length === 2) {
-    const tipo = partes[0];
     const id = parseInt(partes[1]);
-    if (!isNaN(id)) {
-      const item = todosLosItems.find(i => i.id === id);
-      if (item) {
-        mostrarDetalle(id);
-        return;
-      }
+    if (!isNaN(id) && todosLosItems.find(i => i.id === id)) {
+      mostrarDetalle(id);
+      return;
     }
   }
-
   navegarInicio();
 }
 
 function navegarInicio() {
-  state.categoriaActual = 'all';
+  state.categoriaActual    = "all";
   state.subcategoriaActual = null;
-  state.filtroCalidad = 'all';
-  state.paginaActual = 1;
+  state.filtroCalidad      = "all";
+  state.paginaActual       = 1;
 
-  mostrarPagina('inicio');
-  document.getElementById('tituloTabla').innerHTML =
-    '<i class="fas fa-fire"></i> Items Populares';
-  document.getElementById('search').value = '';
-  document.getElementById('autocompleteResults').style.display = 'none';
-
+  mostrarPagina("inicio");
+  document.getElementById("tituloTabla").innerHTML = '<i class="fas fa-fire"></i> Items Populares';
+  document.getElementById("search").value = "";
+  document.getElementById("autocompleteResults").style.display = "none";
   mostrarItems(todosLosItems);
   inicializarRecientes();
   actualizarBreadcrumbs([]);
-
-  window.history.pushState('', '', window.location.pathname);
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.history.pushState("", "", window.location.pathname);
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 // ================================================
 // BREADCRUMBS
 // ================================================
 function actualizarBreadcrumbs(pasos) {
-  const el = document.getElementById('breadcrumbs');
+  const el = document.getElementById("breadcrumbs");
   if (!el) return;
-
-  let html = `
-    <div class="breadcrumbs-inner">
-      <a href="#" onclick="navegarInicio()"><i class="fas fa-home"></i> Inicio</a>
-  `;
-
+  let html = `<div class="breadcrumbs-inner">
+    <a href="#" onclick="navegarInicio()"><i class="fas fa-home"></i> Inicio</a>`;
   pasos.forEach((paso, i) => {
     html += `<span class="separator">›</span>`;
-    if (paso.accion && i < pasos.length - 1) {
+    if (paso.accion && i < pasos.length - 1)
       html += `<a href="#" onclick="${paso.accion}">${paso.texto}</a>`;
-    } else {
+    else
       html += `<span class="current">${paso.texto}</span>`;
-    }
   });
-
-  html += '</div>';
+  html += "</div>";
   el.innerHTML = html;
+}
+
+// ================================================
+// MAPA DE UBICACION
+// ================================================
+function generarMapa(item) {
+  if (!item.ubicacion) {
+    return `
+      <div class="empty-state" style="padding:30px;">
+        <i class="fas fa-map-marked-alt"></i>
+        <h3>Ubicación desconocida</h3>
+        <p>No hay datos de ubicación disponibles</p>
+      </div>`;
+  }
+
+  const ub = item.ubicacion;
+
+  // POIs decorativos
+  const pois = Array.from({ length: 10 }, () => ({
+    x: (Math.random() * 85 + 5).toFixed(1),
+    y: (Math.random() * 80 + 5).toFixed(1)
+  }));
+
+  // Caminos decorativos
+  const paths = Array.from({ length: 5 }, () => ({
+    x: (Math.random() * 80 + 10).toFixed(1),
+    y: (Math.random() * 80 + 10).toFixed(1),
+    angle: (Math.random() * 360).toFixed(0),
+    length: (Math.random() * 150 + 80).toFixed(0)
+  }));
+
+  return `
+    <div class="mapa-container">
+      <div class="mapa-header">
+        <h4><i class="fas fa-map-marked-alt"></i> ${ub.zona}
+          ${ub.descripcion ? `<span style="color:#64748b;font-weight:400;font-size:12px;">— ${ub.descripcion}</span>` : ""}
+        </h4>
+        <span class="mapa-coords">${ub.x.toFixed ? ub.x.toFixed(1) : ub.x}, ${ub.y.toFixed ? ub.y.toFixed(1) : ub.y} · ${ub.continente}</span>
+      </div>
+      <div class="mapa-visual">
+        <div class="mapa-zone-name">${ub.zona}</div>
+        <div class="mapa-terrain mapa-terrain-1"></div>
+        <div class="mapa-terrain mapa-terrain-2"></div>
+        <div class="mapa-terrain mapa-terrain-3"></div>
+        <div class="mapa-terrain mapa-terrain-4"></div>
+        ${paths.map(p => `
+          <div class="mapa-path" style="left:${p.x}%;top:${p.y}%;width:${p.length}px;transform:rotate(${p.angle}deg);"></div>
+        `).join("")}
+        ${pois.map(p => `
+          <div class="mapa-poi" style="left:${p.x}%;top:${p.y}%;"></div>
+        `).join("")}
+        <div class="mapa-marker" style="left:${ub.x}%;top:${ub.y}%;">
+          <div class="mapa-marker-label">${item.nombre}</div>
+          <div class="mapa-marker-dot"></div>
+        </div>
+      </div>
+      <div class="mapa-legend">
+        <div class="mapa-legend-item">
+          <div class="mapa-legend-dot dot-boss"></div><span>Jefe</span>
+        </div>
+        <div class="mapa-legend-item">
+          <div class="mapa-legend-dot dot-npc"></div><span>NPC</span>
+        </div>
+        <div class="mapa-legend-item">
+          <div class="mapa-legend-dot dot-quest"></div><span>Misión</span>
+        </div>
+        <div class="mapa-copy-coords" onclick="copiarCoordenadas(${ub.x},${ub.y})">
+          <i class="fas fa-copy"></i><span>Copiar coords</span>
+        </div>
+      </div>
+    </div>`;
+}
+
+function copiarCoordenadas(x, y) {
+  navigator.clipboard.writeText(`${x}, ${y}`).then(() => {
+    mostrarToast("Coordenadas copiadas", "fa-map-marker-alt");
+  });
+}
+
+// ================================================
+// GRAFICAS DE STATS
+// ================================================
+const STAT_CONFIG = {
+  fuerza:       { color: "fuerza",       max: 2000 },
+  agilidad:     { color: "agilidad",     max: 2000 },
+  intelecto:    { color: "intelecto",    max: 2000 },
+  aguante:      { color: "aguante",      max: 1500 },
+  celeridad:    { color: "celeridad",    max: 800  },
+  maestria:     { color: "maestria",     max: 800  },
+  golpeCritico: { color: "golpecritico", max: 800  },
+  versatilidad: { color: "versatilidad", max: 800  },
+  armadura:     { color: "armadura",     max: 3000 },
+  espiritu:     { color: "espiritu",     max: 500  }
+};
+
+function generarGraficaStats(item) {
+  if (!item.stats || Object.keys(item.stats).length === 0) return "";
+
+  const statsValidas = Object.entries(item.stats)
+    .filter(([k]) => STAT_CONFIG[k])
+    .map(([k, v]) => {
+      const num = parseFloat(String(v).replace(/[^0-9.]/g, "")) || 0;
+      const cfg = STAT_CONFIG[k];
+      return { key: k, value: v, num, pct: Math.min((num / cfg.max) * 100, 100).toFixed(1), color: cfg.color };
+    });
+
+  if (!statsValidas.length) return "";
+
+  return `
+    <div class="stats-chart">
+      <h4><i class="fas fa-chart-bar"></i> Distribución de Stats</h4>
+      <div class="chart-bar-container" id="statsChartBars">
+        ${statsValidas.map(s => `
+          <div class="chart-bar-row">
+            <span class="chart-bar-label">${formatStatName(s.key)}</span>
+            <div class="chart-bar-track">
+              <div class="chart-bar-fill bar-${s.color}"
+                   style="width:0%"
+                   data-target="${s.pct}">
+                <span class="chart-bar-value">${s.value}</span>
+              </div>
+            </div>
+          </div>`).join("")}
+      </div>
+    </div>`;
+}
+
+function animarBarras() {
+  setTimeout(() => {
+    document.querySelectorAll(".chart-bar-fill").forEach(bar => {
+      bar.style.width = bar.getAttribute("data-target") + "%";
+    });
+  }, 120);
 }
 
 // ================================================
@@ -1666,32 +1761,30 @@ function mostrarDetalle(id) {
   const item = todosLosItems.find(i => i.id === id);
   if (!item) return;
 
-  // Hash URL
   window.location.hash = `item=${id}`;
-
-  // Guardar en recientes
   agregarReciente(id);
+  mostrarPagina("detalle");
 
-  mostrarPagina('detalle');
-
+  const statsHTML      = generarStats(item);
+  const graficaHTML    = generarGraficaStats(item);
+  const lootHTML       = generarLootTable(item);
   const relacionadosHTML = generarRelacionados(item);
-  const lootHTML = generarLootTable(item);
-  const statsHTML = generarStats(item);
+  const comentariosHTML  = generarComentarios(item);
+  const mapaHTML       = generarMapa(item);
+  const favoritado     = esFavorito(id);
+
   const efectoHTML = item.efecto ? `
     <div class="efecto-box">
       <h4>${item.efecto.nombre}</h4>
       <p>${item.efecto.descripcion}</p>
-    </div>
-  ` : '<p style="color:#4a4a5e;font-size:13px;">Sin efectos especiales</p>';
+    </div>` : '<p style="color:#4a4a5e;font-size:13px;">Sin efectos especiales</p>';
 
-  const flavorHTML = item.flavor ? `
-    <div class="flavor-text">"${item.flavor}"</div>
-  ` : '';
+  const flavorHTML = item.flavor
+    ? `<div class="flavor-text">"${item.flavor}"</div>` : "";
 
-  const comentariosHTML = generarComentarios(item);
-  const favoritado = esFavorito(id);
+  const tieneUbicacion = item.ubicacion ? item.ubicacion : false;
 
-  document.getElementById('detalleContenido').innerHTML = `
+  document.getElementById("detalleContenido").innerHTML = `
 
     <!-- ACCIONES -->
     <div class="detalle-actions">
@@ -1699,11 +1792,11 @@ function mostrarDetalle(id) {
         <i class="fas fa-arrow-left"></i> Volver
       </button>
       <div class="detalle-action-btns">
-        <button class="action-btn ${favoritado ? 'favorited' : ''}"
+        <button class="action-btn ${favoritado ? "favorited" : ""}"
                 id="btnFavorito"
                 onclick="toggleFavorito(${id})">
-          <i class="${favoritado ? 'fas' : 'far'} fa-star"></i>
-          ${favoritado ? 'Favorito' : 'Añadir a favoritos'}
+          <i class="${favoritado ? "fas" : "far"} fa-star"></i>
+          ${favoritado ? "Favorito" : "Añadir a favoritos"}
         </button>
         <button class="action-btn" onclick="copiarEnlace(${id})">
           <i class="fas fa-link"></i> Copiar enlace
@@ -1719,45 +1812,49 @@ function mostrarDetalle(id) {
 
       <!-- TOP -->
       <div class="detalle-top">
-        <div class="detalle-icono ${item.calidad}-border">
-          ${item.icono}
+        <div class="detalle-icono-wrap">
+          ${crearIconoHTML(item, "xlarge")}
         </div>
         <div class="detalle-info">
           <h1 class="${item.calidad}">${item.nombre}</h1>
-          ${item.nivel > 0 ? `<div class="detalle-ilvl">Nivel de objeto ${item.nivel}</div>` : ''}
-          ${item.binding ? `<div class="detalle-binding">${item.binding}</div>` : ''}
+          ${item.nivel > 0 ? `<div class="detalle-ilvl">Nivel de objeto ${item.nivel}</div>` : ""}
+          ${item.binding ? `<div class="detalle-binding">${item.binding}</div>` : ""}
           <div class="detalle-tipo">
             <span>${item.tipo}</span>
-            ${item.subtipo ? `<span>${item.subtipo}</span>` : ''}
+            ${item.subtipo ? `<span>${item.subtipo}</span>` : ""}
           </div>
         </div>
       </div>
 
       <!-- TABS -->
       <div class="detalle-tabs">
-        <button class="tab-btn active" onclick="cambiarTab(this, 'tabStats')">
+        <button class="tab-btn active" onclick="cambiarTab(this,'tabStats')">
           <i class="fas fa-chart-bar"></i> Estadísticas
         </button>
-        <button class="tab-btn" onclick="cambiarTab(this, 'tabLoot')">
-          <i class="fas fa-treasure-chest"></i> Cómo obtener
+        <button class="tab-btn" onclick="cambiarTab(this,'tabLoot')">
+          <i class="fas fa-box-open"></i> Cómo obtener
           <span class="tab-count">${item.loot ? item.loot.length : 0}</span>
         </button>
-        <button class="tab-btn" onclick="cambiarTab(this, 'tabRelacionados')">
+        ${tieneUbicacion ? `
+        <button class="tab-btn" onclick="cambiarTab(this,'tabMapa')">
+          <i class="fas fa-map-marked-alt"></i> Ubicación
+        </button>` : ""}
+        <button class="tab-btn" onclick="cambiarTab(this,'tabRelacionados')">
           <i class="fas fa-link"></i> Relacionados
           <span class="tab-count">${item.relacionados ? item.relacionados.length : 0}</span>
         </button>
-        <button class="tab-btn" onclick="cambiarTab(this, 'tabComentarios')">
+        <button class="tab-btn" onclick="cambiarTab(this,'tabComentarios')">
           <i class="fas fa-comments"></i> Comentarios
           <span class="tab-count">${item.comentarios ? item.comentarios.length : 0}</span>
         </button>
       </div>
 
-      <!-- TAB: STATS -->
+      <!-- TAB STATS -->
       <div class="tab-content active" id="tabStats">
         <div class="detalle-body">
           <div class="detalle-stats">
             <h3><i class="fas fa-chart-bar"></i> Estadísticas</h3>
-            ${statsHTML || '<p style="color:#4a4a5e;font-size:13px;">Sin estadísticas</p>'}
+            ${statsHTML || '<p style="color:#4a4a5e;font-size:13px;">Sin estadísticas numéricas</p>'}
           </div>
           <div class="detalle-extra">
             <h3><i class="fas fa-magic"></i> Efectos</h3>
@@ -1765,21 +1862,30 @@ function mostrarDetalle(id) {
             ${flavorHTML}
           </div>
         </div>
+        ${graficaHTML}
       </div>
 
-      <!-- TAB: LOOT -->
+      <!-- TAB LOOT -->
       <div class="tab-content" id="tabLoot">
         ${lootHTML}
       </div>
 
-      <!-- TAB: RELACIONADOS -->
+      <!-- TAB MAPA -->
+      ${tieneUbicacion ? `
+      <div class="tab-content" id="tabMapa">
+        ${mapaHTML}
+      </div>` : ""}
+
+      <!-- TAB RELACIONADOS -->
       <div class="tab-content" id="tabRelacionados">
         ${relacionadosHTML}
       </div>
 
-      <!-- TAB: COMENTARIOS -->
+      <!-- TAB COMENTARIOS -->
       <div class="tab-content" id="tabComentarios">
-        ${comentariosHTML}
+        <div id="comentariosLista">
+          ${comentariosHTML}
+        </div>
         <div class="add-comment">
           <input type="text" id="nuevoComentario"
             placeholder="Añade un consejo, estrategia o comentario..." maxlength="300">
@@ -1797,11 +1903,11 @@ function mostrarDetalle(id) {
         </div>
         <div class="source-item">
           <span class="source-label">Expansión</span>
-          <span class="source-value">${item.expansion || '-'}</span>
+          <span class="source-value">${item.expansion || "-"}</span>
         </div>
         <div class="source-item">
           <span class="source-label">Parche</span>
-          <span class="source-value">${item.patch || '-'}</span>
+          <span class="source-value">${item.patch || "-"}</span>
         </div>
         <div class="source-item">
           <span class="source-label">Calidad</span>
@@ -1814,7 +1920,7 @@ function mostrarDetalle(id) {
           <span class="source-value">#${item.id}</span>
         </div>
         <div class="source-item">
-          <span class="source-label">Comando</span>
+          <span class="source-label">Comando GM</span>
           <button class="copy-btn" onclick="copiarComando(${item.id})">
             <i class="fas fa-copy"></i> .additem ${item.id}
           </button>
@@ -1831,46 +1937,42 @@ function mostrarDetalle(id) {
     { texto: item.nombre }
   ]);
 
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  animarBarras();
 }
 
 // ================================================
 // TABS
 // ================================================
 function cambiarTab(btn, tabId) {
-  const card = btn.closest('.detalle-card');
-  card.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  card.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
+  const card = btn.closest(".detalle-card");
+  card.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+  card.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
+  btn.classList.add("active");
   const tab = document.getElementById(tabId);
-  if (tab) {
-    tab.classList.add('active');
-    tab.classList.add('fade-in');
-  }
+  if (tab) { tab.classList.add("active"); tab.classList.add("fade-in"); }
+  if (tabId === "tabStats") animarBarras();
 }
 
 // ================================================
-// GENERADORES DE HTML
+// GENERADORES HTML
 // ================================================
 function generarStats(item) {
-  if (!item.stats || Object.keys(item.stats).length === 0) return '';
-  return Object.entries(item.stats).map(([key, value]) => `
+  if (!item.stats || !Object.keys(item.stats).length) return "";
+  return Object.entries(item.stats).map(([k, v]) => `
     <div class="stat-row">
-      <span class="stat-nombre">${formatStatName(key)}</span>
-      <span class="stat-valor">${value}</span>
-    </div>
-  `).join('');
+      <span class="stat-nombre">${formatStatName(k)}</span>
+      <span class="stat-valor">${v}</span>
+    </div>`).join("");
 }
 
 function generarLootTable(item) {
-  if (!item.loot || item.loot.length === 0) {
-    return `
-      <div class="empty-state">
-        <i class="fas fa-treasure-chest"></i>
-        <h3>Sin información de obtención</h3>
-        <p>No hay datos de drop disponibles</p>
-      </div>`;
-  }
+  if (!item.loot || !item.loot.length) return `
+    <div class="empty-state">
+      <i class="fas fa-box-open"></i>
+      <h3>Sin información de obtención</h3>
+      <p>No hay datos de drop disponibles</p>
+    </div>`;
 
   return `
     <table class="loot-table">
@@ -1887,52 +1989,42 @@ function generarLootTable(item) {
             <td>${l.fuente}</td>
             <td><span class="expansion-badge">${l.modo}</span></td>
             <td class="drop-chance">${l.chance}</td>
-          </tr>
-        `).join('')}
+          </tr>`).join("")}
       </tbody>
-    </table>
-  `;
+    </table>`;
 }
 
 function generarRelacionados(item) {
-  if (!item.relacionados || item.relacionados.length === 0) {
-    return `
-      <div class="empty-state">
-        <i class="fas fa-link"></i>
-        <h3>Sin items relacionados</h3>
-      </div>`;
-  }
+  if (!item.relacionados || !item.relacionados.length) return `
+    <div class="empty-state">
+      <i class="fas fa-link"></i>
+      <h3>Sin items relacionados</h3>
+    </div>`;
 
-  const relacionados = item.relacionados
+  const lista = item.relacionados
     .map(id => todosLosItems.find(i => i.id === id))
     .filter(Boolean);
 
   return `
     <div class="related-grid">
-      ${relacionados.map(rel => `
+      ${lista.map(rel => `
         <div class="related-item" onclick="mostrarDetalle(${rel.id})">
-          <div class="item-icon-small ${rel.calidad}-border">${rel.icono}</div>
+          ${crearIconoHTML(rel, "medium")}
           <div>
-            <div class="item-name-cell">
-              <span class="${rel.calidad}" style="font-size:13px;">${rel.nombre}</span>
-              <span class="item-name-sub">iLvl ${rel.nivel} · ${rel.tipo}</span>
-            </div>
+            <div class="${rel.calidad}" style="font-size:13px;font-weight:600;">${rel.nombre}</div>
+            <div style="font-size:11px;color:#4a4a5e;">iLvl ${rel.nivel} · ${rel.tipo}</div>
           </div>
-        </div>
-      `).join('')}
-    </div>
-  `;
+        </div>`).join("")}
+    </div>`;
 }
 
 function generarComentarios(item) {
-  if (!item.comentarios || item.comentarios.length === 0) {
-    return `
-      <div class="empty-state" style="padding:30px;">
-        <i class="fas fa-comments"></i>
-        <h3>Sin comentarios aún</h3>
-        <p>¡Sé el primero en comentar!</p>
-      </div>`;
-  }
+  if (!item.comentarios || !item.comentarios.length) return `
+    <div class="empty-state" style="padding:30px;">
+      <i class="fas fa-comments"></i>
+      <h3>Sin comentarios aún</h3>
+      <p>¡Sé el primero en comentar!</p>
+    </div>`;
 
   return item.comentarios.map(c => `
     <div class="comment" id="comment-${c.id}">
@@ -1943,220 +2035,182 @@ function generarComentarios(item) {
           <span class="comment-date">${c.fecha}</span>
         </div>
         <div class="comment-votes">
-          <button class="vote-btn" onclick="votarComentario(${c.id}, 'up', this)">
+          <button class="vote-btn" onclick="votarComentario(this, 1)">
             <i class="fas fa-thumbs-up"></i> ${c.votos || 0}
           </button>
-          <button class="vote-btn" onclick="votarComentario(${c.id}, 'down', this)">
+          <button class="vote-btn" onclick="votarComentario(this, -1)">
             <i class="fas fa-thumbs-down"></i>
           </button>
         </div>
       </div>
       <div class="comment-text">${c.texto}</div>
-    </div>
-  `).join('');
+    </div>`).join("");
 }
 
 // ================================================
 // COMENTARIOS
 // ================================================
 function agregarComentario(itemId) {
-  const input = document.getElementById('nuevoComentario');
+  const input = document.getElementById("nuevoComentario");
   const texto = input.value.trim();
-
-  if (!texto) {
-    mostrarToast('Escribe un comentario primero', 'fa-exclamation');
-    return;
-  }
-
-  if (texto.length < 10) {
-    mostrarToast('El comentario es demasiado corto', 'fa-exclamation');
-    return;
-  }
+  if (!texto) { mostrarToast("Escribe un comentario primero", "fa-exclamation"); return; }
+  if (texto.length < 5) { mostrarToast("Comentario demasiado corto", "fa-exclamation"); return; }
 
   const item = todosLosItems.find(i => i.id === itemId);
   if (!item) return;
 
-  const nuevoComentario = {
+  const nuevo = {
     id: ++state.comentarioIdCounter,
-    usuario: 'Tú',
-    fecha: 'Ahora mismo',
-    texto: texto,
+    usuario: "Tú",
+    fecha: "Ahora mismo",
+    texto,
     votos: 0
   };
 
-  item.comentarios.unshift(nuevoComentario);
-  input.value = '';
+  item.comentarios.unshift(nuevo);
+  input.value = "";
 
-  // Re-render solo los comentarios
-  const tabComentarios = document.getElementById('tabComentarios');
-  if (tabComentarios) {
-    const addComment = tabComentarios.querySelector('.add-comment');
-    tabComentarios.innerHTML = generarComentarios(item);
-    tabComentarios.appendChild(addComment);
-  }
+  const lista = document.getElementById("comentariosLista");
+  if (lista) lista.innerHTML = generarComentarios(item);
 
   // Actualizar contador en tab
-  const tabBtns = document.querySelectorAll('.tab-btn');
-  tabBtns.forEach(btn => {
-    if (btn.textContent.includes('Comentarios')) {
-      const count = btn.querySelector('.tab-count');
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    if (btn.textContent.includes("Comentarios")) {
+      const count = btn.querySelector(".tab-count");
       if (count) count.textContent = item.comentarios.length;
     }
   });
 
-  mostrarToast('Comentario añadido ✅', 'fa-check');
+  mostrarToast("Comentario añadido ✅", "fa-check");
 }
 
-function votarComentario(comentarioId, tipo, btn) {
-  const votos = parseInt(btn.querySelector('i').nextSibling?.textContent) ||
-    parseInt(btn.textContent.replace(/\D/g, '')) || 0;
-
-  if (tipo === 'up') {
-    btn.innerHTML = `<i class="fas fa-thumbs-up"></i> ${votos + 1}`;
-    btn.style.color = '#1eff00';
-    mostrarToast('+1 voto', 'fa-thumbs-up');
-  }
+function votarComentario(btn, delta) {
+  const match = btn.innerHTML.match(/(\d+)/);
+  const actual = match ? parseInt(match[1]) : 0;
+  const nuevo  = Math.max(0, actual + delta);
+  btn.innerHTML = `<i class="fas fa-thumbs-up"></i> ${nuevo}`;
+  btn.style.color = delta > 0 ? "#1eff00" : "#e94560";
+  mostrarToast(delta > 0 ? "+1 voto 👍" : "-1 voto 👎", delta > 0 ? "fa-thumbs-up" : "fa-thumbs-down");
 }
 
 // ================================================
-// ACCIONES DE DETALLE
+// ACCIONES
 // ================================================
 function copiarComando(id) {
-  const comando = `.additem ${id}`;
-  navigator.clipboard.writeText(comando).then(() => {
-    mostrarToast(`Copiado: ${comando}`, 'fa-copy');
-  }).catch(() => {
-    mostrarToast(`Comando: ${comando}`, 'fa-copy');
-  });
+  const cmd = `.additem ${id}`;
+  navigator.clipboard.writeText(cmd)
+    .then(() => mostrarToast(`Copiado: ${cmd}`, "fa-copy"))
+    .catch(() => mostrarToast(`Comando: ${cmd}`, "fa-copy"));
 }
 
 function copiarEnlace(id) {
   const url = `${window.location.origin}${window.location.pathname}#item=${id}`;
-  navigator.clipboard.writeText(url).then(() => {
-    mostrarToast('Enlace copiado al portapapeles', 'fa-link');
-  }).catch(() => {
-    mostrarToast('No se pudo copiar', 'fa-times');
-  });
+  navigator.clipboard.writeText(url)
+    .then(() => mostrarToast("Enlace copiado", "fa-link"))
+    .catch(() => mostrarToast("No se pudo copiar", "fa-times"));
 }
 
 // ================================================
 // COMPARADOR
 // ================================================
-let comparadorItems = [];
-
 function agregarComparador(id) {
   const item = todosLosItems.find(i => i.id === id);
   if (!item) return;
 
   if (comparadorItems.find(i => i.id === id)) {
-    mostrarToast('Este item ya está en el comparador', 'fa-exclamation');
+    mostrarToast("Este item ya está en el comparador", "fa-exclamation");
     return;
   }
 
-  if (comparadorItems.length >= 2) {
-    comparadorItems.shift();
-  }
-
+  if (comparadorItems.length >= 2) comparadorItems.shift();
   comparadorItems.push(item);
 
-  if (comparadorItems.length === 2) {
-    mostrarComparador();
-  } else {
-    mostrarToast(`${item.nombre} añadido al comparador. Selecciona otro item.`, 'fa-balance-scale');
-  }
+  if (comparadorItems.length === 2) mostrarComparador();
+  else mostrarToast(`${item.nombre} añadido. Selecciona otro para comparar.`, "fa-balance-scale");
 }
 
 function mostrarComparador() {
-  mostrarPagina('comparar');
-
+  mostrarPagina("comparar");
   const [a, b] = comparadorItems;
 
   if (!a || !b) {
-    document.getElementById('compararContenido').innerHTML = `
+    document.getElementById("compararContenido").innerHTML = `
       <div class="empty-state">
         <i class="fas fa-balance-scale"></i>
         <h3>Selecciona 2 items para comparar</h3>
-        <p>Usa el botón "Comparar" en la página de detalle de cada item</p>
+        <p>Usa el botón "Comparar" en la página de detalle</p>
       </div>`;
     return;
   }
 
-  const todasLasStats = [...new Set([
+  const todasStats = [...new Set([
     ...Object.keys(a.stats || {}),
     ...Object.keys(b.stats || {})
   ])];
 
-  const statsCompara = todasLasStats.map(stat => {
-    const valA = parseFloat(String(a.stats?.[stat] || '0').replace(/[^0-9.]/g, '')) || 0;
-    const valB = parseFloat(String(b.stats?.[stat] || '0').replace(/[^0-9.]/g, '')) || 0;
-    const mejorA = valA > valB;
-    const mejorB = valB > valA;
+  const filas = todasStats.map(stat => {
+    const va = parseFloat(String(a.stats?.[stat] || "0").replace(/[^0-9.]/g, "")) || 0;
+    const vb = parseFloat(String(b.stats?.[stat] || "0").replace(/[^0-9.]/g, "")) || 0;
     return `
       <tr>
-        <td style="color:${mejorA ? '#1eff00' : '#e2e8f0'};font-weight:${mejorA ? '700' : '400'};">
-          ${a.stats?.[stat] || '-'}
+        <td style="color:${va>vb?"#1eff00":va<vb?"#ff4444":"#e2e8f0"};font-weight:${va>vb?"700":"400"};">
+          ${a.stats?.[stat] || "-"}
         </td>
         <td style="color:#64748b;font-size:12px;text-align:center;">${formatStatName(stat)}</td>
-        <td style="color:${mejorB ? '#1eff00' : '#e2e8f0'};font-weight:${mejorB ? '700' : '400'};text-align:right;">
-          ${b.stats?.[stat] || '-'}
+        <td style="color:${vb>va?"#1eff00":vb<va?"#ff4444":"#e2e8f0"};font-weight:${vb>va?"700":"400"};text-align:right;">
+          ${b.stats?.[stat] || "-"}
         </td>
       </tr>`;
-  }).join('');
+  }).join("");
 
-  document.getElementById('compararContenido').innerHTML = `
+  document.getElementById("compararContenido").innerHTML = `
     <div class="detalle-actions">
       <button class="btn-volver" onclick="navegarInicio()">
         <i class="fas fa-arrow-left"></i> Volver
       </button>
     </div>
     <div class="detalle-card">
-      <div class="detalle-top" style="justify-content:space-around;">
-        <div style="text-align:center;">
-          <div class="detalle-icono ${a.calidad}-border" style="margin:0 auto 10px;">
-            ${a.icono}
-          </div>
-          <div class="${a.calidad}" style="font-size:16px;font-weight:700;">${a.nombre}</div>
+      <div class="detalle-top" style="justify-content:space-around;text-align:center;">
+        <div>
+          ${crearIconoHTML(a, "large")}
+          <div class="${a.calidad}" style="font-size:16px;font-weight:700;margin-top:8px;">${a.nombre}</div>
           <div style="color:#f59e0b;font-size:13px;">iLvl ${a.nivel}</div>
         </div>
-        <div style="display:flex;align-items:center;font-size:24px;color:#e94560;">VS</div>
-        <div style="text-align:center;">
-          <div class="detalle-icono ${b.calidad}-border" style="margin:0 auto 10px;">
-            ${b.icono}
-          </div>
-          <div class="${b.calidad}" style="font-size:16px;font-weight:700;">${b.nombre}</div>
+        <div class="comparador-vs">VS</div>
+        <div>
+          ${crearIconoHTML(b, "large")}
+          <div class="${b.calidad}" style="font-size:16px;font-weight:700;margin-top:8px;">${b.nombre}</div>
           <div style="color:#f59e0b;font-size:13px;">iLvl ${b.nivel}</div>
         </div>
       </div>
       <div style="padding:25px 30px;">
-        <h3 style="color:#e94560;font-size:12px;text-transform:uppercase;
-          letter-spacing:1.5px;margin-bottom:15px;">
+        <h3 style="color:#e94560;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:15px;">
           <i class="fas fa-chart-bar"></i> Comparación de Stats
         </h3>
         <table style="width:100%;border-collapse:collapse;">
           <thead>
             <tr>
-              <th style="text-align:left;color:#64748b;font-size:11px;padding:8px 0;">
-                ${a.nombre.substring(0, 20)}...
+              <th style="text-align:left;color:#64748b;font-size:11px;padding:8px 0;border-bottom:1px solid #2a2a3a;">
+                ${a.nombre.length > 25 ? a.nombre.substring(0,25)+"..." : a.nombre}
               </th>
-              <th style="text-align:center;color:#64748b;font-size:11px;">Stat</th>
-              <th style="text-align:right;color:#64748b;font-size:11px;">
-                ${b.nombre.substring(0, 20)}...
+              <th style="text-align:center;color:#64748b;font-size:11px;border-bottom:1px solid #2a2a3a;">Stat</th>
+              <th style="text-align:right;color:#64748b;font-size:11px;border-bottom:1px solid #2a2a3a;">
+                ${b.nombre.length > 25 ? b.nombre.substring(0,25)+"..." : b.nombre}
               </th>
             </tr>
           </thead>
-          <tbody>${statsCompara}</tbody>
+          <tbody>${filas}</tbody>
         </table>
-        <div style="margin-top:20px;text-align:center;">
+        <div style="margin-top:20px;display:flex;gap:10px;">
           <button class="copy-btn" onclick="comparadorItems=[];navegarInicio()">
             <i class="fas fa-times"></i> Limpiar comparador
           </button>
         </div>
       </div>
-    </div>
-  `;
+    </div>`;
 
-  actualizarBreadcrumbs([{ texto: 'Comparador de items' }]);
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  actualizarBreadcrumbs([{ texto: "Comparador de items" }]);
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 // ================================================
@@ -2164,10 +2218,10 @@ function mostrarComparador() {
 // ================================================
 function mostrarRecientes() {
   const rec = getRecientes();
-  mostrarPagina('recientes');
+  mostrarPagina("recientes");
 
-  if (rec.length === 0) {
-    document.getElementById('recientesContenido').innerHTML = `
+  if (!rec.length) {
+    document.getElementById("recientesContenido").innerHTML = `
       <div class="detalle-actions">
         <button class="btn-volver" onclick="navegarInicio()">
           <i class="fas fa-arrow-left"></i> Volver
@@ -2183,7 +2237,7 @@ function mostrarRecientes() {
 
   const recItems = rec.map(id => todosLosItems.find(i => i.id === id)).filter(Boolean);
 
-  document.getElementById('recientesContenido').innerHTML = `
+  document.getElementById("recientesContenido").innerHTML = `
     <div class="detalle-actions">
       <button class="btn-volver" onclick="navegarInicio()">
         <i class="fas fa-arrow-left"></i> Volver
@@ -2196,29 +2250,25 @@ function mostrarRecientes() {
       <div class="related-grid">
         ${recItems.map(item => `
           <div class="related-item" onclick="mostrarDetalle(${item.id})">
-            <div class="item-icon-small ${item.calidad}-border">${item.icono}</div>
+            ${crearIconoHTML(item, "medium")}
             <div>
-              <div class="${item.calidad}" style="font-size:13px;font-weight:600;">
-                ${item.nombre}
-              </div>
+              <div class="${item.calidad}" style="font-size:13px;font-weight:600;">${item.nombre}</div>
               <div style="font-size:11px;color:#4a4a5e;">iLvl ${item.nivel} · ${item.tipo}</div>
             </div>
-          </div>
-        `).join('')}
+          </div>`).join("")}
       </div>
-    </div>
-  `;
+    </div>`;
 
-  actualizarBreadcrumbs([{ texto: 'Vistos recientemente' }]);
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  actualizarBreadcrumbs([{ texto: "Vistos recientemente" }]);
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function mostrarFavoritos() {
   const favs = getFavoritos();
-  mostrarPagina('favoritos');
+  mostrarPagina("favoritos");
 
-  if (favs.length === 0) {
-    document.getElementById('favoritosContenido').innerHTML = `
+  if (!favs.length) {
+    document.getElementById("favoritosContenido").innerHTML = `
       <div class="detalle-actions">
         <button class="btn-volver" onclick="navegarInicio()">
           <i class="fas fa-arrow-left"></i> Volver
@@ -2234,7 +2284,7 @@ function mostrarFavoritos() {
 
   const favItems = favs.map(id => todosLosItems.find(i => i.id === id)).filter(Boolean);
 
-  document.getElementById('favoritosContenido').innerHTML = `
+  document.getElementById("favoritosContenido").innerHTML = `
     <div class="detalle-actions">
       <button class="btn-volver" onclick="navegarInicio()">
         <i class="fas fa-arrow-left"></i> Volver
@@ -2250,63 +2300,37 @@ function mostrarFavoritos() {
       <div class="related-grid">
         ${favItems.map(item => `
           <div class="related-item" onclick="mostrarDetalle(${item.id})">
-            <div class="item-icon-small ${item.calidad}-border">${item.icono}</div>
+            ${crearIconoHTML(item, "medium")}
             <div>
-              <div class="${item.calidad}" style="font-size:13px;font-weight:600;">
-                ${item.nombre}
-              </div>
+              <div class="${item.calidad}" style="font-size:13px;font-weight:600;">${item.nombre}</div>
               <div style="font-size:11px;color:#4a4a5e;">iLvl ${item.nivel} · ${item.tipo}</div>
             </div>
-          </div>
-        `).join('')}
+          </div>`).join("")}
       </div>
-    </div>
-  `;
+    </div>`;
 
-  actualizarBreadcrumbs([{ texto: 'Mis favoritos' }]);
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  actualizarBreadcrumbs([{ texto: "Mis favoritos" }]);
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function limpiarFavoritos() {
   setFavoritos([]);
-  mostrarToast('Favoritos limpiados', 'fa-trash');
+  mostrarToast("Favoritos limpiados", "fa-trash");
   mostrarFavoritos();
 }
 
 // ================================================
-// CALCULADORA (placeholder)
-// ================================================
-function mostrarCalculadora() {
-  mostrarToast('Calculadora de DPS - Próximamente 🚧', 'fa-calculator');
-}
-
-// ================================================
-// FORMATEAR NOMBRES DE STATS
+// FORMATO DE STATS
 // ================================================
 function formatStatName(key) {
   const nombres = {
-    daño: "Daño",
-    velocidad: "Velocidad",
-    fuerza: "Fuerza",
-    agilidad: "Agilidad",
-    intelecto: "Intelecto",
-    aguante: "Aguante",
-    celeridad: "Celeridad",
-    maestria: "Maestría",
-    golpeCritico: "Golpe Crítico",
-    versatilidad: "Versatilidad",
-    espiritu: "Espíritu",
-    armadura: "Armadura",
-    vida: "Vida",
-    efecto: "Efecto",
-    experiencia: "Experiencia",
-    oro: "Oro",
-    reputacion: "Reputación",
-    coste: "Coste",
-    alcance: "Alcance",
-    lanzamiento: "Lanzamiento",
-    reutilizacion: "Reutilización",
-    daño: "Daño"
+    daño: "Daño", velocidad: "Velocidad", fuerza: "Fuerza",
+    agilidad: "Agilidad", intelecto: "Intelecto", aguante: "Aguante",
+    celeridad: "Celeridad", maestria: "Maestría", golpeCritico: "Golpe Crítico",
+    versatilidad: "Versatilidad", espiritu: "Espíritu", armadura: "Armadura",
+    vida: "Vida", efecto: "Efecto", experiencia: "Experiencia", oro: "Oro",
+    reputacion: "Reputación", coste: "Coste", alcance: "Alcance",
+    lanzamiento: "Lanzamiento", reutilizacion: "Reutilización"
   };
   return nombres[key] || key;
 }
