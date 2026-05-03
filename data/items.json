@@ -1,1 +1,739 @@
-
+[
+  {
+    "id": 49623,
+    "nombre": "Shadowmourne",
+    "nivel": 284,
+    "tipo": "Arma a dos manos",
+    "subtipo": "Hacha",
+    "categoria": "armas",
+    "calidad": "legendary",
+    "icono": "inv_axe_113",
+    "iconoEmoji": "🪓",
+    "fuente": "Cadena de misiones - ICC",
+    "binding": "Se liga al recoger",
+    "stats": {
+      "daño": "782 - 1173",
+      "velocidad": "3.70",
+      "fuerza": "+218",
+      "aguante": "+138",
+      "golpeCritico": "+89",
+      "pericia": "+83"
+    },
+    "efecto": {
+      "nombre": "Sed de Sangre",
+      "descripcion": "Tus ataques tienen probabilidad de acumular Esencia de Almas. Al llegar a 10 cargas, consume todas las almas infligiendo 1800 de daño en área y otorgando 270 de Fuerza durante 10 seg."
+    },
+    "flavor": "Forjada con el poder del Rey Exánime y templada con almas de los más poderosos.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3",
+    "loot": [
+      {"fuente": "Cadena de misiones ICC 25", "chance": "100%", "modo": "Quest"}
+    ],
+    "relacionados": [50466, 50509],
+    "comentarios": []
+  },
+  {
+    "id": 50818,
+    "nombre": "Invencible",
+    "nivel": 1,
+    "tipo": "Montura",
+    "subtipo": "Montura voladora",
+    "categoria": "monturas",
+    "calidad": "legendary",
+    "icono": "ability_mount_warhorse",
+    "iconoEmoji": "🐎",
+    "fuente": "El Rey Exánime - ICC 25 Heroico",
+    "binding": "Se liga al recoger",
+    "stats": {},
+    "efecto": {
+      "nombre": "Montura épica voladora",
+      "descripcion": "Invoca a Invencible, el corcel espectral del Rey Exánime. Velocidad de tierra 100%, velocidad de vuelo 310%."
+    },
+    "flavor": "En la vida, el fiel corcel de Arthas. En la muerte, su eterno sirviente.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3.5",
+    "loot": [
+      {"fuente": "El Rey Exánime (25 Heroico)", "chance": "1%", "modo": "25 Heroico"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  },
+  {
+    "id": 47241,
+    "nombre": "Valanyr, Martillo de los Reyes Ancestrales",
+    "nivel": 245,
+    "tipo": "Arma a una mano",
+    "subtipo": "Maza",
+    "categoria": "armas",
+    "calidad": "legendary",
+    "icono": "inv_mace_99",
+    "iconoEmoji": "🔨",
+    "fuente": "Ulduar - Fragmentos",
+    "binding": "Se liga al recoger",
+    "stats": {
+      "daño": "490 - 910",
+      "velocidad": "1.80",
+      "intelecto": "+172",
+      "aguante": "+138",
+      "espiritu": "+72",
+      "poderCuracion": "+590"
+    },
+    "efecto": {
+      "nombre": "Bendición de los Ancestrales",
+      "descripcion": "Cuando tu sanación supera la vida máxima del objetivo, creas un escudo que absorbe daño igual al exceso de sanación. Máximo 20000 absorción."
+    },
+    "flavor": "Forjada por los titanes en las fraguas de Ulduar.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.1",
+    "loot": [
+      {"fuente": "Algalon - Ulduar 25", "chance": "Fragmentos", "modo": "25 jugadores"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  },
+  {
+    "id": 19019,
+    "nombre": "Thunderfury, Hoja Bendita del Vigilante del Viento",
+    "nivel": 80,
+    "tipo": "Arma a una mano",
+    "subtipo": "Espada",
+    "categoria": "armas",
+    "calidad": "legendary",
+    "icono": "inv_sword_39",
+    "iconoEmoji": "⚡",
+    "fuente": "Ragnaros - Núcleo de Magma",
+    "binding": "Se liga al recoger",
+    "stats": {
+      "daño": "105 - 195",
+      "velocidad": "1.90",
+      "agilidad": "+18",
+      "fuerza": "+18",
+      "aguante": "+20",
+      "resistenciaViento": "+8"
+    },
+    "efecto": {
+      "nombre": "Llamar al Viento",
+      "descripcion": "Tiene probabilidad de infligir 300 daño de Naturaleza al objetivo y 12 enemigos cercanos, reduciendo además su velocidad de ataque un 20% durante 6 seg."
+    },
+    "flavor": "Que el vendaval arrope mi acero.",
+    "expansion": "Classic",
+    "patch": "1.0",
+    "loot": [
+      {"fuente": "Ragnaros - Núcleo de Magma", "chance": "Fragmentos", "modo": "40 jugadores"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  },
+  {
+    "id": 32837,
+    "nombre": "Warglaives de Azzinoth",
+    "nivel": 156,
+    "tipo": "Arma a una mano",
+    "subtipo": "Espada",
+    "categoria": "armas",
+    "calidad": "legendary",
+    "icono": "inv_weapon_glave_01",
+    "iconoEmoji": "⚔️",
+    "fuente": "Illidan Stormrage - Templo Oscuro",
+    "binding": "Se liga al recoger",
+    "stats": {
+      "daño": "214 - 398",
+      "velocidad": "2.80",
+      "agilidad": "+200",
+      "aguante": "+120",
+      "golpeCritico": "+95"
+    },
+    "efecto": {
+      "nombre": "Furia de Azzinoth",
+      "descripcion": "Probabilidad de invocar una Llama de Azzinoth durante 10 seg."
+    },
+    "flavor": "No estabais preparados.",
+    "expansion": "The Burning Crusade",
+    "patch": "2.1",
+    "loot": [
+      {"fuente": "Illidan Stormrage - Black Temple", "chance": "5%", "modo": "25 jugadores"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  },
+  {
+    "id": 50466,
+    "nombre": "Hoja del Padre Arrepentido",
+    "nivel": 284,
+    "tipo": "Espada a una mano",
+    "subtipo": "Espada",
+    "categoria": "armas",
+    "calidad": "epic",
+    "icono": "inv_sword_122",
+    "iconoEmoji": "⚔️",
+    "fuente": "El Rey Exánime - ICC 25 Heroico",
+    "binding": "Se liga al recoger",
+    "stats": {
+      "daño": "782 - 1173",
+      "velocidad": "1.50",
+      "fuerza": "+165",
+      "aguante": "+138",
+      "golpeCritico": "+103"
+    },
+    "efecto": null,
+    "flavor": "El arma que Arthas usó para matar a su padre.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3.5",
+    "loot": [
+      {"fuente": "El Rey Exánime (25 Heroico)", "chance": "~10%", "modo": "25 Heroico"}
+    ],
+    "relacionados": [49623],
+    "comentarios": []
+  },
+  {
+    "id": 51532,
+    "nombre": "Casco Santificado del Señor Ymirjar",
+    "nivel": 277,
+    "tipo": "Cabeza",
+    "subtipo": "Placas",
+    "categoria": "armadura",
+    "calidad": "epic",
+    "icono": "inv_helmet_173",
+    "iconoEmoji": "⛑️",
+    "fuente": "El Rey Exánime - ICC 25 Heroico",
+    "binding": "Se liga al recoger",
+    "stats": {
+      "armadura": "3012",
+      "fuerza": "+165",
+      "aguante": "+138",
+      "golpeCritico": "+89",
+      "maestria": "+79"
+    },
+    "efecto": {
+      "nombre": "Bono de Set T10 (2 piezas)",
+      "descripcion": "Tu Devastar tiene un 10% de probabilidad de concederte Berserker durante 10 seg."
+    },
+    "flavor": null,
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3.5",
+    "loot": [
+      {"fuente": "El Rey Exánime (25 Heroico)", "chance": "~15%", "modo": "25 Heroico"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  },
+  {
+    "id": 50674,
+    "nombre": "Sindragosa's Flawless Fang",
+    "nivel": 264,
+    "tipo": "Abalorio",
+    "subtipo": "Trinket",
+    "categoria": "accesorios",
+    "calidad": "epic",
+    "icono": "inv_jewelry_trinketpvp_50",
+    "iconoEmoji": "🔯",
+    "fuente": "Sindragosa - ICC 25 Normal",
+    "binding": "Se liga al recoger",
+    "stats": {
+      "intelecto": "+155"
+    },
+    "efecto": {
+      "nombre": "Colmillo de Sindragosa",
+      "descripcion": "Uso: Aumenta tu poder con hechizos en 2869 durante 20 seg. (2 min de reutilización)"
+    },
+    "flavor": "Tallado del colmillo de la reina de los dragones de escarcha.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3",
+    "loot": [
+      {"fuente": "Sindragosa (25 Normal)", "chance": "~20%", "modo": "25 Normal"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  },
+  {
+    "id": 47570,
+    "nombre": "Anillo del Rey Exánime",
+    "nivel": 264,
+    "tipo": "Anillo",
+    "subtipo": "Anillo",
+    "categoria": "accesorios",
+    "calidad": "epic",
+    "icono": "inv_jewelry_ring_70",
+    "iconoEmoji": "💍",
+    "fuente": "El Rey Exánime - ICC 25 Normal",
+    "binding": "Se liga al recoger",
+    "stats": {
+      "fuerza": "+115",
+      "aguante": "+89",
+      "golpeCritico": "+67",
+      "pericia": "+45"
+    },
+    "efecto": null,
+    "flavor": "El anillo del señor de los no-muertos.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3",
+    "loot": [
+      {"fuente": "El Rey Exánime (25 Normal)", "chance": "~25%", "modo": "25 Normal"},
+      {"fuente": "El Rey Exánime (25 Heroico)", "chance": "~25%", "modo": "25 Heroico"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  },
+  {
+    "id": 50364,
+    "nombre": "Breastplate of the White Knight",
+    "nivel": 264,
+    "tipo": "Pecho",
+    "subtipo": "Placas",
+    "categoria": "armadura",
+    "calidad": "epic",
+    "icono": "inv_chest_plate_raidpaladin_i_01",
+    "iconoEmoji": "🛡️",
+    "fuente": "Lady Deathwhisper - ICC 25 Normal",
+    "binding": "Se liga al recoger",
+    "stats": {
+      "armadura": "2950",
+      "fuerza": "+145",
+      "aguante": "+125",
+      "esquivar": "+89",
+      "defensa": "+76"
+    },
+    "efecto": null,
+    "flavor": null,
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3",
+    "loot": [
+      {"fuente": "Lady Deathwhisper (25 Normal)", "chance": "~20%", "modo": "25 Normal"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  },
+  {
+    "id": 40395,
+    "nombre": "Necklace of Harvested Parts",
+    "nivel": 226,
+    "tipo": "Cuello",
+    "subtipo": "Collar",
+    "categoria": "accesorios",
+    "calidad": "epic",
+    "icono": "inv_jewelry_necklace_27",
+    "iconoEmoji": "📿",
+    "fuente": "Patchwerk - Naxxramas 25",
+    "binding": "Se liga al recoger",
+    "stats": {
+      "intelecto": "+98",
+      "aguante": "+78",
+      "golpeCritico": "+56",
+      "celeridad": "+45"
+    },
+    "efecto": null,
+    "flavor": null,
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "loot": [
+      {"fuente": "Patchwerk (25 Normal)", "chance": "~25%", "modo": "25 Normal"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  },
+  {
+    "id": 47735,
+    "nombre": "Capa de los Diez Tormentos",
+    "nivel": 264,
+    "tipo": "Espalda",
+    "subtipo": "Capa",
+    "categoria": "armadura",
+    "calidad": "epic",
+    "icono": "inv_misc_cape_naxxramas_01",
+    "iconoEmoji": "🧥",
+    "fuente": "Saurfang el Desolador - ICC 25 Normal",
+    "binding": "Se liga al recoger",
+    "stats": {
+      "armadura": "380",
+      "agilidad": "+125",
+      "aguante": "+105",
+      "golpeCritico": "+78",
+      "penetracionArmadura": "+67"
+    },
+    "efecto": null,
+    "flavor": "Tejida con la esencia de los caídos en la Corona de Hielo.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3",
+    "loot": [
+      {"fuente": "Saurfang (25 Normal)", "chance": "~20%", "modo": "25 Normal"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  },
+  {
+    "id": 44661,
+    "nombre": "Poción de Velocidad",
+    "nivel": 80,
+    "tipo": "Consumible",
+    "subtipo": "Poción",
+    "categoria": "consumibles",
+    "calidad": "uncommon",
+    "icono": "inv_alchemy_elixir_04",
+    "iconoEmoji": "⚗️",
+    "fuente": "Alquimia / Subasta",
+    "binding": "No se liga",
+    "stats": {
+      "efecto": "Celeridad +500 por 15seg"
+    },
+    "efecto": {
+      "nombre": "Poción de Velocidad",
+      "descripcion": "Aumenta tu Celeridad en 500 durante 15 seg. Solo se puede usar una vez por encuentro."
+    },
+    "flavor": null,
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "loot": [
+      {"fuente": "Alquimia nivel 430", "chance": "Fabricación", "modo": "Profesión"}
+    ],
+    "relacionados": [44662, 44663],
+    "comentarios": []
+  },
+  {
+    "id": 44662,
+    "nombre": "Poción de Poder Salvaje",
+    "nivel": 80,
+    "tipo": "Consumible",
+    "subtipo": "Poción",
+    "categoria": "consumibles",
+    "calidad": "uncommon",
+    "icono": "inv_alchemy_elixir_01",
+    "iconoEmoji": "⚗️",
+    "fuente": "Alquimia / Subasta",
+    "binding": "No se liga",
+    "stats": {
+      "efecto": "Poder de Ataque +500 por 15seg"
+    },
+    "efecto": {
+      "nombre": "Poción de Poder Salvaje",
+      "descripcion": "Aumenta tu Poder de Ataque en 500 durante 15 seg."
+    },
+    "flavor": null,
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "loot": [
+      {"fuente": "Alquimia nivel 430", "chance": "Fabricación", "modo": "Profesión"}
+    ],
+    "relacionados": [44661, 44663],
+    "comentarios": []
+  },
+  {
+    "id": 44663,
+    "nombre": "Poción de Poder Salvaje con Hechizos",
+    "nivel": 80,
+    "tipo": "Consumible",
+    "subtipo": "Poción",
+    "categoria": "consumibles",
+    "calidad": "uncommon",
+    "icono": "inv_alchemy_elixir_06",
+    "iconoEmoji": "⚗️",
+    "fuente": "Alquimia / Subasta",
+    "binding": "No se liga",
+    "stats": {
+      "efecto": "Poder con Hechizos +590 por 15seg"
+    },
+    "efecto": {
+      "nombre": "Poción de Poder Salvaje con Hechizos",
+      "descripcion": "Aumenta tu Poder con Hechizos en 590 durante 15 seg."
+    },
+    "flavor": null,
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "loot": [
+      {"fuente": "Alquimia nivel 430", "chance": "Fabricación", "modo": "Profesión"}
+    ],
+    "relacionados": [44661, 44662],
+    "comentarios": []
+  },
+  {
+    "id": 43599,
+    "nombre": "Matraz de Embriagadora Calidez",
+    "nivel": 80,
+    "tipo": "Consumible",
+    "subtipo": "Matraz",
+    "categoria": "consumibles",
+    "calidad": "rare",
+    "icono": "inv_alchemy_elixir_empty",
+    "iconoEmoji": "🧪",
+    "fuente": "Alquimia / Subasta",
+    "binding": "No se liga",
+    "stats": {
+      "efecto": "Fuerza/Agilidad/Intelecto +125"
+    },
+    "efecto": {
+      "nombre": "Matraz de Embriagadora Calidez",
+      "descripcion": "Aumenta Fuerza, Agilidad o Intelecto en 125 durante 1 hora."
+    },
+    "flavor": null,
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "loot": [
+      {"fuente": "Alquimia nivel 450", "chance": "Fabricación", "modo": "Profesión"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  },
+  {
+    "id": 43015,
+    "nombre": "Riendas del Gran Draco Negro",
+    "nivel": 1,
+    "tipo": "Montura",
+    "subtipo": "Montura voladora",
+    "categoria": "monturas",
+    "calidad": "epic",
+    "icono": "ability_mount_drake_black",
+    "iconoEmoji": "🐉",
+    "fuente": "Sartharion 3 Drakes - Obsidian Sanctum 25",
+    "binding": "Se liga al recoger",
+    "stats": {},
+    "efecto": {
+      "nombre": "Montura voladora épica",
+      "descripcion": "Invoca un Gran Draco Negro. Velocidad 310%."
+    },
+    "flavor": "La recompensa más exclusiva de WotLK al lanzamiento.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "loot": [
+      {"fuente": "Sartharion (3 Drakes activos - 25)", "chance": "100%", "modo": "25 Heroico"}
+    ],
+    "relacionados": [50818],
+    "comentarios": []
+  },
+  {
+    "id": 44151,
+    "nombre": "Riendas del Protodrake Azul Brillante",
+    "nivel": 1,
+    "tipo": "Montura",
+    "subtipo": "Montura voladora",
+    "categoria": "monturas",
+    "calidad": "epic",
+    "icono": "ability_mount_drake_proto",
+    "iconoEmoji": "🐉",
+    "fuente": "Malygos - Eye of Eternity",
+    "binding": "Se liga al recoger",
+    "stats": {},
+    "efecto": {
+      "nombre": "Montura voladora épica",
+      "descripcion": "Invoca un Protodrake Azul Brillante. Velocidad 280%."
+    },
+    "flavor": null,
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "loot": [
+      {"fuente": "Malygos (10 Normal)", "chance": "~5%", "modo": "10 Normal"},
+      {"fuente": "Malygos (25 Normal)", "chance": "~5%", "modo": "25 Normal"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  },
+  {
+    "id": 45693,
+    "nombre": "Riendas del Protodrake de Tormenta",
+    "nivel": 1,
+    "tipo": "Montura",
+    "subtipo": "Montura voladora",
+    "categoria": "monturas",
+    "calidad": "epic",
+    "icono": "ability_mount_drake_storms",
+    "iconoEmoji": "⚡",
+    "fuente": "Logro: Glory of the Ulduar Raider",
+    "binding": "Se liga al recoger",
+    "stats": {},
+    "efecto": {
+      "nombre": "Montura voladora épica",
+      "descripcion": "Invoca un Protodrake de Tormenta. Velocidad 310%."
+    },
+    "flavor": "Otorgado a los más valientes que conquistaron Ulduar.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.1",
+    "loot": [
+      {"fuente": "Logro: Glory of the Ulduar Raider", "chance": "100%", "modo": "Logro"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  },
+  {
+    "id": 50250,
+    "nombre": "Riendas del Frostbrood Proto-Wyrm",
+    "nivel": 1,
+    "tipo": "Montura",
+    "subtipo": "Montura voladora",
+    "categoria": "monturas",
+    "calidad": "epic",
+    "icono": "ability_mount_drake_icecrown",
+    "iconoEmoji": "❄️",
+    "fuente": "Logro: Glory of the Icecrown Raider",
+    "binding": "Se liga al recoger",
+    "stats": {},
+    "efecto": {
+      "nombre": "Montura voladora épica",
+      "descripcion": "Invoca un Wyrm de Sangre Helada. Velocidad 310%."
+    },
+    "flavor": "Para los héroes que conquistaron todos los logros de ICC.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3",
+    "loot": [
+      {"fuente": "Logro: Glory of the Icecrown Raider", "chance": "100%", "modo": "Logro"}
+    ],
+    "relacionados": [50818],
+    "comentarios": []
+  },
+  {
+    "id": 40670,
+    "nombre": "Collar de la Reina Escarcha",
+    "nivel": 226,
+    "tipo": "Cuello",
+    "subtipo": "Collar",
+    "categoria": "accesorios",
+    "calidad": "epic",
+    "icono": "inv_jewelry_necklace_30",
+    "iconoEmoji": "📿",
+    "fuente": "Sapphiron - Naxxramas 25",
+    "binding": "Se liga al recoger",
+    "stats": {
+      "fuerza": "+76",
+      "aguante": "+65",
+      "golpeCritico": "+45",
+      "penetracionArmadura": "+40"
+    },
+    "efecto": null,
+    "flavor": null,
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "loot": [
+      {"fuente": "Sapphiron (25 Normal)", "chance": "~25%", "modo": "25 Normal"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  },
+  {
+    "id": 45507,
+    "nombre": "Espíritu de Redención",
+    "nivel": 239,
+    "tipo": "Abalorio",
+    "subtipo": "Trinket",
+    "categoria": "accesorios",
+    "calidad": "epic",
+    "icono": "inv_jewelry_trinket_07",
+    "iconoEmoji": "🔯",
+    "fuente": "Algalon - Ulduar 25",
+    "binding": "Se liga al recoger",
+    "stats": {
+      "intelecto": "+128"
+    },
+    "efecto": {
+      "nombre": "Espíritu de Redención",
+      "descripcion": "Uso: Resucita a un jugador caído cercano con el 20% de vida y maná."
+    },
+    "flavor": "Forjado en las estrellas por Algalon el Observador.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.1",
+    "loot": [
+      {"fuente": "Algalon (25 Normal)", "chance": "~15%", "modo": "25 Normal"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  },
+  {
+    "id": 47115,
+    "nombre": "Pergamino de Encantamiento - Fuerza de los Reyes",
+    "nivel": 80,
+    "tipo": "Consumible",
+    "subtipo": "Encantamiento",
+    "categoria": "consumibles",
+    "calidad": "uncommon",
+    "icono": "inv_scroll_06",
+    "iconoEmoji": "📜",
+    "fuente": "Encantamiento / Subasta",
+    "binding": "No se liga",
+    "stats": {
+      "efecto": "Encanta guantes: +20 Fuerza"
+    },
+    "efecto": {
+      "nombre": "Fuerza de los Reyes",
+      "descripcion": "Encanta permanentemente tus guantes con +20 de Fuerza."
+    },
+    "flavor": null,
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "loot": [
+      {"fuente": "Encantamiento nivel 450", "chance": "Fabricación", "modo": "Profesión"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  },
+  {
+    "id": 37264,
+    "nombre": "Gema Roja Audaz",
+    "nivel": 80,
+    "tipo": "Gema",
+    "subtipo": "Gema",
+    "categoria": "gemas",
+    "calidad": "uncommon",
+    "icono": "inv_jewelcrafting_gem_37",
+    "iconoEmoji": "💎",
+    "fuente": "Joyería / Subasta",
+    "binding": "No se liga",
+    "stats": {
+      "fuerza": "+16"
+    },
+    "efecto": null,
+    "flavor": null,
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "loot": [
+      {"fuente": "Joyería nivel 430", "chance": "Fabricación", "modo": "Profesión"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  },
+  {
+    "id": 37495,
+    "nombre": "Gema Cardinal Rubí",
+    "nivel": 80,
+    "tipo": "Gema",
+    "subtipo": "Gema",
+    "categoria": "gemas",
+    "calidad": "rare",
+    "icono": "inv_jewelcrafting_gem_43",
+    "iconoEmoji": "💎",
+    "fuente": "Joyería / Subasta",
+    "binding": "No se liga",
+    "stats": {
+      "fuerza": "+20"
+    },
+    "efecto": null,
+    "flavor": "La gema roja más poderosa de WotLK.",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.2",
+    "loot": [
+      {"fuente": "Joyería nivel 450", "chance": "Fabricación", "modo": "Profesión"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  },
+  {
+    "id": 41119,
+    "nombre": "Gema Titán Real",
+    "nivel": 80,
+    "tipo": "Gema",
+    "subtipo": "Gema",
+    "categoria": "gemas",
+    "calidad": "rare",
+    "icono": "inv_jewelcrafting_gem_40",
+    "iconoEmoji": "💎",
+    "fuente": "Joyería / Subasta",
+    "binding": "No se liga",
+    "stats": {
+      "aguante": "+30"
+    },
+    "efecto": null,
+    "flavor": null,
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "loot": [
+      {"fuente": "Joyería nivel 450", "chance": "Fabricación", "modo": "Profesión"}
+    ],
+    "relacionados": [],
+    "comentarios": []
+  }
+]
