@@ -1,1 +1,672 @@
-
+[
+  {
+    "id": 1,
+    "nombre": "Ciudadela de la Corona de Hielo",
+    "nombreEN": "Icecrown Citadel",
+    "icono": "achievement_zone_icecrown",
+    "imagen": "https://wow.zamimg.com/uploads/screenshots/normal/427636.jpg",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.3",
+    "zona": "Rasganorte",
+    "dificultades": ["10 Normal", "10 Heroico", "25 Normal", "25 Heroico"],
+    "jugadores": [10, 25],
+    "descripcion": "La fortaleza del Rey Exánime en Rasganorte. El encuentro final de Wrath of the Lich King donde los héroes enfrentan a Arthas Menethil.",
+    "lore": "Construida sobre el Trono de Hielo, la Ciudadela de la Corona de Hielo es la sede del poder del Rey Exánime. Desde aquí Arthas dirige a su ejército de no-muertos, la Plaga.",
+    "jefes": [
+      {
+        "id": 36612,
+        "nombre": "Lord Marrowgar",
+        "icono": "achievement_boss_lordmarrowgar",
+        "descripcion": "El guardián del trono del Rey Exánime, construido con los huesos de cientos de aventureros caídos.",
+        "habilidades": [
+          {"nombre": "Tormenta de Huesos", "descripcion": "Gira causando daño masivo a todos los jugadores cercanos"},
+          {"nombre": "Empalado de Frío", "descripcion": "Empala a un jugador en un lugar usando huesos de escarcha"},
+          {"nombre": "Sable de Frío", "descripcion": "Dispara rayos de escarcha en línea recta"}
+        ],
+        "x": 45, "y": 20
+      },
+      {
+        "id": 36855,
+        "nombre": "Lady Deathwhisper",
+        "icono": "achievement_boss_ladydeathwhisper",
+        "descripcion": "Suprema Faccionaria del Culto de los Condenados.",
+        "habilidades": [
+          {"nombre": "Silencio Eterno", "descripcion": "Silencia a todos los jugadores en un área"},
+          {"nombre": "Maldición de la Torpe", "descripcion": "Maldición que transforma al jugador"},
+          {"nombre": "Escudo de Maná", "descripcion": "Escudo que debe ser destruido antes de dañarla"}
+        ],
+        "x": 45, "y": 30
+      },
+      {
+        "id": 37813,
+        "nombre": "Asalto al Baluarte Aéreo",
+        "icono": "achievement_boss_gunshipbattle",
+        "descripcion": "Batalla naval aérea contra el barco de la Alianza o la Horda.",
+        "habilidades": [
+          {"nombre": "Cañón de Escarcha", "descripcion": "Disparo de cañón que congela el área"},
+          {"nombre": "Jetpack", "descripcion": "Los jugadores pueden saltar al barco enemigo"}
+        ],
+        "x": 50, "y": 40
+      },
+      {
+        "id": 37955,
+        "nombre": "Saurfang el Desolador",
+        "icono": "achievement_boss_deathbringerSaurfang",
+        "descripcion": "El Portador de la Muerte. Hijo de Varok Saurfang corrompido por el Rey Exánime.",
+        "habilidades": [
+          {"nombre": "Marca de la Bestia", "descripcion": "Marca que acumula y drena vida"},
+          {"nombre": "Salpicadura de Sangre", "descripcion": "Daño de sangre en área"},
+          {"nombre": "Llamada de los Esclavos", "descripcion": "Invoca adds que sanan al jefe"}
+        ],
+        "x": 50, "y": 50
+      },
+      {
+        "id": 36626,
+        "nombre": "Festergut",
+        "icono": "achievement_boss_festergut",
+        "descripcion": "Una de las creaciones enfermas del Profesor Putricide.",
+        "habilidades": [
+          {"nombre": "Gas Putrefacto", "descripcion": "Gas venenoso que aumenta en stacks"},
+          {"nombre": "Vómito Gaseoso", "descripcion": "Vómito dirigido a un jugador"},
+          {"nombre": "Inhalar", "descripcion": "Inhala el gas del suelo aumentando su daño"}
+        ],
+        "x": 35, "y": 55
+      },
+      {
+        "id": 36627,
+        "nombre": "Rotface",
+        "icono": "achievement_boss_rotface",
+        "descripcion": "El hermano de Festergut, igualmente repugnante.",
+        "habilidades": [
+          {"nombre": "Infección de Ooze", "descripcion": "Infecta a un jugador que crea un ooze"},
+          {"nombre": "Explosión de Ooze", "descripcion": "El ooze explota causando daño"},
+          {"nombre": "Ooze Inestable", "descripcion": "Los oozes se fusionan creando uno más grande"}
+        ],
+        "x": 65, "y": 55
+      },
+      {
+        "id": 36678,
+        "nombre": "Profesor Putricide",
+        "icono": "achievement_boss_professorputricide",
+        "descripcion": "El científico loco responsable de las plagas de la Ciudadela.",
+        "habilidades": [
+          {"nombre": "Plaga Maleable", "descripcion": "Plaga que persigue jugadores"},
+          {"nombre": "Bomba de Gas", "descripcion": "Bomba que debe ser absorbida"},
+          {"nombre": "Transmutación", "descripcion": "Se transforma en una aberración en fase 3"}
+        ],
+        "x": 50, "y": 60
+      },
+      {
+        "id": 37972,
+        "nombre": "Príncipe Valanar",
+        "icono": "achievement_boss_bloodprincecouncil",
+        "descripcion": "Consejo de Sangre de los Príncipes de Sangre.",
+        "habilidades": [
+          {"nombre": "Choque Cinético", "descripcion": "Orbe que causa daño al detenerse"},
+          {"nombre": "Vórtice de Sombras", "descripcion": "Vórtice de energía de sombra"},
+          {"nombre": "Llamas Empoderadas", "descripcion": "Llamas que deben ser absorbidas"}
+        ],
+        "x": 35, "y": 65
+      },
+      {
+        "id": 37955,
+        "nombre": "Reina de Sangre Lana'thel",
+        "icono": "achievement_boss_bloodqueenlanathal",
+        "descripcion": "La primera vampira creada por el Rey Exánime.",
+        "habilidades": [
+          {"nombre": "Mordisco de Vampiro", "descripcion": "Muerde a un jugador convirtiéndolo"},
+          {"nombre": "Oscuridad Descarnada", "descripcion": "Oscuridad que cubre la sala"},
+          {"nombre": "Pacto de Sangre", "descripcion": "Une a dos jugadores"}
+        ],
+        "x": 65, "y": 65
+      },
+      {
+        "id": 36853,
+        "nombre": "Valithria Dreamwalker",
+        "icono": "achievement_boss_valithria",
+        "descripcion": "Una dragona verde atrapada que los héroes deben sanar.",
+        "habilidades": [
+          {"nombre": "Portal del Sueño", "descripcion": "Portal que potencia la sanación"},
+          {"nombre": "Chorro Necrótico", "descripcion": "Los adds atacan a los sanadores"}
+        ],
+        "x": 50, "y": 70
+      },
+      {
+        "id": 36895,
+        "nombre": "Sindragosa",
+        "icono": "achievement_boss_sindragosa",
+        "descripcion": "La reina de los dragones de escarcha, sierva del Rey Exánime.",
+        "habilidades": [
+          {"nombre": "Aliento de Escarcha", "descripcion": "Aliento frontal que congela"},
+          {"nombre": "Bola de Escarcha", "descripcion": "Lanza bola de hielo al tanque"},
+          {"nombre": "Trampa de Hielo", "descripcion": "Atrapa a jugadores en hielo"},
+          {"nombre": "Mística Inhibición", "descripcion": "Penaliza el uso de hechizos"}
+        ],
+        "x": 50, "y": 80
+      },
+      {
+        "id": 36597,
+        "nombre": "El Rey Exánime",
+        "icono": "achievement_boss_lichking",
+        "descripcion": "Arthas Menethil, el Rey Exánime. El jefe final de Wrath of the Lich King.",
+        "habilidades": [
+          {"nombre": "Plaga de Infestación", "descripcion": "Plaga que mata si no se cura a tiempo"},
+          {"nombre": "Invocación de los Muertos", "descripcion": "Invoca ghules y sombras"},
+          {"nombre": "Trampa de Almas", "descripcion": "Atrapa almas de jugadores caídos"},
+          {"nombre": "Enfurecer", "descripcion": "Fase final donde mata a todos y Tirion los resucita"},
+          {"nombre": "Filo del Dolor", "descripcion": "Daño masivo al tanque principal"}
+        ],
+        "x": 50, "y": 90
+      }
+    ],
+    "recompensas": {
+      "sets": [
+        {"nombre": "Tier 10 Guerrero", "piezas": 5},
+        {"nombre": "Tier 10 Paladín", "piezas": 5},
+        {"nombre": "Tier 10 Cazador", "piezas": 5},
+        {"nombre": "Tier 10 Pícaro", "piezas": 5},
+        {"nombre": "Tier 10 Sacerdote", "piezas": 5},
+        {"nombre": "Tier 10 Chamán", "piezas": 5},
+        {"nombre": "Tier 10 Mago", "piezas": 5},
+        {"nombre": "Tier 10 Brujo", "piezas": 5},
+        {"nombre": "Tier 10 Druida", "piezas": 5},
+        {"nombre": "Tier 10 Caballero de la Muerte", "piezas": 5}
+      ],
+      "legendarios": [
+        {"nombre": "Invencible", "tipo": "Montura", "id": 50818, "chance": "1%"}
+      ],
+      "notables": [
+        {"nombre": "Hoja del Padre Arrepentido", "id": 50466, "jefe": "El Rey Exánime"},
+        {"nombre": "Pico del Conquistador Helado", "id": 50509, "jefe": "El Rey Exánime"},
+        {"nombre": "Corona de Vergüenza Eterna", "id": 50427, "jefe": "El Rey Exánime"}
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "nombre": "Ulduar",
+    "nombreEN": "Ulduar",
+    "icono": "achievement_zone_ulduar",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.1",
+    "zona": "Cimas de la Tormenta",
+    "dificultades": ["10 Normal", "10 Heroico", "25 Normal", "25 Heroico"],
+    "jugadores": [10, 25],
+    "descripcion": "La cárcel del titán caído Yogg-Saron. Una de las mejores raids de la historia de WoW.",
+    "lore": "Ulduar fue construida por los titanes como prisión para Yogg-Saron, el Dios de la Muerte. Algeciras, el observador corrupto, tomó el control de la fortaleza.",
+    "jefes": [
+      {
+        "id": 33113,
+        "nombre": "Flame Leviathan",
+        "icono": "achievement_boss_flameleviathan",
+        "descripcion": "Enorme máquina de guerra construida por los titanes.",
+        "habilidades": [
+          {"nombre": "Llamarada", "descripcion": "Llama en área bajo el vehículo"},
+          {"nombre": "Turret", "descripcion": "Torretas que disparan a los vehículos"}
+        ],
+        "x": 20, "y": 15
+      },
+      {
+        "id": 33118,
+        "nombre": "Ignis el Maestro de la Fragua",
+        "icono": "achievement_boss_ignis",
+        "descripcion": "El maestro de la forja de Ulduar.",
+        "habilidades": [
+          {"nombre": "Brasas", "descripcion": "Coloca brasas bajo los pies"},
+          {"nombre": "Escoria", "descripcion": "Agarra y calienta a un jugador"}
+        ],
+        "x": 30, "y": 20
+      },
+      {
+        "id": 33186,
+        "nombre": "Razorscale",
+        "icono": "achievement_boss_razorscale",
+        "descripcion": "Dragón oscuro controlado por los guardianes de Ulduar.",
+        "habilidades": [
+          {"nombre": "Aliento de Fuego", "descripcion": "Aliento frontal de fuego"},
+          {"nombre": "Inmolación", "descripcion": "Marca a un jugador con fuego"}
+        ],
+        "x": 25, "y": 30
+      },
+      {
+        "id": 33293,
+        "nombre": "XT-002 Deconstructor",
+        "icono": "achievement_boss_xt002deconstructor",
+        "descripcion": "Robot gigante con la voz de un niño.",
+        "habilidades": [
+          {"nombre": "Bomba de Luz", "descripcion": "Bomba de luz que debe moverse"},
+          {"nombre": "Rabieta", "descripcion": "Fase de corazón expuesto con más daño"}
+        ],
+        "x": 40, "y": 25
+      },
+      {
+        "id": 32867,
+        "nombre": "El Consejo de la Asamblea de Hierro",
+        "icono": "achievement_boss_assemblyofIron",
+        "descripcion": "Tres guardianes de hierro que deben ser derrotados estratégicamente.",
+        "habilidades": [
+          {"nombre": "Supercargar", "descripcion": "Empoderar a otro miembro del consejo"},
+          {"nombre": "Descarga Estática", "descripcion": "Daño de rayo en área"}
+        ],
+        "x": 50, "y": 30
+      },
+      {
+        "id": 32930,
+        "nombre": "Kologarn",
+        "icono": "achievement_boss_kologarn",
+        "descripcion": "Gigante de piedra que guarda el camino a las profundidades.",
+        "habilidades": [
+          {"nombre": "Aplastamiento", "descripcion": "Aplasta con el brazo a jugadores"},
+          {"nombre": "Rayo Ocular", "descripcion": "Rayo que persigue a un jugador"}
+        ],
+        "x": 55, "y": 40
+      },
+      {
+        "id": 33515,
+        "nombre": "Algalon el Observador",
+        "icono": "achievement_boss_algalon",
+        "descripcion": "El observador cósmico enviado por los titanes.",
+        "habilidades": [
+          {"nombre": "Colapso Cuántico", "descripcion": "Teletransporta jugadores"},
+          {"nombre": "Big Bang", "descripcion": "Daño masivo a toda la raid"}
+        ],
+        "x": 60, "y": 35
+      },
+      {
+        "id": 32865,
+        "nombre": "Auriaya",
+        "icono": "achievement_boss_auriaya",
+        "descripcion": "Guardiana de los secretos de Ulduar.",
+        "habilidades": [
+          {"nombre": "Grito de Terror", "descripcion": "Miedo a todos los jugadores cercanos"},
+          {"nombre": "Protector Férico", "descripcion": "Invoca gatos guardianes"}
+        ],
+        "x": 60, "y": 50
+      },
+      {
+        "id": 32845,
+        "nombre": "Hodir",
+        "icono": "achievement_boss_hodir",
+        "descripcion": "Guardián del frío de Ulduar.",
+        "habilidades": [
+          {"nombre": "Tormenta de Nieve", "descripcion": "Tormenta que reduce la velocidad"},
+          {"nombre": "Destello Helado", "descripcion": "Congela a jugadores aleatorios"}
+        ],
+        "x": 35, "y": 55
+      },
+      {
+        "id": 32906,
+        "nombre": "Thorim",
+        "icono": "achievement_boss_thorim",
+        "descripcion": "El señor del trueno, corrompido por Loken.",
+        "habilidades": [
+          {"nombre": "Cadena de Relámpagos", "descripcion": "Cadena de rayos entre jugadores"},
+          {"nombre": "Golpe de Trueno", "descripcion": "Golpe masivo al tanque"}
+        ],
+        "x": 65, "y": 55
+      },
+      {
+        "id": 32914,
+        "nombre": "Freya",
+        "icono": "achievement_boss_freya",
+        "descripcion": "Guardiana de la naturaleza de Ulduar.",
+        "habilidades": [
+          {"nombre": "Abrazo de la Naturaleza", "descripcion": "Raíces que atrapan jugadores"},
+          {"nombre": "Explosión de Esporas", "descripcion": "Esporas que explotan causando daño"}
+        ],
+        "x": 50, "y": 65
+      },
+      {
+        "id": 33271,
+        "nombre": "Mimiron",
+        "icono": "achievement_boss_mimiron",
+        "descripcion": "El gnomo mecánico maestro ingeniero de Ulduar.",
+        "habilidades": [
+          {"nombre": "Cohete de Proximidad", "descripcion": "Cohetes que explotan cerca"},
+          {"nombre": "Modo VX-001", "descripcion": "Segunda fase en torreta"}
+        ],
+        "x": 50, "y": 75
+      },
+      {
+        "id": 33288,
+        "nombre": "General Vezax",
+        "icono": "achievement_boss_generalvezax",
+        "descripcion": "El general de la guardia de Yogg-Saron.",
+        "habilidades": [
+          {"nombre": "Oleada de Oscuridad", "descripcion": "Oleada que aumenta el daño mágico"},
+          {"nombre": "Agonía Sombría", "descripcion": "Daño de sombra masivo"}
+        ],
+        "x": 50, "y": 85
+      },
+      {
+        "id": 33288,
+        "nombre": "Yogg-Saron",
+        "icono": "achievement_boss_yoggsaron",
+        "descripcion": "El Dios de la Muerte. El prisionero de Ulduar.",
+        "habilidades": [
+          {"nombre": "Boca de Yogg-Saron", "descripcion": "Bocas en el suelo que atacan"},
+          {"nombre": "Pesadilla", "descripcion": "Manda jugadores a visiones del pasado"},
+          {"nombre": "Locura", "descripcion": "Los jugadores se vuelven locos"}
+        ],
+        "x": 50, "y": 95
+      }
+    ],
+    "recompensas": {
+      "legendarios": [
+        {"nombre": "Val'anyr, Martillo de los Reyes Ancestrales", "tipo": "Arma", "id": 45038, "chance": "Fragmentos"}
+      ],
+      "notables": [
+        {"nombre": "Pecho de Malicia", "id": 45243, "jefe": "Yogg-Saron"},
+        {"nombre": "Fragmentos de Destino", "id": 45179, "jefe": "Algalon"}
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "nombre": "Naxxramas",
+    "nombreEN": "Naxxramas",
+    "icono": "achievement_dungeon_naxxramas",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "zona": "Rasganorte",
+    "dificultades": ["10 Normal", "25 Normal"],
+    "jugadores": [10, 25],
+    "descripcion": "La ciudadela volante del archimago Kel'Thuzad. La raid de inicio de WotLK.",
+    "lore": "Naxxramas es la fortaleza volante de Kel'Thuzad, lichhombre al servicio del Rey Exánime. Flota sobre Rasganorte sembrando terror.",
+    "jefes": [
+      {
+        "id": 15956, "nombre": "Anub'Rekhan",
+        "icono": "achievement_boss_anubrekhan",
+        "descripcion": "Señor de los insectos de Naxxramas.",
+        "habilidades": [
+          {"nombre": "Nube de Langostas", "descripcion": "Invoca langostas que atacan"},
+          {"nombre": "Ráfaga de Escara", "descripcion": "Daño en área alrededor"}
+        ],
+        "x": 20, "y": 20
+      },
+      {
+        "id": 13716, "nombre": "Gran Viuda Faerlina",
+        "icono": "achievement_boss_grandwidowfaerlina",
+        "descripcion": "Sacerdotisa de los Tejedores de Veneno.",
+        "habilidades": [
+          {"nombre": "Lluvia de Fuego", "descripcion": "Lluvia de fuego en área"},
+          {"nombre": "Frenesí", "descripcion": "Aumenta su velocidad de ataque"}
+        ],
+        "x": 30, "y": 20
+      },
+      {
+        "id": 15953, "nombre": "Maexxna",
+        "icono": "achievement_boss_maexxna",
+        "descripcion": "La araña matriarca de Naxxramas.",
+        "habilidades": [
+          {"nombre": "Capullo de Araña", "descripcion": "Envuelve a un jugador en capullo"},
+          {"nombre": "Veneno de Araña", "descripcion": "Veneno que reduce la sanación"}
+        ],
+        "x": 25, "y": 35
+      },
+      {
+        "id": 16011, "nombre": "Noth el Hacedor de Plaga",
+        "icono": "achievement_boss_noththeplaguebringer",
+        "descripcion": "El maestro de los no-muertos de Naxxramas.",
+        "habilidades": [
+          {"nombre": "Maldición de Plaga", "descripcion": "Maldición que se extiende"},
+          {"nombre": "Invocar Esqueleto", "descripcion": "Invoca esqueletos durante la fase"}
+        ],
+        "x": 50, "y": 20
+      },
+      {
+        "id": 15990, "nombre": "Heigan el Impuro",
+        "icono": "achievement_boss_heigantheunclean",
+        "descripcion": "Famoso por la danza de Heigan.",
+        "habilidades": [
+          {"nombre": "Erupción", "descripcion": "Erupción en el suelo que mata si no bailas"},
+          {"nombre": "Nube de Plaga", "descripcion": "Nube venenosa"}
+        ],
+        "x": 60, "y": 20
+      },
+      {
+        "id": 16061, "nombre": "Loatheb",
+        "icono": "achievement_boss_loatheb",
+        "descripcion": "Creación de plaga masiva.",
+        "habilidades": [
+          {"nombre": "Aura de Inhabilitar", "descripcion": "Bloquea la sanación excepto brevemente"},
+          {"nombre": "Espora Mortal", "descripcion": "Esporas que dan crítico a los jugadores"}
+        ],
+        "x": 70, "y": 30
+      },
+      {
+        "id": 16028, "nombre": "Instructor Razuvious",
+        "icono": "achievement_boss_instructorrazuvious",
+        "descripcion": "El maestro de los Caballeros de la Muerte de Naxxramas.",
+        "habilidades": [
+          {"nombre": "Golpe Desconcertante", "descripcion": "Aturde al tanque"},
+          {"nombre": "Golpe de Tumulto", "descripcion": "Daño masivo"}
+        ],
+        "x": 30, "y": 60
+      },
+      {
+        "id": 16060, "nombre": "Gothik el Segador",
+        "icono": "achievement_boss_gothiktheharvester",
+        "descripcion": "El segador de almas de Naxxramas.",
+        "habilidades": [
+          {"nombre": "Segado", "descripcion": "Divide la raid en dos lados"},
+          {"nombre": "Espectros", "descripcion": "Invoca espectros en ambos lados"}
+        ],
+        "x": 40, "y": 60
+      },
+      {
+        "id": 30549, "nombre": "Los Cuatro Jinetes",
+        "icono": "achievement_boss_the4horsemen",
+        "descripcion": "Cuatro Caballeros de la Muerte que deben ser enfrentados simultáneamente.",
+        "habilidades": [
+          {"nombre": "Marca", "descripcion": "Marca que se acumula y mata"},
+          {"nombre": "Sello del Comanding", "descripcion": "Silencia los hechizos"}
+        ],
+        "x": 50, "y": 70
+      },
+      {
+        "id": 16246, "nombre": "Patchwerk",
+        "icono": "achievement_boss_patchwerk",
+        "descripcion": "La creación de batalla de Naxxramas.",
+        "habilidades": [
+          {"nombre": "Tajo", "descripcion": "Ataca al tanque principal y auxiliar"},
+          {"nombre": "Frenesí", "descripcion": "Aumenta su velocidad de ataque"}
+        ],
+        "x": 75, "y": 55
+      },
+      {
+        "id": 15931, "nombre": "Grobbulus",
+        "icono": "achievement_boss_grobbulus",
+        "descripcion": "Creación de plaga que inyecta veneno.",
+        "habilidades": [
+          {"nombre": "Inyección de Veneno Mutante", "descripcion": "Inyecta veneno que crea slime"},
+          {"nombre": "Nube de Gas", "descripcion": "Gas venenoso"}
+        ],
+        "x": 80, "y": 60
+      },
+      {
+        "id": 15932, "nombre": "Gluth",
+        "icono": "achievement_boss_gluth",
+        "descripcion": "Perro zombi de Naxxramas.",
+        "habilidades": [
+          {"nombre": "Devorar Zombis", "descripcion": "Se cura al devorar zombis"},
+          {"nombre": "Decimate", "descripcion": "Reduce la vida de todos al 5%"}
+        ],
+        "x": 80, "y": 70
+      },
+      {
+        "id": 15928, "nombre": "Thaddius",
+        "icono": "achievement_boss_thaddius",
+        "descripcion": "Creación masiva hecha de cuerpos cosidos.",
+        "habilidades": [
+          {"nombre": "Polaridad", "descripcion": "Positivo y negativo deben separarse"},
+          {"nombre": "Bola de Relámpago", "descripcion": "Rayo que salta entre jugadores"}
+        ],
+        "x": 75, "y": 80
+      },
+      {
+        "id": 15990, "nombre": "Sapphiron",
+        "icono": "achievement_boss_sapphiron",
+        "descripcion": "El gran dragón de escarcha guardián de Kel'Thuzad.",
+        "habilidades": [
+          {"nombre": "Aliento de Escarcha", "descripcion": "Aliento masivo de hielo"},
+          {"nombre": "Blizzard", "descripcion": "Tormenta de hielo en área"},
+          {"nombre": "Vuelo", "descripcion": "Vuela y deja caer bloques de hielo"}
+        ],
+        "x": 50, "y": 88
+      },
+      {
+        "id": 15990, "nombre": "Kel'Thuzad",
+        "icono": "achievement_boss_kelthuzad",
+        "descripcion": "El archimago lichhombre, jefe final de Naxxramas.",
+        "habilidades": [
+          {"nombre": "Trampa de Hielo", "descripcion": "Congela a un jugador"},
+          {"nombre": "Cadena de Kel'Thuzad", "descripcion": "Encadena a varios jugadores"},
+          {"nombre": "Sombra Oscura", "descripcion": "Daño masivo de sombra"},
+          {"nombre": "Guardianes", "descripcion": "Invoca guardianes en fase 1"}
+        ],
+        "x": 50, "y": 95
+      }
+    ],
+    "recompensas": {
+      "legendarios": [],
+      "notables": [
+        {"nombre": "Atiesh, Gran Bastón del Guardián", "id": 22589, "jefe": "Kel'Thuzad"}
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "nombre": "Cámara de los Aspectos Oníricos",
+    "nombreEN": "The Eye of Eternity",
+    "icono": "achievement_boss_malygos",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "zona": "Rasganorte",
+    "dificultades": ["10 Normal", "25 Normal"],
+    "jugadores": [10, 25],
+    "descripcion": "La batalla contra Malygos, el Aspecto Mágico que busca destruir toda la magia mortal.",
+    "lore": "Malygos, el Señor del Tiempo, ha enloquecido y busca drenar toda la magia del mundo para devolvérsela a los dragones.",
+    "jefes": [
+      {
+        "id": 28859, "nombre": "Malygos",
+        "icono": "achievement_boss_malygos",
+        "descripcion": "El Aspecto de la Magia enloquecido.",
+        "habilidades": [
+          {"nombre": "Vortex", "descripcion": "Lanza a todos los jugadores al aire"},
+          {"nombre": "Rayo de Poder", "descripcion": "Rayo de magia pura"},
+          {"nombre": "Fase de Disco", "descripcion": "Los jugadores montan discos voladores"}
+        ],
+        "x": 50, "y": 50
+      }
+    ],
+    "recompensas": {
+      "legendarios": [],
+      "notables": [
+        {"nombre": "Nexus de los Aspectos Caídos", "id": 40625, "jefe": "Malygos"}
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "nombre": "Obsidian Sanctum",
+    "nombreEN": "The Obsidian Sanctum",
+    "icono": "achievement_boss_sartharion",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.0",
+    "zona": "Rasganorte",
+    "dificultades": ["10 Normal", "25 Normal"],
+    "jugadores": [10, 25],
+    "descripcion": "El santuario de obsidiana donde Sartharion guarda los huevos de los dragones negros.",
+    "lore": "Sartharion custodia el santuario con sus tres lugartenientes. Derrotarlos con todos activos es el mayor desafío.",
+    "jefes": [
+      {
+        "id": 28860, "nombre": "Sartharion",
+        "icono": "achievement_boss_sartharion",
+        "descripcion": "El guardián del Santuario de Obsidiana.",
+        "habilidades": [
+          {"nombre": "Oleada de Lava", "descripcion": "Oleada que recorre la sala"},
+          {"nombre": "Fuego del Vacío", "descripcion": "Daño de fuego en área"},
+          {"nombre": "Zerg de Dragones", "descripcion": "3D activos aumenta enormemente la dificultad"}
+        ],
+        "x": 50, "y": 50
+      }
+    ],
+    "recompensas": {
+      "legendarios": [],
+      "notables": [
+        {"nombre": "Riendas del Dragón Oscuro Twilight", "id": 43952, "jefe": "Sartharion 3D", "chance": "100%"}
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "nombre": "Prueba del Cruzado",
+    "nombreEN": "Trial of the Crusader",
+    "icono": "achievement_boss_anubarak",
+    "expansion": "Wrath of the Lich King",
+    "patch": "3.2",
+    "zona": "Rasganorte",
+    "dificultades": ["10 Normal", "10 Heroico", "25 Normal", "25 Heroico"],
+    "jugadores": [10, 25],
+    "descripcion": "El torneo del Cruzado donde los campeones demuestran su valía.",
+    "lore": "La Cruzada Argenta y los Caballeros del Ebon Blade organizan un torneo para encontrar a los más valientes.",
+    "jefes": [
+      {
+        "id": 34796, "nombre": "Los Beasts of Northrend",
+        "icono": "achievement_boss_gormok",
+        "descripcion": "Tres bestias consecutivas: Gormok, Acidmaw/Dreadscale y Icehowl.",
+        "habilidades": [
+          {"nombre": "Impale", "descripcion": "Lanza a un jugador"},
+          {"nombre": "Acid Spew", "descripcion": "Escupe ácido"},
+          {"nombre": "Massive Crash", "descripcion": "Icehowl arrolla a todos"}
+        ],
+        "x": 50, "y": 25
+      },
+      {
+        "id": 35013, "nombre": "Lord Jaraxxus",
+        "icono": "achievement_boss_lordjaraxxus",
+        "descripcion": "Eredar señor convocado accidentalmente.",
+        "habilidades": [
+          {"nombre": "Erupción Infernal", "descripcion": "Abre portales infernales"},
+          {"nombre": "Llama de Nether", "descripcion": "Daño masivo de fuego"}
+        ],
+        "x": 50, "y": 45
+      },
+      {
+        "id": 34460, "nombre": "Campeones de la Facción",
+        "icono": "achievement_boss_factionchampions",
+        "descripcion": "PvP contra los campeones de la facción enemiga.",
+        "habilidades": [
+          {"nombre": "CC masivo", "descripcion": "Todos los jugadores enemigos usan habilidades PvP"}
+        ],
+        "x": 50, "y": 60
+      },
+      {
+        "id": 34497, "nombre": "Las Valkyrias Gemelas",
+        "icono": "achievement_boss_twinsvalkyr",
+        "descripcion": "Fjola Lightbane y Eydis Darkbane.",
+        "habilidades": [
+          {"nombre": "Esencia de Luz/Oscuridad", "descripcion": "Los jugadores deben tomar el color correcto"},
+          {"nombre": "Vórtice", "descripcion": "Vórtice de energía"}
+        ],
+        "x": 50, "y": 75
+      },
+      {
+        "id": 34564, "nombre": "Anub'arak",
+        "icono": "achievement_boss_anubarak",
+        "descripcion": "El señor de los nerubios traicionero.",
+        "habilidades": [
+          {"nombre": "Perforación", "descripcion": "Se hunde bajo tierra y emerge"},
+          {"nombre": "Escarabajo de Hielo", "descripcion": "Invoca escarabajos de hielo"},
+          {"nombre": "Drenaje de Vida", "descripcion": "Drena vida en fase final"}
+        ],
+        "x": 50, "y": 90
+      }
+    ],
+    "recompensas": {
+      "legendarios": [],
+      "notables": []
+    }
+  }
+]
