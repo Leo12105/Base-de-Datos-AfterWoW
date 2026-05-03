@@ -1,0 +1,518 @@
+[
+  {
+    "id": 1,
+    "nombre": "Guerrero",
+    "nombreEN": "Warrior",
+    "icono": "classicon_warrior",
+    "color": "#C79C6E",
+    "roles": ["Tanque", "DPS Cuerpo a cuerpo"],
+    "tipoArmadura": "Placas",
+    "recurso": "Furia/Rabia",
+    "especializaciones": [
+      {
+        "id": 1,
+        "nombre": "Armas",
+        "icono": "ability_warrior_savageblow",
+        "rol": "DPS",
+        "descripcion": "Especialista en armas a dos manos con ataques devastadores.",
+        "stats": ["Fuerza", "Golpe Crítico", "Penetración de Armadura"],
+        "habilidadesClave": [
+          {"nombre": "Tormenta de Acero", "icono": "ability_warrior_bladestorm", "id": 46924},
+          {"nombre": "Golpe Mortal", "icono": "ability_warrior_savageblow", "id": 47486},
+          {"nombre": "Ejecución", "icono": "inv_sword_48", "id": 47471}
+        ],
+        "guia": {
+          "prioridad": "Rend > Tormenta de Acero > Golpe Mortal > Ejecución < 20% > Derribar",
+          "gemas": "Roja: Fuerza | Amarilla: Fuerza/Crit | Azul: Fuerza/Golpe",
+          "encantamientos": "Arma: Berserker | Pecho: +10 Stats | Piernas: Remiendo de Icescale",
+          "glifos": ["Glifo de Ejecución", "Glifo de Golpe Mortal", "Glifo de Rend"],
+          "bisPiezas": [
+            {"slot": "Cabeza", "item": "Sanctified Ymirjar Lord's Helmet", "id": 51227},
+            {"slot": "Hombros", "item": "Sanctified Ymirjar Lord's Pauldrons", "id": 51229},
+            {"slot": "Pecho", "item": "Sanctified Ymirjar Lord's Battleplate", "id": 51225},
+            {"slot": "Piernas", "item": "Sanctified Ymirjar Lord's Legplates", "id": 51228},
+            {"slot": "Manos", "item": "Sanctified Ymirjar Lord's Gauntlets", "id": 51226}
+          ]
+        }
+      },
+      {
+        "id": 2,
+        "nombre": "Furia",
+        "icono": "ability_warrior_innerrage",
+        "rol": "DPS",
+        "descripcion": "Berserker que porta dos armas a dos manos para máximo daño.",
+        "stats": ["Fuerza", "Índice de Golpe", "Pericia"],
+        "habilidadesClave": [
+          {"nombre": "Sed de Sangre", "icono": "spell_nature_bloodlust", "id": 23881},
+          {"nombre": "Torbellino", "icono": "ability_whirlwind", "id": 1680},
+          {"nombre": "Golpe Heroico", "icono": "ability_heroicstrike", "id": 47450}
+        ],
+        "guia": {
+          "prioridad": "Sed de Sangre > Torbellino > Golpe Heroico (con exceso de Furia)",
+          "gemas": "Roja: Fuerza | Amarilla: Fuerza/Crit | Azul: Fuerza/Golpe",
+          "encantamientos": "Arma: Berserker x2 | Pecho: +10 Stats",
+          "glifos": ["Glifo de Torbellino", "Glifo de Sed de Sangre", "Glifo de Golpe Heroico"],
+          "bisPiezas": []
+        }
+      },
+      {
+        "id": 3,
+        "nombre": "Protección",
+        "icono": "ability_warrior_defensivestance",
+        "rol": "Tanque",
+        "descripcion": "Tanque resistente con gran generación de amenaza.",
+        "stats": ["Aguante", "Defensa", "Esquivar"],
+        "habilidadesClave": [
+          {"nombre": "Bloqueo de Escudo", "icono": "ability_defend", "id": 2565},
+          {"nombre": "Devastar", "icono": "ability_warrior_devastate", "id": 47498},
+          {"nombre": "Muro de Escudo", "icono": "ability_warrior_shieldwall", "id": 871}
+        ],
+        "guia": {
+          "prioridad": "Bloqueo de Escudo > Devastar > Venganza > Onda Expansiva",
+          "gemas": "Roja: Aguante | Amarilla: Defensa/Aguante | Azul: Aguante",
+          "encantamientos": "Arma: Mangosta | Escudo: Titanio | Pecho: +275 Vida",
+          "glifos": ["Glifo de Devastar", "Glifo de Bloqueo de Escudo", "Glifo de Vigilancia"],
+          "bisPiezas": []
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Paladín",
+    "nombreEN": "Paladin",
+    "icono": "classicon_paladin",
+    "color": "#F58CBA",
+    "roles": ["Tanque", "DPS Cuerpo a cuerpo", "Sanador"],
+    "tipoArmadura": "Placas",
+    "recurso": "Maná",
+    "especializaciones": [
+      {
+        "id": 1,
+        "nombre": "Sagrado",
+        "icono": "spell_holy_holybolt",
+        "rol": "Sanador",
+        "descripcion": "El mejor sanador de tanques en WotLK.",
+        "stats": ["Intelecto", "Celeridad", "Poder con Hechizos"],
+        "habilidadesClave": [
+          {"nombre": "Destello de Luz", "icono": "spell_holy_flashheal", "id": 48785},
+          {"nombre": "Luz Sagrada", "icono": "spell_holy_holybolt", "id": 48782},
+          {"nombre": "Imposición de Manos", "icono": "spell_holy_layonhands", "id": 633}
+        ],
+        "guia": {
+          "prioridad": "Destello de Luz (principal) > Luz Sagrada (AoE) > Impacto Sagrado",
+          "gemas": "Roja: Intelecto | Amarilla: Int/Celeridad | Azul: Int/MP5",
+          "encantamientos": "Arma: Intelecto | Pecho: +10 Stats | Cabeza: Kirin Tor",
+          "glifos": ["Glifo de Luz Sagrada", "Glifo de Destello de Luz", "Glifo de Sello de Sabiduría"],
+          "bisPiezas": []
+        }
+      },
+      {
+        "id": 2,
+        "nombre": "Protección",
+        "icono": "spell_holy_devotionaura",
+        "rol": "Tanque",
+        "descripcion": "Tanque con excelente supervivencia y utilidad grupal.",
+        "stats": ["Aguante", "Defensa", "Fuerza"],
+        "habilidadesClave": [
+          {"nombre": "Escudo de lo Justo", "icono": "ability_paladin_shieldoftherighteousness", "id": 61411},
+          {"nombre": "Escudo Sagrado", "icono": "ability_paladin_holyshield", "id": 48952},
+          {"nombre": "Martillo del Honrado", "icono": "spell_holy_auraoflight", "id": 53595}
+        ],
+        "guia": {
+          "prioridad": "Escudo Sagrado > Escudo de lo Justo > Martillo del Honrado > Consagración",
+          "gemas": "Aguante | Defensa/Aguante",
+          "encantamientos": "Arma: Defensa de Titanio | Escudo: Titanio",
+          "glifos": ["Glifo de Sello de Venganza", "Glifo de Justicia Divina", "Glifo de Escudo de lo Justo"],
+          "bisPiezas": []
+        }
+      },
+      {
+        "id": 3,
+        "nombre": "Reprensión",
+        "icono": "spell_holy_auraoflight",
+        "rol": "DPS",
+        "descripcion": "DPS cuerpo a cuerpo con gran daño y utilidad.",
+        "stats": ["Fuerza", "Golpe Crítico", "Pericia"],
+        "habilidadesClave": [
+          {"nombre": "Cruzada", "icono": "spell_holy_crusaderstrike", "id": 35395},
+          {"nombre": "Tormenta Divina", "icono": "ability_paladin_divinestorm", "id": 53385},
+          {"nombre": "Juicio", "icono": "spell_holy_righteousfury", "id": 20271}
+        ],
+        "guia": {
+          "prioridad": "Juicio > Cruzada > Tormenta Divina > Consagración > Exorcismo",
+          "gemas": "Roja: Fuerza | Amarilla: Fuerza/Crit",
+          "encantamientos": "Arma: Berserker | Pecho: +10 Stats",
+          "glifos": ["Glifo de Juicio", "Glifo de Consagración", "Glifo de Exorcismo"],
+          "bisPiezas": []
+        }
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Cazador",
+    "nombreEN": "Hunter",
+    "icono": "classicon_hunter",
+    "color": "#ABD473",
+    "roles": ["DPS a Distancia"],
+    "tipoArmadura": "Malla",
+    "recurso": "Maná",
+    "especializaciones": [
+      {
+        "id": 1,
+        "nombre": "Puntería",
+        "icono": "ability_hunter_focusedaim",
+        "rol": "DPS",
+        "descripcion": "DPS a distancia con alto daño sostenido.",
+        "stats": ["Agilidad", "Penetración de Armadura", "Golpe Crítico"],
+        "habilidadesClave": [
+          {"nombre": "Disparo Quimérico", "icono": "ability_hunter_chimerashot2", "id": 53209},
+          {"nombre": "Disparo Certero", "icono": "ability_hunter_aimedshot", "id": 49050},
+          {"nombre": "Disparo Firme", "icono": "ability_hunter_steadyshot", "id": 49052}
+        ],
+        "guia": {
+          "prioridad": "Marca del Cazador > Serpiente > Disparo Quimérico > Disparo Certero > Disparo Firme",
+          "gemas": "Roja: Agilidad | Amarilla: Agi/Crit | Azul: Agi/Golpe",
+          "encantamientos": "Arma: Matar (Massacre)",
+          "glifos": ["Glifo de Disparo Quimérico", "Glifo de Serpiente", "Glifo de Disparo Firme"],
+          "bisPiezas": []
+        }
+      },
+      {
+        "id": 2,
+        "nombre": "Supervivencia",
+        "icono": "ability_hunter_camouflage",
+        "rol": "DPS",
+        "descripcion": "DPS con trampas y daño de naturaleza.",
+        "stats": ["Agilidad", "Golpe Crítico", "Celeridad"],
+        "habilidadesClave": [
+          {"nombre": "Picadura Explosiva", "icono": "ability_hunter_explosiveshot", "id": 60053},
+          {"nombre": "Flecha Negra", "icono": "spell_shadow_painspike", "id": 63672},
+          {"nombre": "Disparo Firme", "icono": "ability_hunter_steadyshot", "id": 49052}
+        ],
+        "guia": {
+          "prioridad": "Flecha Negra > Picadura Explosiva > Picadura de Serpiente > Disparo Firme",
+          "gemas": "Roja: Agilidad | Amarilla: Agi/Crit",
+          "encantamientos": "Arma: Matar",
+          "glifos": ["Glifo de Picadura Explosiva", "Glifo de Flecha Negra", "Glifo de Asesinato"],
+          "bisPiezas": []
+        }
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Pícaro",
+    "nombreEN": "Rogue",
+    "icono": "classicon_rogue",
+    "color": "#FFF569",
+    "roles": ["DPS Cuerpo a cuerpo"],
+    "tipoArmadura": "Cuero",
+    "recurso": "Energía",
+    "especializaciones": [
+      {
+        "id": 1,
+        "nombre": "Asesinato",
+        "icono": "ability_rogue_eviscerate",
+        "rol": "DPS",
+        "descripcion": "Especialista en venenos y daño sostenido.",
+        "stats": ["Agilidad", "Golpe Crítico", "Índice de Golpe"],
+        "habilidadesClave": [
+          {"nombre": "Mutilar", "icono": "ability_rogue_shadowstrikes", "id": 48666},
+          {"nombre": "Envenenar", "icono": "ability_rogue_dualweild", "id": 57993},
+          {"nombre": "Evisceración", "icono": "ability_rogue_eviscerate", "id": 48668}
+        ],
+        "guia": {
+          "prioridad": "Cortar (mantener) > Mutilar > Envenenar a 4-5 PC > Evisceración",
+          "gemas": "Roja: Agilidad | Amarilla: Agi/Crit",
+          "encantamientos": "Arma MH: Berserker | OH: Berserker",
+          "glifos": ["Glifo de Mutilar", "Glifo de Cortar", "Glifo de Truco"],
+          "bisPiezas": []
+        }
+      },
+      {
+        "id": 2,
+        "nombre": "Combate",
+        "icono": "ability_backstab",
+        "rol": "DPS",
+        "descripcion": "DPS con gran daño AoE y cleave.",
+        "stats": ["Agilidad", "Penetración de Armadura", "Pericia"],
+        "habilidadesClave": [
+          {"nombre": "Golpe Siniestro", "icono": "spell_shadow_ritualofsacrifice", "id": 48638},
+          {"nombre": "Asesinato", "icono": "ability_rogue_murderspree", "id": 51690},
+          {"nombre": "Adrenalina", "icono": "spell_shadow_shadowworddominate", "id": 13750}
+        ],
+        "guia": {
+          "prioridad": "Cortar > Golpe Siniestro > Evisceración a 5 PC > Asesinato",
+          "gemas": "Roja: Pen Armadura | Amarilla: Agi/ArP",
+          "encantamientos": "Arma MH: Berserker | OH: Berserker",
+          "glifos": ["Glifo de Golpe Siniestro", "Glifo de Asesinato", "Glifo de Truco"],
+          "bisPiezas": []
+        }
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Sacerdote",
+    "nombreEN": "Priest",
+    "icono": "classicon_priest",
+    "color": "#FFFFFF",
+    "roles": ["Sanador", "DPS a Distancia"],
+    "tipoArmadura": "Tela",
+    "recurso": "Maná",
+    "especializaciones": [
+      {
+        "id": 1, "nombre": "Disciplina", "icono": "spell_holy_powerwordshield",
+        "rol": "Sanador", "descripcion": "Sanador preventivo con escudos.",
+        "stats": ["Intelecto", "Poder con Hechizos", "Celeridad"],
+        "habilidadesClave": [
+          {"nombre": "Escudo de Palabra de Poder", "icono": "spell_holy_powerwordshield", "id": 48066},
+          {"nombre": "Penitencia", "icono": "spell_holy_penance", "id": 53007}
+        ],
+        "guia": {"prioridad": "Escudo > Penitencia > Renovar > Flash Heal", "gemas": "", "encantamientos": "", "glifos": [], "bisPiezas": []}
+      },
+      {
+        "id": 2, "nombre": "Sagrado", "icono": "spell_holy_guardianspirit",
+        "rol": "Sanador", "descripcion": "Sanador reactivo de raid.",
+        "stats": ["Intelecto", "Celeridad", "Crítico"],
+        "habilidadesClave": [
+          {"nombre": "Circle of Healing", "icono": "spell_holy_circleofrenewal", "id": 48089},
+          {"nombre": "Espíritu Guardián", "icono": "spell_holy_guardianspirit", "id": 47788}
+        ],
+        "guia": {"prioridad": "CoH > Renovar > Flash Heal > PoH", "gemas": "", "encantamientos": "", "glifos": [], "bisPiezas": []}
+      },
+      {
+        "id": 3, "nombre": "Sombras", "icono": "spell_shadow_shadowwordpain",
+        "rol": "DPS", "descripcion": "DPS con hechizos de sombra.",
+        "stats": ["Poder con Hechizos", "Celeridad", "Golpe Crítico"],
+        "habilidadesClave": [
+          {"nombre": "Toque Vampírico", "icono": "spell_holy_stoicism", "id": 48160},
+          {"nombre": "Explosión Mental", "icono": "spell_shadow_unholyfrenzy", "id": 48127}
+        ],
+        "guia": {"prioridad": "VT > SWP > MF > MB > SW:D < 25%", "gemas": "", "encantamientos": "", "glifos": [], "bisPiezas": []}
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "nombre": "Chamán",
+    "nombreEN": "Shaman",
+    "icono": "classicon_shaman",
+    "color": "#0070DE",
+    "roles": ["Sanador", "DPS a Distancia", "DPS Cuerpo a cuerpo"],
+    "tipoArmadura": "Malla",
+    "recurso": "Maná",
+    "especializaciones": [
+      {
+        "id": 1, "nombre": "Elemental", "icono": "spell_nature_lightning",
+        "rol": "DPS", "descripcion": "DPS a distancia con rayos.",
+        "stats": ["Poder con Hechizos", "Celeridad", "Crítico"],
+        "habilidadesClave": [
+          {"nombre": "Descarga de Relámpagos", "icono": "spell_nature_lightning", "id": 49238},
+          {"nombre": "Choque de Lava", "icono": "spell_shaman_lavaburst", "id": 60043}
+        ],
+        "guia": {"prioridad": "Choque de Llamas > Choque de Lava > Descarga de Relámpagos", "gemas": "", "encantamientos": "", "glifos": [], "bisPiezas": []}
+      },
+      {
+        "id": 2, "nombre": "Mejora", "icono": "spell_shaman_improvedstormstrike",
+        "rol": "DPS", "descripcion": "DPS cuerpo a cuerpo con armas mejoradas.",
+        "stats": ["Agilidad", "Pericia", "Golpe Crítico"],
+        "habilidadesClave": [
+          {"nombre": "Golpe de Tormenta", "icono": "spell_shaman_improvedstormstrike", "id": 17364},
+          {"nombre": "Choque de Lava", "icono": "spell_shaman_lavaburst", "id": 60043}
+        ],
+        "guia": {"prioridad": "Golpe de Tormenta > Choque de Lava > Golpe de Tierra > Nova de Fuego", "gemas": "", "encantamientos": "", "glifos": [], "bisPiezas": []}
+      },
+      {
+        "id": 3, "nombre": "Restauración", "icono": "spell_nature_healingwavegreater",
+        "rol": "Sanador", "descripcion": "Sanador de raid con totems.",
+        "stats": ["Intelecto", "Celeridad", "MP5"],
+        "habilidadesClave": [
+          {"nombre": "Corriente Sanadora", "icono": "spell_nature_healingway", "id": 55459},
+          {"nombre": "Mareas Curativas", "icono": "spell_nature_healingwavelesser", "id": 61301}
+        ],
+        "guia": {"prioridad": "Escudo de Tierra > Riptide > Corriente Sanadora > Mareas", "gemas": "", "encantamientos": "", "glifos": [], "bisPiezas": []}
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "nombre": "Mago",
+    "nombreEN": "Mage",
+    "icono": "classicon_mage",
+    "color": "#69CCF0",
+    "roles": ["DPS a Distancia"],
+    "tipoArmadura": "Tela",
+    "recurso": "Maná",
+    "especializaciones": [
+      {
+        "id": 1, "nombre": "Arcano", "icono": "spell_holy_magicalsentry",
+        "rol": "DPS", "descripcion": "Máximo DPS single target en WotLK.",
+        "stats": ["Poder con Hechizos", "Celeridad", "Golpe Crítico"],
+        "habilidadesClave": [
+          {"nombre": "Explosión Arcana", "icono": "spell_arcane_blast", "id": 42897},
+          {"nombre": "Misiles Arcanos", "icono": "spell_nature_starfall", "id": 42846}
+        ],
+        "guia": {"prioridad": "AB x3-4 > AM (proc) > Evocación > Repetir", "gemas": "", "encantamientos": "", "glifos": [], "bisPiezas": []}
+      },
+      {
+        "id": 2, "nombre": "Fuego", "icono": "spell_fire_firebolt02",
+        "rol": "DPS", "descripcion": "DPS con gran daño de fuego.",
+        "stats": ["Poder con Hechizos", "Golpe Crítico", "Celeridad"],
+        "habilidadesClave": [
+          {"nombre": "Bola de Fuego", "icono": "spell_fire_fireball02", "id": 42833},
+          {"nombre": "Explosión de Vida", "icono": "spell_fire_livingbomb", "id": 55360}
+        ],
+        "guia": {"prioridad": "Explosión de Vida > Bola de Fuego > Piro (proc Hot Streak)", "gemas": "", "encantamientos": "", "glifos": [], "bisPiezas": []}
+      },
+      {
+        "id": 3, "nombre": "Escarcha", "icono": "spell_frost_frostbolt02",
+        "rol": "DPS", "descripcion": "DPS con control y AoE.",
+        "stats": ["Poder con Hechizos", "Golpe Crítico", "Índice de Golpe"],
+        "habilidadesClave": [
+          {"nombre": "Descarga de Escarcha", "icono": "spell_frost_frostbolt02", "id": 42842},
+          {"nombre": "Cono de Frío", "icono": "spell_frost_glacier", "id": 42931}
+        ],
+        "guia": {"prioridad": "Descarga > Descarga Helada (proc) > Cono de Frío", "gemas": "", "encantamientos": "", "glifos": [], "bisPiezas": []}
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "nombre": "Brujo",
+    "nombreEN": "Warlock",
+    "icono": "classicon_warlock",
+    "color": "#9482C9",
+    "roles": ["DPS a Distancia"],
+    "tipoArmadura": "Tela",
+    "recurso": "Maná",
+    "especializaciones": [
+      {
+        "id": 1, "nombre": "Aflicción", "icono": "spell_shadow_deathcoil",
+        "rol": "DPS", "descripcion": "DPS con DOTs.",
+        "stats": ["Poder con Hechizos", "Celeridad", "Espíritu"],
+        "habilidadesClave": [
+          {"nombre": "Semilla de Corrupción", "icono": "spell_shadow_seedofdestruction", "id": 47836},
+          {"nombre": "Drenar Alma", "icono": "spell_shadow_haunting", "id": 47855}
+        ],
+        "guia": {"prioridad": "Maldición > Corrupción > Agonía > Drenar Alma > Drenaje de Vida", "gemas": "", "encantamientos": "", "glifos": [], "bisPiezas": []}
+      },
+      {
+        "id": 2, "nombre": "Demonología", "icono": "spell_shadow_metamorphosis",
+        "rol": "DPS", "descripcion": "DPS con demonio mejorado y Metamorfosis.",
+        "stats": ["Poder con Hechizos", "Golpe Crítico", "Celeridad"],
+        "habilidadesClave": [
+          {"nombre": "Metamorfosis", "icono": "spell_shadow_metamorphosis", "id": 59672},
+          {"nombre": "Inmolación", "icono": "spell_fire_immolation", "id": 47811}
+        ],
+        "guia": {"prioridad": "Metamorfosis > Inmolación > Rayo de Sombras > Incinerar", "gemas": "", "encantamientos": "", "glifos": [], "bisPiezas": []}
+      },
+      {
+        "id": 3, "nombre": "Destrucción", "icono": "spell_shadow_rainoffire",
+        "rol": "DPS", "descripcion": "DPS directo con fuego y sombra.",
+        "stats": ["Poder con Hechizos", "Golpe Crítico", "Índice de Golpe"],
+        "habilidadesClave": [
+          {"nombre": "Saeta de Caos", "icono": "spell_shadow_chaosbolt", "id": 59172},
+          {"nombre": "Incinerar", "icono": "spell_fire_burnout", "id": 47838}
+        ],
+        "guia": {"prioridad": "Inmolación > Caos > Conflagración > Incinerar", "gemas": "", "encantamientos": "", "glifos": [], "bisPiezas": []}
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "nombre": "Druida",
+    "nombreEN": "Druid",
+    "icono": "classicon_druid",
+    "color": "#FF7D0A",
+    "roles": ["Tanque", "DPS Cuerpo a cuerpo", "DPS a Distancia", "Sanador"],
+    "tipoArmadura": "Cuero",
+    "recurso": "Maná/Energía/Rabia",
+    "especializaciones": [
+      {
+        "id": 1, "nombre": "Equilibrio", "icono": "spell_nature_starfall",
+        "rol": "DPS", "descripcion": "DPS a distancia con daño de naturaleza y arcano.",
+        "stats": ["Poder con Hechizos", "Celeridad", "Golpe Crítico"],
+        "habilidadesClave": [
+          {"nombre": "Lluvia de Estrellas", "icono": "ability_druid_starfall", "id": 53201},
+          {"nombre": "Eclipse", "icono": "spell_nature_wrathv2", "id": 48468}
+        ],
+        "guia": {"prioridad": "Fuego Estelar (Eclipse Solar) > Cólera (Eclipse Lunar) > Lluvia de Estrellas", "gemas": "", "encantamientos": "", "glifos": [], "bisPiezas": []}
+      },
+      {
+        "id": 2, "nombre": "Feral (Gato)", "icono": "ability_druid_catform",
+        "rol": "DPS", "descripcion": "DPS cuerpo a cuerpo en forma de gato.",
+        "stats": ["Agilidad", "Penetración de Armadura", "Golpe Crítico"],
+        "habilidadesClave": [
+          {"nombre": "Destrozar", "icono": "ability_druid_ravage", "id": 48572},
+          {"nombre": "Zarpa", "icono": "ability_druid_disembowel", "id": 48570}
+        ],
+        "guia": {"prioridad": "Mangle > Zarpa > Rip > Ferocious Bite < 25%", "gemas": "", "encantamientos": "", "glifos": [], "bisPiezas": []}
+      },
+      {
+        "id": 3, "nombre": "Feral (Oso)", "icono": "ability_racial_bearform",
+        "rol": "Tanque", "descripcion": "Tanque con alto pool de vida.",
+        "stats": ["Aguante", "Agilidad", "Defensa"],
+        "habilidadesClave": [
+          {"nombre": "Mangosta", "icono": "ability_druid_mangle2", "id": 48564},
+          {"nombre": "Lacerar", "icono": "ability_druid_lacerate", "id": 48568}
+        ],
+        "guia": {"prioridad": "Mangosta > Lacerar > Fuego de Hadas > Maul", "gemas": "", "encantamientos": "", "glifos": [], "bisPiezas": []}
+      },
+      {
+        "id": 4, "nombre": "Restauración", "icono": "spell_nature_healingtouch",
+        "rol": "Sanador", "descripcion": "Sanador de raid con HOTs.",
+        "stats": ["Intelecto", "Celeridad", "Espíritu"],
+        "habilidadesClave": [
+          {"nombre": "Rejuvenecimiento", "icono": "spell_nature_rejuvenation", "id": 48441},
+          {"nombre": "Floración Vital", "icono": "spell_nature_resistnature", "id": 48451}
+        ],
+        "guia": {"prioridad": "Rejuv > Floración > Rapidez > Nourish", "gemas": "", "encantamientos": "", "glifos": [], "bisPiezas": []}
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "nombre": "Caballero de la Muerte",
+    "nombreEN": "Death Knight",
+    "icono": "classicon_deathknight",
+    "color": "#C41F3B",
+    "roles": ["Tanque", "DPS Cuerpo a cuerpo"],
+    "tipoArmadura": "Placas",
+    "recurso": "Poder Rúnico",
+    "especializaciones": [
+      {
+        "id": 1, "nombre": "Sangre", "icono": "spell_deathknight_bloodpresence",
+        "rol": "DPS", "descripcion": "DPS con auto-sanación en WotLK.",
+        "stats": ["Fuerza", "Penetración de Armadura", "Golpe Crítico"],
+        "habilidadesClave": [
+          {"nombre": "Golpe de Corazón", "icono": "inv_weapon_shortblade_40", "id": 55262},
+          {"nombre": "Danza Macabra", "icono": "spell_deathknight_classicon", "id": 49028}
+        ],
+        "guia": {"prioridad": "Enfermedades > Golpe de Corazón > Golpe de Muerte > Danza Macabra", "gemas": "", "encantamientos": "", "glifos": [], "bisPiezas": []}
+      },
+      {
+        "id": 2, "nombre": "Escarcha", "icono": "spell_deathknight_frostpresence",
+        "rol": "DPS", "descripcion": "DPS con dos armas y daño de escarcha.",
+        "stats": ["Fuerza", "Índice de Golpe", "Pericia"],
+        "habilidadesClave": [
+          {"nombre": "Golpe Aniquilador", "icono": "spell_deathknight_empowerruneblade2", "id": 51425},
+          {"nombre": "Golpe Helado", "icono": "spell_deathknight_icetouch", "id": 49909}
+        ],
+        "guia": {"prioridad": "Golpe Aniquilador > Golpe Helado > Golpe de Peste > Golpe de Escarcha", "gemas": "", "encantamientos": "", "glifos": [], "bisPiezas": []}
+      },
+      {
+        "id": 3, "nombre": "Profano", "icono": "spell_deathknight_unholypresence",
+        "rol": "DPS/Tanque", "descripcion": "DPS con gul y enfermedades.",
+        "stats": ["Fuerza", "Golpe Crítico", "Celeridad"],
+        "habilidadesClave": [
+          {"nombre": "Azote", "icono": "spell_deathknight_scourgestrike", "id": 55271},
+          {"nombre": "Presencia Profana", "icono": "spell_deathknight_unholypresence", "id": 48265}
+        ],
+        "guia": {"prioridad": "Enfermedades > Azote > Golpe de Muerte > Espiral de Muerte", "gemas": "", "encantamientos": "", "glifos": [], "bisPiezas": []}
+      }
+    ]
+  }
+]
