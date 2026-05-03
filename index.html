@@ -9,116 +9,239 @@
 </head>
 <body>
 
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <a href="#" class="expansion active">The War Within</a>
+      <a href="#" class="expansion">Dragonflight</a>
+      <a href="#" class="expansion">Classic</a>
+    </div>
+    <div class="topbar-right">
+      <a href="#">Iniciar Sesión</a>
+      <a href="#">Registrarse</a>
+    </div>
+  </div>
+
   <!-- HEADER -->
   <header class="header">
-    <div class="logo">AfterWoW</div>
+    <a href="#" class="logo" onclick="mostrarInicio()">AfterWoW</a>
     <div class="search-box">
+      <select id="searchFilter">
+        <option value="all">Todo</option>
+        <option value="armas">Armas</option>
+        <option value="armadura">Armadura</option>
+        <option value="consumibles">Consumibles</option>
+        <option value="npcs">NPCs</option>
+        <option value="quests">Quests</option>
+      </select>
       <input type="text" id="search" placeholder="Buscar items, NPCs, quests...">
       <button><i class="fas fa-search"></i></button>
     </div>
-    <nav class="nav">
-      <a href="#">Items</a>
-      <a href="#">NPCs</a>
-      <a href="#">Quests</a>
-      <a href="#">Spells</a>
-    </nav>
   </header>
 
-  <!-- MAIN -->
-  <main class="main">
+  <!-- NAV MEJORADO -->
+  <nav class="nav">
+    <ul class="nav-menu">
+      <li class="nav-item has-dropdown">
+        <a href="#"><i class="fas fa-database"></i> Base de Datos</a>
+        <div class="dropdown mega-menu">
+          <div class="mega-col">
+            <h4>Equipamiento</h4>
+            <a href="#" onclick="filtrarCategoria('armas')">⚔️ Armas</a>
+            <a href="#" onclick="filtrarCategoria('armadura')">🛡️ Armadura</a>
+            <a href="#" onclick="filtrarCategoria('accesorios')">💍 Accesorios</a>
+            <a href="#" onclick="filtrarCategoria('espalda')">🧥 Capas</a>
+          </div>
+          <div class="mega-col">
+            <h4>Consumibles</h4>
+            <a href="#" onclick="filtrarCategoria('consumibles')">🧪 Pociones</a>
+            <a href="#" onclick="filtrarCategoria('consumibles')">🍖 Comida</a>
+            <a href="#" onclick="filtrarCategoria('consumibles')">📜 Pergaminos</a>
+            <a href="#" onclick="filtrarCategoria('gemas')">💎 Gemas</a>
+          </div>
+          <div class="mega-col">
+            <h4>Criaturas</h4>
+            <a href="#" onclick="filtrarCategoria('npcs')">👹 NPCs</a>
+            <a href="#" onclick="filtrarCategoria('jefes')">💀 Jefes de Raid</a>
+            <a href="#" onclick="filtrarCategoria('vendedores')">🏪 Vendedores</a>
+            <a href="#" onclick="filtrarCategoria('entrenadores')">📖 Entrenadores</a>
+          </div>
+          <div class="mega-col">
+            <h4>Más</h4>
+            <a href="#" onclick="filtrarCategoria('quests')">📜 Misiones</a>
+            <a href="#" onclick="filtrarCategoria('spells')">✨ Hechizos</a>
+            <a href="#" onclick="filtrarCategoria('logros')">🏆 Logros</a>
+            <a href="#" onclick="filtrarCategoria('monturas')">🐎 Monturas</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item has-dropdown">
+        <a href="#"><i class="fas fa-shield-alt"></i> Clases</a>
+        <div class="dropdown">
+          <a href="#" onclick="filtrarClase('guerrero')">⚔️ Guerrero</a>
+          <a href="#" onclick="filtrarClase('paladin')">🛡️ Paladín</a>
+          <a href="#" onclick="filtrarClase('cazador')">🏹 Cazador</a>
+          <a href="#" onclick="filtrarClase('picaro')">🗡️ Pícaro</a>
+          <a href="#" onclick="filtrarClase('sacerdote')">✝️ Sacerdote</a>
+          <a href="#" onclick="filtrarClase('chaman')">⚡ Chamán</a>
+          <a href="#" onclick="filtrarClase('mago')">🔮 Mago</a>
+          <a href="#" onclick="filtrarClase('brujo')">😈 Brujo</a>
+          <a href="#" onclick="filtrarClase('monje')">☯️ Monje</a>
+          <a href="#" onclick="filtrarClase('druida')">🌿 Druida</a>
+          <a href="#" onclick="filtrarClase('dk')">💀 Caballero de la Muerte</a>
+          <a href="#" onclick="filtrarClase('dh')">👁️ Cazador de Demonios</a>
+          <a href="#" onclick="filtrarClase('evoker')">🐉 Evocador</a>
+        </div>
+      </li>
+      <li class="nav-item has-dropdown">
+        <a href="#"><i class="fas fa-dungeon"></i> Mazmorras y Raids</a>
+        <div class="dropdown">
+          <a href="#">🏰 Mazmorras Míticas+</a>
+          <a href="#">💀 Amirdrassil</a>
+          <a href="#">🐉 Aberrus</a>
+          <a href="#">⚡ Bóveda de las Encarnaciones</a>
+          <a href="#">🗡️ Nerub-ar Palace</a>
+        </div>
+      </li>
+      <li class="nav-item has-dropdown">
+        <a href="#"><i class="fas fa-book"></i> Guías</a>
+        <div class="dropdown">
+          <a href="#">📖 Guías de Clase</a>
+          <a href="#">⚒️ Guías de Profesiones</a>
+          <a href="#">🏰 Guías de Mazmorras</a>
+          <a href="#">💀 Guías de Raid</a>
+          <a href="#">⚔️ Guías de PvP</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#"><i class="fas fa-newspaper"></i> Noticias</a>
+      </li>
+    </ul>
+  </nav>
 
-    <!-- CATEGORIAS -->
-    <section class="categorias">
-      <div class="card">
-        <span class="card-icon">⚔️</span>
-        <h3>Items</h3>
-        <p>125,000 registros</p>
-      </div>
-      <div class="card">
-        <span class="card-icon">👹</span>
-        <h3>NPCs</h3>
-        <p>89,000 registros</p>
-      </div>
-      <div class="card">
-        <span class="card-icon">📜</span>
-        <h3>Quests</h3>
-        <p>34,000 registros</p>
-      </div>
-      <div class="card">
-        <span class="card-icon">✨</span>
-        <h3>Spells</h3>
-        <p>67,000 registros</p>
-      </div>
-      <div class="card">
-        <span class="card-icon">🏆</span>
-        <h3>Logros</h3>
-        <p>12,000 registros</p>
-      </div>
-      <div class="card">
-        <span class="card-icon">🗺️</span>
-        <h3>Zonas</h3>
-        <p>2,400 registros</p>
-      </div>
-    </section>
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main" id="mainContent">
 
-    <!-- ITEMS POPULARES -->
-    <section class="tabla-seccion">
-      <h2>⚔️ Items Populares</h2>
-      <table class="tabla">
-        <thead>
-          <tr>
-            <th>Icono</th>
-            <th>Nombre</th>
-            <th>Nivel</th>
-            <th>Tipo</th>
-            <th>Fuente</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>🪓</td>
-            <td class="legendary">Fyr'alath el Lacerasueños</td>
-            <td>489</td>
-            <td>Arma a dos manos</td>
-            <td>Fyrakk - Amirdrassil</td>
-          </tr>
-          <tr>
-            <td>🔮</td>
-            <td class="legendary">Atiesh Gran Bastón del Guardián</td>
-            <td>130</td>
-            <td>Bastón</td>
-            <td>Naxxramas</td>
-          </tr>
-          <tr>
-            <td>⚔️</td>
-            <td class="epic">Espada de Quel'delar</td>
-            <td>251</td>
-            <td>Espada a una mano</td>
-            <td>Cadena de misiones</td>
-          </tr>
-          <tr>
-            <td>🧥</td>
-            <td class="epic">Capa de Ensueño Ardiente</td>
-            <td>483</td>
-            <td>Espalda</td>
-            <td>Fyrakk</td>
-          </tr>
-          <tr>
-            <td>🧪</td>
-            <td class="rare">Matraz de la Sombra Titánica</td>
-            <td>70</td>
-            <td>Consumible</td>
-            <td>Alquimia</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+    <!-- PAGINA INICIO -->
+    <div id="paginaInicio">
+
+      <!-- CATEGORIAS -->
+      <section class="categorias">
+        <div class="card" onclick="filtrarCategoria('armas')">
+          <span class="card-icon">⚔️</span>
+          <h3>Armas</h3>
+          <p>Espadas, hachas, bastones...</p>
+        </div>
+        <div class="card" onclick="filtrarCategoria('armadura')">
+          <span class="card-icon">🛡️</span>
+          <h3>Armadura</h3>
+          <p>Placas, cuero, tela...</p>
+        </div>
+        <div class="card" onclick="filtrarCategoria('accesorios')">
+          <span class="card-icon">💍</span>
+          <h3>Accesorios</h3>
+          <p>Anillos, collares, trinkets...</p>
+        </div>
+        <div class="card" onclick="filtrarCategoria('consumibles')">
+          <span class="card-icon">🧪</span>
+          <h3>Consumibles</h3>
+          <p>Pociones, comida, elixires...</p>
+        </div>
+        <div class="card" onclick="filtrarCategoria('npcs')">
+          <span class="card-icon">👹</span>
+          <h3>NPCs</h3>
+          <p>Jefes, vendedores, criaturas...</p>
+        </div>
+        <div class="card" onclick="filtrarCategoria('quests')">
+          <span class="card-icon">📜</span>
+          <h3>Misiones</h3>
+          <p>Historias, diarias, semanales...</p>
+        </div>
+        <div class="card" onclick="filtrarCategoria('spells')">
+          <span class="card-icon">✨</span>
+          <h3>Hechizos</h3>
+          <p>Habilidades de clase...</p>
+        </div>
+        <div class="card" onclick="filtrarCategoria('monturas')">
+          <span class="card-icon">🐎</span>
+          <h3>Monturas</h3>
+          <p>Dragones, caballos, lobos...</p>
+        </div>
+      </section>
+
+      <!-- TABLA DE ITEMS -->
+      <section class="tabla-seccion">
+        <div class="tabla-header">
+          <h2 id="tituloTabla">⚔️ Items Populares</h2>
+          <div class="filtros">
+            <button class="filtro-btn active" onclick="filtrarCalidad('all', this)">Todos</button>
+            <button class="filtro-btn" onclick="filtrarCalidad('legendary', this)">Legendario</button>
+            <button class="filtro-btn" onclick="filtrarCalidad('epic', this)">Épico</button>
+            <button class="filtro-btn" onclick="filtrarCalidad('rare', this)">Raro</button>
+            <button class="filtro-btn" onclick="filtrarCalidad('uncommon', this)">Poco común</button>
+          </div>
+        </div>
+        <div class="tabla-container">
+          <table class="tabla">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Nombre</th>
+                <th>Nivel</th>
+                <th>Tipo</th>
+                <th>Fuente</th>
+              </tr>
+            </thead>
+            <tbody id="tablaBody">
+              <!-- Se llena con JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- PAGINA DETALLE ITEM -->
+    <div id="paginaDetalle" style="display:none;">
+      <button class="btn-volver" onclick="mostrarInicio()">
+        <i class="fas fa-arrow-left"></i> Volver
+      </button>
+      <div id="detalleContenido">
+        <!-- Se llena con JavaScript -->
+      </div>
+    </div>
 
   </main>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2024 AfterWoW - Base de Datos de World of Warcraft</p>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>AfterWoW</h3>
+        <p>La base de datos más completa de World of Warcraft.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Base de Datos</h4>
+        <a href="#" onclick="filtrarCategoria('armas')">Armas</a>
+        <a href="#" onclick="filtrarCategoria('armadura')">Armadura</a>
+        <a href="#" onclick="filtrarCategoria('npcs')">NPCs</a>
+        <a href="#" onclick="filtrarCategoria('quests')">Misiones</a>
+      </div>
+      <div class="footer-col">
+        <h4>Comunidad</h4>
+        <a href="#">Discord</a>
+        <a href="#">Foros</a>
+        <a href="#">Contribuir</a>
+        <a href="#">Contacto</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 AfterWoW - World of Warcraft es marca registrada de Blizzard Entertainment.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
